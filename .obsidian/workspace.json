@@ -74,8 +74,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -172,12 +171,12 @@
   },
   "active": "4b344472f8bc6df5",
   "lastOpenFiles": [
+    "life/2023-07-31.md",
+    "Race_list.md",
     "wp/ctfshow.md",
     "wp/xing ctf2023.md",
     "Tricks.md",
-    "Race_list.md",
     "tool.md",
-    "life/2023-07-31.md",
     "life/2023-07-25.md",
     "wp/The Odyssey CTF.md",
     "tmp.md",
