@@ -1,0 +1,21 @@
+/* 
+@Author   : 咖啡豆  
+@contact  : https://coffeetea.top/  
+@File     : 满屏无边距.css  
+@Software : vscode  
+@Date     : 2022-10-16  
+@upDate   : 2022-10-16  
+@Desc     : CSS提供给系统yaml调用，调用格式如下  
+            ---            
+            cssclass: coffeebean-full-screen            
+            ---
+@Desc     : 定义格式如 .markdown-preview-view .mianban_width 下面的都加此前缀  
+@Desc     : 用来嵌入各种网页，无任务边距，满屏的效果  
+*/  
+.cm-s-obsidian span.cm-inline-code {
+  padding: 2px 0 1px;
+  color: var(--text-color-code);
+  font-weight: var(--font-weight-inline-code);
+  font-family: var(--font-family-inline-code) !important;
+  font-size: var(--font-size-code) !important;
+}

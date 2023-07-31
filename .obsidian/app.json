@@ -1,0 +1,26 @@
+{
+  "showLineNumber": false,
+  "readableLineLength": false,
+  "livePreview": true,
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  },
+  "alwaysUpdateLinks": true,
+  "vimMode": false,
+  "defaultViewMode": "source",
+  "showInlineTitle": true,
+  "attachmentFolderPath": "/attachment",
+  "newFileLocation": "current",
+  "userIgnoreFilters": [
+    "/attachment"
+  ],
+  "autoConvertHtml": false,
+  "rightToLeft": false,
+  "promptDelete": false,
+  "strictLineBreaks": false,
+  "showFrontmatter": false
+}

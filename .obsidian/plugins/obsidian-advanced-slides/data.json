@@ -1,0 +1,21 @@
+{
+  "port": "3000",
+  "autoReload": true,
+  "exportDirectory": "attachment",
+  "enableChalkboard": false,
+  "enableOverview": false,
+  "enableMenu": false,
+  "enablePointer": false,
+  "enableTimeBar": false,
+  "theme": "black",
+  "highlightTheme": "zenburn",
+  "transition": "slide",
+  "transitionSpeed": "default",
+  "controls": true,
+  "progress": true,
+  "slideNumber": false,
+  "showGrid": true,
+  "autoComplete": "inPreview",
+  "paneMode": "split",
+  "motm": "2023-07-15T09:47:38.374Z"
+}
