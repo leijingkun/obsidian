@@ -1178,7 +1178,7 @@ int main()
 ### [网鼎杯 2020 青龙组]singal
 #vm
 ```c
-//opcode==7时,会将输入的字符与下一个字符比较
+//opcode==7时,会将输入的字符与下一个字符比较,也就是比较flag
   case 7:
 	if ( Str[v7 + 100] != string[v9 + 1] )
 	{
@@ -1190,6 +1190,10 @@ int main()
 	break;
 ```
 
+
+常规解法,逆向
+
+符号
 # ctfshow
 ### re2
 ![[Pasted image 20230604234625.png]]

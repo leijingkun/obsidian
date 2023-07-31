@@ -8,46 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "3f81e670afd9a9d2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "life/2023-07-25.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
             "id": "4b344472f8bc6df5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Race_list.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "c5d8e9187b195ba8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "tmp.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "85be7cfe6caddc3b",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -58,22 +19,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "3ff0aa5e2bdc7a9c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "wp/UIUCTF 2023.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -222,19 +169,22 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "85be7cfe6caddc3b",
+  "active": "4b344472f8bc6df5",
   "lastOpenFiles": [
-    "wp/The Odyssey CTF.md",
-    "life/2023-07-31.md",
     "Race_list.md",
+    "life/2023-07-25.md",
+    "wp/The Odyssey CTF.md",
+    "tmp.md",
+    "wp/UIUCTF 2023.md",
+    "README.md",
+    "GRE.md",
+    "practice/htb.md",
+    "life/2023-07-31.md",
     "wp/tfc ctf 2023.md",
     "wp/ImaginaryCTF 2023.md",
-    "tmp.md",
     "ctf/Reverse.md",
     "hvv.md",
-    "GRE.md",
     "Mapping.md",
-    "wp/UIUCTF 2023.md",
     "wp/justctf2023.md",
     "wp/google ctf 2023.md",
     "wp/crewCTF.md",
@@ -247,9 +197,6 @@
     "wp/nkctf2023.md",
     "Tricks.md",
     "life/2023-07-26.md",
-    "awd.md",
-    "awdp.md",
-    "life/2023-07-25.md",
     "realcs",
     "~$scnBuild 设计报告.docx",
     "CiscnBuild 设计报告.docx",
