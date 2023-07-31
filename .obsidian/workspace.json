@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "life/2023-07-31.md",
+                "file": "Tricks.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "life/2023-07-31.md",
+                "file": "Tricks.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "life/2023-07-31.md"
+                "file": "Tricks.md"
               }
             }
           },
@@ -171,7 +171,10 @@
   },
   "active": "4b344472f8bc6df5",
   "lastOpenFiles": [
+    "wp/xing ctf2023.md",
     "Race_list.md",
+    "tool.md",
+    "life/2023-07-31.md",
     "life/2023-07-25.md",
     "wp/The Odyssey CTF.md",
     "tmp.md",
@@ -179,7 +182,6 @@
     "README.md",
     "GRE.md",
     "practice/htb.md",
-    "life/2023-07-31.md",
     "wp/tfc ctf 2023.md",
     "wp/ImaginaryCTF 2023.md",
     "ctf/Reverse.md",
@@ -195,8 +197,6 @@
     "wp/省赛.md",
     "wp/SCTF2023.md",
     "wp/nkctf2023.md",
-    "Tricks.md",
-    "life/2023-07-26.md",
     "realcs",
     "~$scnBuild 设计报告.docx",
     "CiscnBuild 设计报告.docx",
