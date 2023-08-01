@@ -55,6 +55,8 @@ Connection: close
 
 
 # reverse
+### utterly-deranged
+直接f5会提示`too big function`,修改配置文件里的选项,还是不行,反编译半天
 
 # pwn
 
