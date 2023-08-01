@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "life/2023-08-01.md",
+                "file": "wp/cor ctf 2023.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -108,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "life/2023-08-01.md",
+                "file": "wp/cor ctf 2023.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -140,7 +140,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "life/2023-08-01.md"
+                "file": "wp/cor ctf 2023.md"
               }
             }
           },
@@ -185,9 +185,10 @@
   },
   "active": "58f160bfcd03f5a2",
   "lastOpenFiles": [
+    "Race_list.md",
+    "wp/cor ctf 2023.md",
     "life/2023-08-01.md",
     "life/2023-07-31.md",
-    "Race_list.md",
     "wp/ctfshow.md",
     "wp/xing ctf2023.md",
     "Tricks.md",
@@ -210,7 +211,6 @@
     "blockchain.md",
     "life/2023-07-28.md",
     "wp/icq春秋杯2022.md",
-    "wp/buuctf.md",
     "realcs",
     "~$scnBuild 设计报告.docx",
     "CiscnBuild 设计报告.docx",

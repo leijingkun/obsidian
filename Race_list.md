@@ -40,6 +40,7 @@
 [[wp/ImaginaryCTF 2023]]
 [[wp/tfc ctf 2023]]
 [[wp/xing ctf2023]]
+[[wp/cor ctf 2023]]
 复现
 [[catctf2022]]
 [[i春秋2022冬]]
