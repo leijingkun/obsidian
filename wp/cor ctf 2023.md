@@ -109,10 +109,26 @@ while True:
 ### msfrognymize
 一个上传图片后对可以对人脸进行打码的网站
 
+---
+漏洞在查看文件处...可以目录穿越
+```python
+@app.route('/anonymized/<image_file>')
+def serve_image(image_file):
+    file_path = os.path.join(UPLOAD_FOLDER, unquote(image_file))
+    if ".." in file_path or not os.path.exists(file_path):
+        return f"Image {file_path} cannot be found.", 404
+    return send_file(file_path, mimetype='image/png')
+```
+两次url编码,直接可以到根目录,光想着往上穿了
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230801221808.png)
+
 
 # reverse
+https://blog.solidity.kr/posts/(ctf)-2023-corctf/
 ### utterly-deranged
-直接f5会提示`too big function`,修改配置文件里的选项,还是不行,反编译半天
+直接f5会提示`too big function`,修改配置文件里的选项,还是不行,反编译半天也没结果
+我们需要反反编译
+
 
 # pwn
 
