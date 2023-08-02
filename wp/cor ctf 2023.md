@@ -123,6 +123,14 @@ def serve_image(image_file):
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230801221808.png)
 
 
+
+### frogshare
+#xss 
+![image](https://i.imgur.com/lN64zKd.png)
+可以根据传入的参数生成一个svg样式
+
+测试了一下[svg_存储xss](https://infosecwriteups.com/stored-xss-using-svg-file-2e3608248fae) 直接访问svg可以xss,但是这道题里生成的没法xss
+
 # reverse
 https://blog.solidity.kr/posts/(ctf)-2023-corctf/
 ### utterly-deranged
