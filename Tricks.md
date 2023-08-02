@@ -312,6 +312,8 @@ xc = function(src){
 > 
 > Apache HTTP Server 2.2.x多个版本没有严格限制HTTP请求头信息，HTTP请求头信息超过LimitRequestFieldSize长度时，服务器返回400（Bad Request）错误，并在返回信息中将出错的请求头内容输出（包含请求头里的HttpOnly Cookie），攻击者可以利用这个缺陷获取HttpOnly Cookie
 
+# CSP(Content Security Policy)
+https://csp-evaluator.withgoogle.com/ 输入csp头来检测是否能预防xss
 
 # Linux 查看文件命令
 

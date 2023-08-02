@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "origin",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -88,7 +88,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -185,13 +186,14 @@
   },
   "active": "58f160bfcd03f5a2",
   "lastOpenFiles": [
-    "Race_list.md",
+    "wp/google ctf 2023.md",
+    "Tricks.md",
+    "wp/xing ctf2023.md",
     "wp/cor ctf 2023.md",
+    "Race_list.md",
     "life/2023-08-01.md",
     "life/2023-07-31.md",
     "wp/ctfshow.md",
-    "wp/xing ctf2023.md",
-    "Tricks.md",
     "tool.md",
     "life/2023-07-25.md",
     "wp/The Odyssey CTF.md",
@@ -206,7 +208,6 @@
     "hvv.md",
     "Mapping.md",
     "wp/justctf2023.md",
-    "wp/google ctf 2023.md",
     "wp/crewCTF.md",
     "blockchain.md",
     "life/2023-07-28.md",
