@@ -47,7 +47,9 @@ free available check你收我费,test your code
 MAC: 2A:38:5C:91:E5:27
 Hint: format XX.XX,XX.XX
 
-google到了可以使用google cloud api,研究配置一番
+google到了可以使用google cloud api,研究配置一番,
+visa卡通过不了验证,设置不了billing account.
+卒
 
 # web
 
