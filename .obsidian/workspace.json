@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wp/xing ctf2023.md",
+                "file": "wp/tjctf 2023.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -46,8 +46,7 @@
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -121,7 +120,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2023NwuCTF/开学第一课(计协版).md",
+                "file": "wp/tjctf 2023.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -153,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2023NwuCTF/开学第一课(计协版).md"
+                "file": "wp/tjctf 2023.md"
               }
             }
           },
@@ -196,19 +195,19 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "793e454e2fb97b5a",
+  "active": "4b344472f8bc6df5",
   "lastOpenFiles": [
+    "Race_list.md",
+    "wp/xing ctf2023.md",
     "2023NwuCTF/培训-1.md",
     "2023NwuCTF/开学第一课(计协版).md",
     "2023NwuCTF/课程计划表.md",
     "2023NwuCTF/2023NwuSec招新计划.md",
-    "Race_list.md",
     "CiscnBuild 设计报告.md",
     "practice/thm.md",
     "wp/cor ctf 2023.md",
     "wp/google ctf 2023.md",
     "Tricks.md",
-    "wp/xing ctf2023.md",
     "life/2023-08-01.md",
     "life/2023-07-31.md",
     "wp/ctfshow.md",

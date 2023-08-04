@@ -65,7 +65,7 @@ for i in range(0,2**24):
 本目录和根目录都没有flag,随便试了一下读取Dockerfile,提示flag在`/secret-flag-dir/flag.txt`
 
 ### ezsql
-#nodejs 
+#nodejs #sql 
 ```js
 app.get('/search', (req, res) => {
     const { name } = req.query;
