@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wp/tjctf 2023.md",
+                "file": "wp/BlockHarbor Automotive CTF.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -120,7 +120,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "wp/tjctf 2023.md",
+                "file": "wp/BlockHarbor Automotive CTF.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -152,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "wp/tjctf 2023.md"
+                "file": "wp/BlockHarbor Automotive CTF.md"
               }
             }
           },
@@ -198,6 +198,8 @@
   "active": "4b344472f8bc6df5",
   "lastOpenFiles": [
     "Race_list.md",
+    "wp/BlockHarbor Automotive CTF.md",
+    "wp/tjctf 2023.md",
     "wp/xing ctf2023.md",
     "2023NwuCTF/培训-1.md",
     "2023NwuCTF/开学第一课(计协版).md",
@@ -221,8 +223,6 @@
     "practice/htb.md",
     "wp/tfc ctf 2023.md",
     "wp/ImaginaryCTF 2023.md",
-    "ctf/Reverse.md",
-    "hvv.md",
     "realcs",
     "~$scnBuild 设计报告.docx",
     "CiscnBuild 设计报告.docx",

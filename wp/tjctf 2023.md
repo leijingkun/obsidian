@@ -126,6 +126,102 @@ def generate_token(id, username, year):
 
 
 # reverse
+### wtmoo
+```c
+for ( i = 0; i < v5; ++i )
+  {
+    if ( s[i] <= 96 || s[i] > 122 )
+    {
+      if ( s[i] <= 64 || s[i] > 90 )
+      {
+        if ( s[i] <= 47 || s[i] > 52 )
+        {
+          if ( s[i] <= 52 || s[i] > 57 )
+          {
+            if ( s[i] != 123 && s[i] != 125 )
+            {
+              puts("wtmoo is this guess???");
+              printf("%c\n", (unsigned int)s[i]);
+              return 1;
+            }
+          }
+          else
+          {
+            s[i] -= 21;
+          }
+        }
+        else
+        {
+          s[i] += 43;
+        }
+      }
+      else
+      {
+        s[i] += 32;
+      }
+    }
+    else
+    {
+      s[i] -= 60;
+    }
+  }
+  if ( !strcmp(s, flag) )
+    printf(cow, dest);
+```
+
+*decrypt*
+```c
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main(){
+int s[]={  0x38, 0x2E, 0x27, 0x38, 0x2A, 0x7B, 0x3B, 0x38, 0x6D, 0x33, 
+  0x33, 0x5B, 0x6F, 0x5B, 0x33, 0x5B, 0x33, 0x5B, 0x25, 0x22, 
+  0x29, 0x23, 0x2A, 0x5C, 0x7D};
+int v5=sizeof(s)/sizeof(s[0]);
+for (int  i = 0; i < v5; ++i )
+  cout << (char)s[i];
+
+for (int i = 0; i < v5; ++i )
+  {
+    if ( s[i] <= 36 || s[i] > 62 )
+    {
+      if ( s[i] <= 96 || s[i] > 122 )
+      {
+        if ( s[i] <= 90 || s[i] > 95 )
+        {
+          if ( s[i] <= 31 || s[i] > 36 )
+          {
+            if ( s[i] != 123 && s[i] != 125 )
+            {
+            }
+          }
+          else
+          {
+            s[i] += 21;
+          }
+        }
+        else
+        {
+          s[i] -= 43;
+        }
+      }
+      else
+      {
+        s[i] -= 32;
+      }
+    }
+    else
+    {
+      s[i] += 60;
+    }
+  }
+for (int  i = 0; i < v5; ++i )
+  cout << (char)s[i];
+
+}
+```
+
 
 # pwn
 
