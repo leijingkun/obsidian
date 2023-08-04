@@ -19,8 +19,9 @@ VIN(Vehicle Identification Number)汽车唯一标识码
 >Here's a license plate "DCR 660", it is registered in Michigan. Can you find the VIN?
 
 google到这个[网站](https://vincheck.info/license-plate-search.php?error=e1008)输入车牌号`DCR660`和`Michigan`的简称`MI`即可获得到VIN
-![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230804203742.png)
+![image.png|850](https://gitee.com/leiye87/typora_picture/raw/master/20230804203742.png)
 
+`YV4A22PK1H1184823`
 ### Make and Model
 >[!info]
 >Here's a license plate "DCR 660", it is registered in Michigan. What is the make and model?
@@ -35,7 +36,18 @@ Format: year-make-model
 
 ### Imported when?
 查询车辆的进口时间
+free available check你收我费,test your code
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230804220227.png)
 
+找不到了,next
+
+### Mac Track!
+>[!info]
+>We've managed to identify the MAC address of a vehicle of interest, can you help us track down where it was located on December 8'th, 2022? We need the latitude and longitude to two decimal places.
+MAC: 2A:38:5C:91:E5:27
+Hint: format XX.XX,XX.XX
+
+google到了可以使用google cloud api,研究配置一番
 
 # web
 
