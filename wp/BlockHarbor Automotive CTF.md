@@ -18,6 +18,23 @@ VIN(Vehicle Identification Number)汽车唯一标识码
 >[!info]
 >Here's a license plate "DCR 660", it is registered in Michigan. Can you find the VIN?
 
+google到这个[网站](https://vincheck.info/license-plate-search.php?error=e1008)输入车牌号`DCR660`和`Michigan`的简称`MI`即可获得到VIN
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230804203742.png)
+
+### Make and Model
+>[!info]
+>Here's a license plate "DCR 660", it is registered in Michigan. What is the make and model?
+Format: year-make-model
+
+`2017-VOLVO-XC90`
+
+### Manufactured at?
+*Format: City, Country*
+
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230804205919.png)
+
+### Imported when?
+查询车辆的进口时间
 
 
 # web
