@@ -50,6 +50,13 @@ Hint: format XX.XX,XX.XX
 google到了可以使用google cloud api,研究配置一番,
 visa卡通过不了验证,设置不了billing account.
 卒
+# VSEC HarborBay
+### Simulation VIN
+使用UDS(Unified Diagnostic Services)统一诊断协议 命令来操作
+向指定can口发送数据
+`cangen vcan0 -g 5 -I 42A -L 1 -D i -x -n 10`
+
+
 
 # web
 
