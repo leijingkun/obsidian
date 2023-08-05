@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "d4d82bf3b8a2c988",
+        "id": "eb6139609c01254a",
         "type": "tabs",
         "children": [
           {
-            "id": "4b344472f8bc6df5",
+            "id": "cb3a06fbb7fb8c38",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "life/2023-08-05.md",
+                "file": "Race_list.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -21,32 +21,20 @@
             }
           },
           {
-            "id": "58f160bfcd03f5a2",
+            "id": "d64291c6beb3f3d3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2023NwuCTF/培训-1.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "793e454e2fb97b5a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "2023NwuCTF/开学第一课(计协版).md",
+                "file": "ctf/Pwn.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -75,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#安卓逆向",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -100,8 +88,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -121,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "life/2023-08-05.md",
+                "file": "ctf/Pwn.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -153,7 +140,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "life/2023-08-05.md"
+                "file": "ctf/Pwn.md"
               }
             }
           },
@@ -196,16 +183,22 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "4b344472f8bc6df5",
+  "active": "d64291c6beb3f3d3",
   "lastOpenFiles": [
-    "os/Android.md",
-    "life/2023-08-05.md",
-    "wp/BlockHarbor Automotive CTF.md",
     "Race_list.md",
+    "ctf/Pwn.md",
+    "wp/DeconstruCT.F 2023.md",
+    "ctf/Misc.md",
+    "ctf/crypto.md",
+    "ctf/wargame.md",
+    "2023NwuCTF/开学第一课(计协版).md",
+    "2023NwuCTF/培训-1.md",
+    "life/2023-08-05.md",
+    "wp/巅峰极客2023.md",
+    "os/Android.md",
+    "wp/BlockHarbor Automotive CTF.md",
     "wp/tjctf 2023.md",
     "wp/xing ctf2023.md",
-    "2023NwuCTF/培训-1.md",
-    "2023NwuCTF/开学第一课(计协版).md",
     "2023NwuCTF/课程计划表.md",
     "2023NwuCTF/2023NwuSec招新计划.md",
     "CiscnBuild 设计报告.md",
@@ -218,12 +211,6 @@
     "wp/ctfshow.md",
     "tool.md",
     "life/2023-07-25.md",
-    "wp/The Odyssey CTF.md",
-    "tmp.md",
-    "wp/UIUCTF 2023.md",
-    "README.md",
-    "GRE.md",
-    "practice/htb.md",
     "realcs",
     "~$scnBuild 设计报告.docx",
     "CiscnBuild 设计报告.docx",
