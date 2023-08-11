@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wp/nepnepctf 2023.md",
+                "file": "Tricks.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -62,7 +62,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "lfi",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "wp/nepnepctf 2023.md",
+                "file": "Tricks.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "wp/nepnepctf 2023.md"
+                "file": "Tricks.md"
               }
             }
           },
@@ -184,12 +184,14 @@
   },
   "active": "cb3a06fbb7fb8c38",
   "lastOpenFiles": [
+    "web.md",
+    "wp/TAMUctf 2023.md",
+    "blog/From LFI to RCE.md",
     "Tricks.md",
     "wp/nepnepctf 2023.md",
     "Race_list.md",
     "tmp.md",
     "tool.md",
-    "web.md",
     "life/2023-08-11.md",
     "2023NwuCTF/课程计划表.md",
     "wp/Arab Security Cyber Wargames 2023 Qualifications.md",
@@ -208,8 +210,6 @@
     "wp/BlockHarbor Automotive CTF.md",
     "wp/tjctf 2023.md",
     "wp/xing ctf2023.md",
-    "CiscnBuild 设计报告.md",
-    "practice/thm.md",
     "realcs",
     "~$scnBuild 设计报告.docx",
     "CiscnBuild 设计报告.docx",
