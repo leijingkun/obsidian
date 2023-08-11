@@ -1,4 +1,5 @@
 # web
+### java
 
 # reverse
 
@@ -47,6 +48,9 @@ def decompress(compressed_file, decompressed_file):
 ```python
 sensitive_strings = ['open','chm','get','env','\\x','bind', 'listen', 'read', 'write', 'asm', 'exe', 'sys', 'sh', 'popen', 'mprotect', 'map']
 ```
+
+*Nepctf{easy_codes_3c67d795-0504-4d55-96e1-a4a14b740bc2_[TEAM_HASH]}*
+
 ---
 # *相关wp*
 
