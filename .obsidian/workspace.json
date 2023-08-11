@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Race_list.md",
+                "file": "wp/nepnepctf 2023.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -33,8 +33,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -108,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2023NwuCTF/课程计划表.md",
+                "file": "wp/nepnepctf 2023.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -140,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2023NwuCTF/课程计划表.md"
+                "file": "wp/nepnepctf 2023.md"
               }
             }
           },
@@ -183,16 +182,17 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "c81673eec581db6d",
+  "active": "cb3a06fbb7fb8c38",
   "lastOpenFiles": [
+    "Race_list.md",
+    "wp/nepnepctf 2023.md",
     "life/2023-08-11.md",
-    "wp/Arab Security Cyber Wargames 2023 Qualifications.md",
     "2023NwuCTF/课程计划表.md",
+    "wp/Arab Security Cyber Wargames 2023 Qualifications.md",
     "2023NwuCTF/开学第一课(计协版).md",
     "2023NwuCTF/2023NwuSec招新计划.md",
     "life/2023-08-10.md",
     "wp/DeconstruCT.F 2023.md",
-    "Race_list.md",
     "ctf/Pwn.md",
     "ctf/Misc.md",
     "ctf/crypto.md",
@@ -210,7 +210,6 @@
     "wp/google ctf 2023.md",
     "Tricks.md",
     "life/2023-08-01.md",
-    "life/2023-07-31.md",
     "realcs",
     "~$scnBuild 设计报告.docx",
     "CiscnBuild 设计报告.docx",
