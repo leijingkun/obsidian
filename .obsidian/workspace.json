@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tricks.md",
+                "file": "src/src.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tricks.md",
+                "file": "src/src.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tricks.md"
+                "file": "src/src.md"
               }
             }
           },
@@ -184,10 +184,12 @@
   },
   "active": "cb3a06fbb7fb8c38",
   "lastOpenFiles": [
+    "src/info.md",
+    "life/2023-08-13.md",
+    "Tricks.md",
     "web.md",
     "wp/TAMUctf 2023.md",
     "blog/From LFI to RCE.md",
-    "Tricks.md",
     "wp/nepnepctf 2023.md",
     "Race_list.md",
     "tmp.md",
@@ -208,8 +210,6 @@
     "wp/巅峰极客2023.md",
     "os/Android.md",
     "wp/BlockHarbor Automotive CTF.md",
-    "wp/tjctf 2023.md",
-    "wp/xing ctf2023.md",
     "realcs",
     "~$scnBuild 设计报告.docx",
     "CiscnBuild 设计报告.docx",
