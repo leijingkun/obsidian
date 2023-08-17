@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "practice/thm.md",
+                "file": "blog/CTFShow 周末大挑战.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -62,7 +62,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "msf",
+                "query": "role",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -87,8 +87,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -108,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "practice/thm.md",
+                "file": "blog/CTFShow 周末大挑战.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -140,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "practice/thm.md"
+                "file": "blog/CTFShow 周末大挑战.md"
               }
             }
           },
@@ -185,6 +184,8 @@
   },
   "active": "cb3a06fbb7fb8c38",
   "lastOpenFiles": [
+    "life/2023-08-17.md",
+    "practice/thm.md",
     "life/2023-08-15.md",
     "src/src.md",
     "src/info.md",
@@ -209,8 +210,6 @@
     "ctf/crypto.md",
     "ctf/wargame.md",
     "2023NwuCTF/培训-1.md",
-    "life/2023-08-05.md",
-    "wp/巅峰极客2023.md",
     "realcs",
     "~$scnBuild 设计报告.docx",
     "CiscnBuild 设计报告.docx",
