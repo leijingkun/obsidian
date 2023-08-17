@@ -4,6 +4,7 @@
 前端题,找到jsfuck控制台直接输
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230618224300.png)
 
+
 ### 电子木鱼
 为什么负数不能积累到cost里捏
 ```rust
