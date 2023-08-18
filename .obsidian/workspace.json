@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blockchain.md",
+                "file": "Tricks.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -49,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "role",
+                "query": "md5",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +74,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "blockchain.md",
+                "file": "Tricks.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "blockchain.md"
+                "file": "Tricks.md"
               }
             }
           },
@@ -169,34 +170,34 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "cb3a06fbb7fb8c38",
+  "active": "7a5e8490109e3ce0",
   "lastOpenFiles": [
+    "wp/moectf2023.md",
+    "Race_list.md",
+    "wp/Arab Security Cyber Wargames 2023 Qualifications.md",
+    "pentest.md",
+    "wp/deadsec 2023.md",
+    "language/Java.md",
+    "Tricks.md",
+    "life/2023-08-18.md",
+    "blockchain.md",
     "wp/VNCTF2023.md",
     "life/2023-08-11.md",
     "wp/n00bzCTF.md",
-    "pentest.md",
-    "blockchain.md",
     "life/2023-08-17.md",
     "practice/thm.md",
     "life/2023-08-15.md",
     "src/src.md",
     "src/info.md",
     "life/2023-08-13.md",
-    "Tricks.md",
     "web.md",
     "wp/TAMUctf 2023.md",
     "blog/From LFI to RCE.md",
     "wp/nepnepctf 2023.md",
-    "Race_list.md",
     "tmp.md",
     "tool.md",
     "2023NwuCTF/课程计划表.md",
-    "wp/Arab Security Cyber Wargames 2023 Qualifications.md",
     "2023NwuCTF/开学第一课(计协版).md",
-    "2023NwuCTF/2023NwuSec招新计划.md",
-    "life/2023-08-10.md",
-    "wp/DeconstruCT.F 2023.md",
-    "ctf/Pwn.md",
     "realcs",
     "~$scnBuild 设计报告.docx",
     "CiscnBuild 设计报告.docx",

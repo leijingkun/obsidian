@@ -45,6 +45,8 @@
 [[wp/DeconstruCT.F 2023]]
 [[wp/Arab Security Cyber Wargames 2023 Qualifications]]
 [[wp/nepnepctf 2023]]
+[[wp/moectf2023]]
+
 复现
 [[catctf2022]]
 [[i春秋2022冬]]
