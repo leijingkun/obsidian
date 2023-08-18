@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tricks.md",
+                "file": "wp/moectf2023.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tricks.md",
+                "file": "wp/moectf2023.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tricks.md"
+                "file": "wp/moectf2023.md"
               }
             }
           },
@@ -170,15 +170,15 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "7a5e8490109e3ce0",
+  "active": "cb3a06fbb7fb8c38",
   "lastOpenFiles": [
-    "wp/moectf2023.md",
     "Race_list.md",
-    "wp/Arab Security Cyber Wargames 2023 Qualifications.md",
     "pentest.md",
+    "wp/moectf2023.md",
+    "Tricks.md",
+    "wp/Arab Security Cyber Wargames 2023 Qualifications.md",
     "wp/deadsec 2023.md",
     "language/Java.md",
-    "Tricks.md",
     "life/2023-08-18.md",
     "blockchain.md",
     "wp/VNCTF2023.md",

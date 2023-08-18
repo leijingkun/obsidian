@@ -54,6 +54,10 @@ xml_content=<!--?xml version="1.0" ?-->
   <name>%26example;</name>
  </xml>
 ```
+
+```payload
+di_jiu_qiangdi_qi_qiangdi_qi_qiangdi_qi_qiang";s:11:"Spear_Owner";s:6:"MaoLei";}
+```
 # reverse
 
 # pwn
