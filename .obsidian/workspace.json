@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ctf/Reverse.md",
+                "file": "life/2023-08-21.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -74,8 +74,23 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
+      },
+      {
+        "id": "b908cc20e4ee3fcd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "34292a170bfd08e6",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "life/2023-08-21.md"
+              }
+            }
+          }
+        ]
       }
     ],
     "direction": "horizontal",
@@ -95,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ctf/Reverse.md",
+                "file": "life/2023-08-21.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,16 +137,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "34292a170bfd08e6",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "ctf/Reverse.md"
-              }
-            }
-          },
-          {
             "id": "fc432225e98a4261",
             "type": "leaf",
             "state": {
@@ -150,7 +155,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
