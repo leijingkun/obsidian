@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Race_list.md",
+                "file": "ctf/Reverse.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -49,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "z3",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +74,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Race_list.md",
+                "file": "ctf/Reverse.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Race_list.md"
+                "file": "ctf/Reverse.md"
               }
             }
           },
@@ -171,13 +172,16 @@
   },
   "active": "cb3a06fbb7fb8c38",
   "lastOpenFiles": [
+    "wp/n00bzCTF.md",
+    "wp/crewCTF.md",
+    "life/2023-08-21.md",
+    "Race_list.md",
     "pentest.md",
     "life/2023-08-19.md",
     "language/solidity.md",
     "blockchain.md",
     "hvv.md",
     "web.md",
-    "Race_list.md",
     "README.md",
     "Tricks.md",
     "wp/moectf2023.md",
@@ -187,7 +191,6 @@
     "life/2023-08-18.md",
     "wp/VNCTF2023.md",
     "life/2023-08-11.md",
-    "wp/n00bzCTF.md",
     "life/2023-08-17.md",
     "practice/thm.md",
     "life/2023-08-15.md",
@@ -195,8 +198,6 @@
     "src/info.md",
     "life/2023-08-13.md",
     "wp/TAMUctf 2023.md",
-    "blog/From LFI to RCE.md",
-    "wp/nepnepctf 2023.md",
     "realcs",
     "~$scnBuild 设计报告.docx",
     "CiscnBuild 设计报告.docx",
