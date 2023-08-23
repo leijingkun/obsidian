@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blog/手机刷kali-nethunter.md",
+                "file": "blog/kali-nethunter刷机教程.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -86,7 +86,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "blog/手机刷kali-nethunter.md"
+                "file": "blog/kali-nethunter刷机教程.md"
               }
             }
           }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "blog/手机刷kali-nethunter.md",
+                "file": "blog/kali-nethunter刷机教程.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -179,7 +179,7 @@
   "active": "cb3a06fbb7fb8c38",
   "lastOpenFiles": [
     "life/2023-08-23.md",
-    "blog/手机刷kali-nethunter.md",
+    "blog/kali-nethunter刷机教程.md",
     "os/Android.md",
     "life/2023-08-21.md",
     "wp/n00bzCTF.md",
