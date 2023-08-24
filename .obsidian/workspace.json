@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blog/kali-nethunter刷机教程.md",
+                "file": "wp/moectf2023.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -86,7 +86,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "blog/kali-nethunter刷机教程.md"
+                "file": "wp/moectf2023.md"
               }
             }
           }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "blog/kali-nethunter刷机教程.md",
+                "file": "wp/moectf2023.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -178,13 +178,19 @@
   },
   "active": "cb3a06fbb7fb8c38",
   "lastOpenFiles": [
-    "life/2023-08-23.md",
-    "blog/kali-nethunter刷机教程.md",
-    "os/Android.md",
-    "life/2023-08-21.md",
+    "Race_list.md",
+    "ctf/Reverse.md",
     "wp/n00bzCTF.md",
     "wp/crewCTF.md",
-    "Race_list.md",
+    "2023NwuCTF/课程计划表.md",
+    "2023NwuCTF/培训-1.md",
+    "2023NwuCTF/For Freshman.md",
+    "2023NwuCTF/2023NwuSec招新计划.md",
+    "life/2023-08-24.md",
+    "blog/kali-nethunter刷机教程.md",
+    "life/2023-08-23.md",
+    "os/Android.md",
+    "life/2023-08-21.md",
     "pentest.md",
     "life/2023-08-19.md",
     "language/solidity.md",
@@ -198,12 +204,6 @@
     "wp/deadsec 2023.md",
     "language/Java.md",
     "life/2023-08-18.md",
-    "wp/VNCTF2023.md",
-    "life/2023-08-11.md",
-    "life/2023-08-17.md",
-    "practice/thm.md",
-    "life/2023-08-15.md",
-    "src/src.md",
     "realcs",
     "~$scnBuild 设计报告.docx",
     "CiscnBuild 设计报告.docx",

@@ -60,6 +60,11 @@ di_jiu_qiangdi_qi_qiangdi_qi_qiangdi_qi_qiang";s:11:"Spear_Owner";s:6:"MaoLei";}
 ```
 # reverse
 
+```python
+from z3 import *
+
+```
+
 # pwn
 
 # crypto
