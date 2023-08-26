@@ -51,7 +51,6 @@ curl `whoami`.xxx.com
 
 ```
 - 使用`\`换行符
-⚠️upload failed, check dev console
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230530132922.png)
 
 
