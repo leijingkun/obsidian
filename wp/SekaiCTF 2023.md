@@ -78,6 +78,57 @@ def escape_shell_input(input_string)
 ### Azusawa’s Gacha World
 一个unity抽卡游戏,一百万次才能抽到,ce能修改金币数,但是得一百万次...
 使用`dnlpy`打开`.\Managed\Assembly-CSharp.dll`,根据函数调用一直回溯到
+```c#
+public IEnumerator SendGachaRequest(int numPulls)
+{
+	string json = JsonUtility.ToJson(new GachaRequest(this.gameState.crystals, this.gameState.pulls, numPulls));
+	// 让人疑惑的就是竟然会发送web请求,跟进这个函数
+	using (UnityWebRequest request = this.CreateGachaWebRequest(json))
+	{
+		yield return request.SendWebRequest();
+		if (request.result == UnityWebRequest.Result.Success)
+		{
+			this.HandleGachaResponse(request.downloadHandler.text, numPulls);
+			GachaResponse gachaResponse = JsonUtility.FromJson<GachaResponse>(request.downloadHandler.text);
+			base.StartCoroutine(this.uiManager.DisplaySplashArt(gachaResponse.characters));
+}
+
+---------------------
+private UnityWebRequest CreateGachaWebRequest(string json)
+{
+	byte[] bytes = Encoding.UTF8.GetBytes(json);
+	string s = "aHR0cDovLzE3Mi44Ni42NC44OTozMDAwL2dhY2hh";
+	UnityWebRequest unityWebRequest = new UnityWebRequest(Encoding.UTF8.GetString(Convert.FromBase64String(s)), "POST");
+	unityWebRequest.uploadHandler = new UploadHandlerRaw(bytes);
+	unityWebRequest.downloadHandler = new DownloadHandlerBuffer();
+	unityWebRequest.SetRequestHeader("Content-Type", "application/json");
+	unityWebRequest.SetRequestHeader("User-Agent", "SekaiCTF");
+	return unityWebRequest;
+}
+```
+
+原来校验是在web端,所以直接打开fiddler进行一个抓包
+
+```http
+POST http://172.86.64.89:3000/gacha HTTP/1.1
+Host: 172.86.64.89:3000
+Accept: */*
+Accept-Encoding: deflate, gzip
+Connection: Keep-Alive
+Content-Type: application/json
+User-Agent: SekaiCTF
+X-Unity-Version: 2021.3.29f1
+Content-Length: 39
+
+{"crystals":100,"pulls":0,"numPulls":1}
+```
+猜测pulls是请求数,修改为999999,即下一次出flag
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230827031808.png)
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230827031836.png)
+
+
+
+
 
 # pwn
 
