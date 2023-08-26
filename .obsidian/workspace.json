@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wp/BSidesTLV 2023 CTF.md",
+                "file": "life/2023-08-26.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -87,8 +87,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "b908cc20e4ee3fcd",
@@ -100,7 +99,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "wp/BSidesTLV 2023 CTF.md"
+                "file": "life/2023-08-26.md"
               }
             }
           }
@@ -124,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "wp/BSidesTLV 2023 CTF.md",
+                "file": "life/2023-08-26.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -192,6 +191,7 @@
   },
   "active": "cb3a06fbb7fb8c38",
   "lastOpenFiles": [
+    "wp/BSidesTLV 2023 CTF.md",
     "ctf/Reverse.md",
     "os/Android.md",
     "wp/moectf2023.md",
@@ -217,7 +217,6 @@
     "hvv.md",
     "web.md",
     "README.md",
-    "Tricks.md",
     "realcs",
     "~$scnBuild 设计报告.docx",
     "CiscnBuild 设计报告.docx",
