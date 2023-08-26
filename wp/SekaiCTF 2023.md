@@ -74,8 +74,11 @@ def escape_shell_input(input_string)
 
 其中空格可以用`%09`代替,
 # reverse
+#unity
 ### Azusawa’s Gacha World
-一个unity抽卡游戏,一百万次才能chou'dao
+一个unity抽卡游戏,一百万次才能抽到,ce能修改金币数,但是得一百万次...
+使用`dnlpy`打开`.\Managed\Assembly-CSharp.dll`,根据函数调用一直回溯到
+
 # pwn
 
 # crypto
