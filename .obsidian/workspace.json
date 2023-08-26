@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ctf/crypto.md",
+                "file": "blog/CTFShow 周末大挑战.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "z3",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -100,7 +100,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ctf/crypto.md"
+                "file": "blog/CTFShow 周末大挑战.md"
               }
             }
           }
@@ -124,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ctf/crypto.md",
+                "file": "blog/CTFShow 周末大挑战.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -192,8 +192,10 @@
   },
   "active": "0bbb18161e56d2d1",
   "lastOpenFiles": [
-    "wp/moectf2023.md",
+    "wp/ctfshow.md",
+    "life/2023-08-26.md",
     "ctf/crypto.md",
+    "wp/moectf2023.md",
     "Race_list.md",
     "ctf/Reverse.md",
     "wp/n00bzCTF.md",
@@ -216,8 +218,6 @@
     "README.md",
     "Tricks.md",
     "wp/Arab Security Cyber Wargames 2023 Qualifications.md",
-    "wp/deadsec 2023.md",
-    "language/Java.md",
     "realcs",
     "~$scnBuild 设计报告.docx",
     "CiscnBuild 设计报告.docx",
