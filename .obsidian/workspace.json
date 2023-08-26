@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ctf/Misc.md",
+                "file": "Tricks.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -99,7 +99,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ctf/Misc.md"
+                "file": "Tricks.md"
               }
             }
           }
@@ -123,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ctf/Misc.md",
+                "file": "Tricks.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -191,6 +191,9 @@
   },
   "active": "cb3a06fbb7fb8c38",
   "lastOpenFiles": [
+    "ctf/Misc.md",
+    "Race_list.md",
+    "wp/SekaiCTF 2023.md",
     "life/2023-08-26.md",
     "wp/BSidesTLV 2023 CTF.md",
     "ctf/Reverse.md",
@@ -199,7 +202,6 @@
     "blog/CTFShow 周末大挑战.md",
     "wp/ctfshow.md",
     "ctf/crypto.md",
-    "Race_list.md",
     "wp/n00bzCTF.md",
     "wp/crewCTF.md",
     "2023NwuCTF/课程计划表.md",
@@ -215,8 +217,6 @@
     "language/solidity.md",
     "blockchain.md",
     "hvv.md",
-    "web.md",
-    "README.md",
     "realcs",
     "~$scnBuild 设计报告.docx",
     "CiscnBuild 设计报告.docx",
