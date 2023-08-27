@@ -8,25 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "cb3a06fbb7fb8c38",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "wp/SekaiCTF 2023.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
             "id": "0bbb18161e56d2d1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blog/CTFShow 周末大挑战.md",
+                "file": "wp/SekaiCTF 2023.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -189,9 +176,10 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "cb3a06fbb7fb8c38",
+  "active": "0bbb18161e56d2d1",
   "lastOpenFiles": [
     "blog/CTFShow 周末大挑战.md",
+    "template/Day List.md",
     "wp/SekaiCTF 2023.md",
     "Tricks.md",
     "ctf/Misc.md",
@@ -216,7 +204,6 @@
     "pentest.md",
     "life/2023-08-19.md",
     "language/solidity.md",
-    "blockchain.md",
     "realcs",
     "~$scnBuild 设计报告.docx",
     "CiscnBuild 设计报告.docx",

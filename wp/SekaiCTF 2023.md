@@ -72,7 +72,32 @@ def escape_shell_input(input_string)
   end
 ```
 
-其中空格可以用`%09`代替,
+其中空格可以用`%09`代替
+
+---
+
+
+### frog-waf
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230827194115.png)
+
+`addContact` -> 增加contact
+/ 主页面
+其中 `first name`,`last name`,`description` 都用正则表达式限制了,唯一可控输入点在`country`这
+而该字段也由`frog-waf`过滤
+
+```java
+public enum AttackTypes {
+    SQLI("\"", "'", "#"),
+    XSS(">", "<"),
+    OS_INJECTION("bash", "&", "|", ";", "`", "~", "*"),
+    CODE_INJECTION("for", "while", "goto", "if"),
+    JAVA_INJECTION("Runtime", "class", "java", "Name", "char", "Process", "cmd", "eval", "Char", "true", "false"),
+    IDK("+", "-", "/", "*", "%", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9");
+```
+
+还没看出来有啥漏洞,已经被waf防死了
+
+
 # reverse
 #unity
 ### Azusawa’s Gacha World
