@@ -7,3 +7,8 @@
 
 ## NSSCTF
 ### [NSSRound#1 Basic]cut_into_thirds
+*使用`vol3`查看信息*
+`python .\vol.py -f D:\CTF\attachment\cut_into_thirds.raw windows.info`
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230827212917.png)
+*win7*
+*提取用户密码哈希*
