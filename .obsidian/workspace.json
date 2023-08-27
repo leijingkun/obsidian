@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wp/SekaiCTF 2023.md",
+                "file": "ctf/Forensic.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -86,7 +86,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "wp/SekaiCTF 2023.md"
+                "file": "ctf/Forensic.md"
               }
             }
           }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "wp/SekaiCTF 2023.md",
+                "file": "ctf/Forensic.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -178,9 +178,11 @@
   },
   "active": "0bbb18161e56d2d1",
   "lastOpenFiles": [
+    "ctf/Reverse_Know.md",
+    "ctf/Forensic.md",
+    "wp/SekaiCTF 2023.md",
     "blog/CTFShow 周末大挑战.md",
     "template/Day List.md",
-    "wp/SekaiCTF 2023.md",
     "Tricks.md",
     "ctf/Misc.md",
     "Race_list.md",
@@ -202,8 +204,6 @@
     "life/2023-08-23.md",
     "life/2023-08-21.md",
     "pentest.md",
-    "life/2023-08-19.md",
-    "language/solidity.md",
     "realcs",
     "~$scnBuild 设计报告.docx",
     "CiscnBuild 设计报告.docx",
