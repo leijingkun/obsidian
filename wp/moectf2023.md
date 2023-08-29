@@ -1051,6 +1051,15 @@ open('flag').read()
 限制长度12
 
 
+`eval(input())` 长度为13
+
+### 3
+限制长度6
+
+2,3都为输入help(),然后os,然后!sh
+
+https://zhuanlan.zhihu.com/p/578986988
+
 ---
 # *相关wp*
 

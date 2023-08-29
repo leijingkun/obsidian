@@ -13,14 +13,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wp/moectf2023.md",
+                "file": "2023NwuCTF/培训-1.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a38eae7192f6d218",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2023NwuCTF/知识点.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -86,7 +100,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "wp/moectf2023.md"
+                "file": "2023NwuCTF/知识点.md"
               }
             }
           }
@@ -110,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "wp/moectf2023.md",
+                "file": "2023NwuCTF/知识点.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -176,11 +190,13 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "0bbb18161e56d2d1",
+  "active": "a38eae7192f6d218",
   "lastOpenFiles": [
     "2023NwuCTF/培训-1.md",
-    "2023NwuCTF/2023NwuSec招新计划.md",
+    "2023NwuCTF/知识点.md",
     "2023NwuCTF/课程计划表.md",
+    "wp/moectf2023.md",
+    "2023NwuCTF/2023NwuSec招新计划.md",
     "2023NwuCTF/For Freshman.md",
     "wp/SekaiCTF 2023.md",
     "ctf/Forensic.md",
@@ -195,7 +211,6 @@
     "wp/BSidesTLV 2023 CTF.md",
     "ctf/Reverse.md",
     "os/Android.md",
-    "wp/moectf2023.md",
     "wp/ctfshow.md",
     "ctf/crypto.md",
     "wp/n00bzCTF.md",
@@ -203,7 +218,6 @@
     "life/2023-08-24.md",
     "blog/kali-nethunter刷机教程.md",
     "life/2023-08-23.md",
-    "life/2023-08-21.md",
     "realcs",
     "~$scnBuild 设计报告.docx",
     "CiscnBuild 设计报告.docx",
