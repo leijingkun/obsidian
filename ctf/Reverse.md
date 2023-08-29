@@ -1190,6 +1190,7 @@ int main()
 	break;
 ```
 
+先把所有opcode搞出来
 
 
 
