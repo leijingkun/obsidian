@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2023NwuCTF/培训-1.md",
+                "file": "wp/moectf2023.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -86,7 +86,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2023NwuCTF/培训-1.md"
+                "file": "wp/moectf2023.md"
               }
             }
           }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2023NwuCTF/培训-1.md",
+                "file": "wp/moectf2023.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -178,9 +178,9 @@
   },
   "active": "0bbb18161e56d2d1",
   "lastOpenFiles": [
+    "2023NwuCTF/培训-1.md",
     "2023NwuCTF/2023NwuSec招新计划.md",
     "2023NwuCTF/课程计划表.md",
-    "2023NwuCTF/培训-1.md",
     "2023NwuCTF/For Freshman.md",
     "wp/SekaiCTF 2023.md",
     "ctf/Forensic.md",
