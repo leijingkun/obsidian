@@ -233,8 +233,14 @@ Content-Length: 39
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230827031808.png)
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230827031836.png)
 
+### Guardians of the Kernel
+针对内核的逆向,第一次见
+提供了两个文件
+`initramfs.cpio.gz` (临时的文件系统)
+`bzImage`
 
-
+> The bzImage compresses the Linux kernel image, the brain and core of your computer's operation.
+> initramfs offers a temporary file system equipped with essentials, drivers, and tools for mounting the root file system. Think of it as the setup crew before the main event.
 
 
 # pwn
