@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2023NwuCTF/知识点.md",
+                "file": "ctf/Reverse.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -100,7 +100,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2023NwuCTF/知识点.md"
+                "file": "ctf/Reverse.md"
               }
             }
           }
@@ -124,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2023NwuCTF/知识点.md",
+                "file": "ctf/Reverse.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -192,8 +192,8 @@
   },
   "active": "a38eae7192f6d218",
   "lastOpenFiles": [
-    "2023NwuCTF/培训-1.md",
     "2023NwuCTF/知识点.md",
+    "2023NwuCTF/培训-1.md",
     "2023NwuCTF/课程计划表.md",
     "wp/moectf2023.md",
     "2023NwuCTF/2023NwuSec招新计划.md",

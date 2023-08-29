@@ -1191,9 +1191,10 @@ int main()
 ```
 
 
-常规解法,逆向
 
-符号
+
+
+
 # ctfshow
 ### re2
 ![[Pasted image 20230604234625.png]]
