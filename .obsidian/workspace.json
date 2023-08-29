@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wp/SekaiCTF 2023.md",
+                "file": "2023NwuCTF/培训-1.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -86,7 +86,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "wp/SekaiCTF 2023.md"
+                "file": "2023NwuCTF/培训-1.md"
               }
             }
           }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "wp/SekaiCTF 2023.md",
+                "file": "2023NwuCTF/培训-1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -178,6 +178,10 @@
   },
   "active": "0bbb18161e56d2d1",
   "lastOpenFiles": [
+    "2023NwuCTF/2023NwuSec招新计划.md",
+    "2023NwuCTF/课程计划表.md",
+    "2023NwuCTF/培训-1.md",
+    "2023NwuCTF/For Freshman.md",
     "wp/SekaiCTF 2023.md",
     "ctf/Forensic.md",
     "life/2023-08-29.md",
@@ -196,10 +200,6 @@
     "ctf/crypto.md",
     "wp/n00bzCTF.md",
     "wp/crewCTF.md",
-    "2023NwuCTF/课程计划表.md",
-    "2023NwuCTF/培训-1.md",
-    "2023NwuCTF/For Freshman.md",
-    "2023NwuCTF/2023NwuSec招新计划.md",
     "life/2023-08-24.md",
     "blog/kali-nethunter刷机教程.md",
     "life/2023-08-23.md",
