@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "web.md",
+                "file": "wp/icq春秋杯2023春.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -73,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "yaml",
+                "query": "pickle",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -111,7 +111,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "web.md"
+                "file": "wp/icq春秋杯2023春.md"
               }
             }
           }
@@ -135,7 +135,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "web.md",
+                "file": "wp/icq春秋杯2023春.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -203,10 +203,11 @@
   },
   "active": "a38eae7192f6d218",
   "lastOpenFiles": [
+    "web.md",
+    "wp/icq春秋杯2023春.md",
     "Race_list.md",
     "life/2023-09-02.md",
     "life/2023-05-23.md",
-    "web.md",
     "wp/nepnepctf 2023.md",
     "2023NwuCTF/培训-1.md",
     "ctf/Reverse.md",
@@ -228,7 +229,6 @@
     "os/Android.md",
     "wp/ctfshow.md",
     "ctf/crypto.md",
-    "wp/n00bzCTF.md",
     "realcs",
     "~$scnBuild 设计报告.docx",
     "CiscnBuild 设计报告.docx",
