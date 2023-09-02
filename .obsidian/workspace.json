@@ -43,7 +43,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -110,7 +111,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "life/2023-05-23.md"
+                "file": "life/2023-09-02.md"
               }
             }
           }
@@ -134,7 +135,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "life/2023-05-23.md",
+                "file": "life/2023-09-02.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -200,8 +201,9 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "0bbb18161e56d2d1",
+  "active": "a38eae7192f6d218",
   "lastOpenFiles": [
+    "life/2023-05-23.md",
     "web.md",
     "Race_list.md",
     "wp/nepnepctf 2023.md",
@@ -227,7 +229,6 @@
     "wp/ctfshow.md",
     "ctf/crypto.md",
     "wp/n00bzCTF.md",
-    "wp/crewCTF.md",
     "realcs",
     "~$scnBuild 设计报告.docx",
     "CiscnBuild 设计报告.docx",
