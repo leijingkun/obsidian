@@ -26,15 +26,24 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ctf/Reverse.md",
+                "file": "life/2023-09-02.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               }
             }
+          },
+          {
+            "id": "ffbc1ee58812bdba",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.4.5"
+              }
+            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -100,7 +109,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ctf/Reverse.md"
+                "file": "2023NwuCTF/培训-1.md"
               }
             }
           }
@@ -124,7 +133,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ctf/Reverse.md",
+                "file": "2023NwuCTF/培训-1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -190,8 +199,10 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "a38eae7192f6d218",
+  "active": "0bbb18161e56d2d1",
   "lastOpenFiles": [
+    "life/2023-09-02.md",
+    "ctf/Reverse.md",
     "2023NwuCTF/知识点.md",
     "2023NwuCTF/培训-1.md",
     "2023NwuCTF/课程计划表.md",
@@ -209,7 +220,6 @@
     "Race_list.md",
     "life/2023-08-26.md",
     "wp/BSidesTLV 2023 CTF.md",
-    "ctf/Reverse.md",
     "os/Android.md",
     "wp/ctfshow.md",
     "ctf/crypto.md",
@@ -217,7 +227,6 @@
     "wp/crewCTF.md",
     "life/2023-08-24.md",
     "blog/kali-nethunter刷机教程.md",
-    "life/2023-08-23.md",
     "realcs",
     "~$scnBuild 设计报告.docx",
     "CiscnBuild 设计报告.docx",
