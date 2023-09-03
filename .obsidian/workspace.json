@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wp/icq春秋杯2023春.md",
+                "file": "Race_list.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -73,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "pickle",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -98,8 +98,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "b908cc20e4ee3fcd",
@@ -111,7 +110,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "wp/icq春秋杯2023春.md"
+                "file": "Race_list.md"
               }
             }
           }
@@ -135,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "wp/icq春秋杯2023春.md",
+                "file": "Race_list.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -203,9 +202,10 @@
   },
   "active": "a38eae7192f6d218",
   "lastOpenFiles": [
+    "wp/SekaiCTF 2023.md",
+    "Race_list.md",
     "web.md",
     "wp/icq春秋杯2023春.md",
-    "Race_list.md",
     "life/2023-09-02.md",
     "life/2023-05-23.md",
     "wp/nepnepctf 2023.md",
@@ -216,7 +216,6 @@
     "wp/moectf2023.md",
     "2023NwuCTF/2023NwuSec招新计划.md",
     "2023NwuCTF/For Freshman.md",
-    "wp/SekaiCTF 2023.md",
     "ctf/Forensic.md",
     "life/2023-08-29.md",
     "ctf/Reverse_Know.md",
