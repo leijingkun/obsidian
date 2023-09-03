@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Race_list.md",
+                "file": "wp/DownUnderCTF 2023.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -110,7 +110,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Race_list.md"
+                "file": "wp/DownUnderCTF 2023.md"
               }
             }
           }
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Race_list.md",
+                "file": "wp/DownUnderCTF 2023.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -202,8 +202,9 @@
   },
   "active": "a38eae7192f6d218",
   "lastOpenFiles": [
-    "wp/SekaiCTF 2023.md",
     "Race_list.md",
+    "wp/DownUnderCTF 2023.md",
+    "wp/SekaiCTF 2023.md",
     "web.md",
     "wp/icq春秋杯2023春.md",
     "life/2023-09-02.md",
@@ -227,7 +228,6 @@
     "wp/BSidesTLV 2023 CTF.md",
     "os/Android.md",
     "wp/ctfshow.md",
-    "ctf/crypto.md",
     "realcs",
     "~$scnBuild 设计报告.docx",
     "CiscnBuild 设计报告.docx",
