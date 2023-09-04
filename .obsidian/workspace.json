@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "培训/[羊城杯 2020]easyser.md",
+                "file": "培训.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wp/deadsec 2023.md",
+                "file": "wp/SekaiCTF 2023.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -62,7 +62,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "hznu",
+                "query": "ssrfme",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -100,7 +100,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "培训/[羊城杯 2020]easyser.md"
+                "file": "培训.md"
               }
             }
           }
@@ -124,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "培训/[羊城杯 2020]easyser.md",
+                "file": "培训.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -192,33 +192,33 @@
   },
   "active": "9c17da3eff24d54c",
   "lastOpenFiles": [
+    "培训/[网鼎杯 2020 玄武组]SSRFMe.md",
     "培训.md",
-    "培训/[羊城杯 2020]easyser.md",
-    "培训/[UUCTF 2022 新生赛]ez_rce.md",
-    "web.md",
-    "培训/[CISCN 2019华北Day2]Web1.md",
-    "培训/pingpingping.md",
-    "Tricks.md",
-    "wp/deadsec 2023.md",
-    "wp/crewCTF.md",
-    "wp/moectf2023.md",
-    "培训/盲注脚本.md",
-    "培训/报错注入.md",
-    "培训/强网杯 2019随便注.md",
-    "培训",
-    "通关流程.md",
+    "培训/[HNCTF 2022 WEEK2]ez_ssrf.md",
+    "[NISACTF 2022]easyssrf.md",
     "audit/audit.md",
-    "2023NwuCTF/培训-1.md",
+    "wp/crewCTF.md",
+    "practice/htb.md",
+    "practice/thm.md",
+    "wp/WaniCTF 2023.md",
+    "life/2023-05-11.md",
     "life/2023-09-04.md",
-    "life/未命名 2.md",
-    "life/2023-05-23.md",
-    "life/未命名 1.md",
-    "wp/DownUnderCTF 2023.md",
-    "Race_list.md",
+    "wp/buuctf.md",
+    "wp/JSMSA.md",
+    "wp/nkctf2023.md",
+    "language/Java.md",
     "wp/SekaiCTF 2023.md",
+    "Tricks.md",
     "wp/icq春秋杯2023春.md",
-    "life/2023-09-02.md",
-    "wp/nepnepctf 2023.md",
+    "wp/省赛.md",
+    "2023NwuCTF/知识点.md",
+    "wp/Africa battle CTF 2023.md",
+    "wp/AntCTF x D^3CTF.md",
+    "wp/BDSec CTF 2023.md",
+    "wp/BlockHarbor Automotive CTF.md",
+    "wp/ciscn 2023.md",
+    "培训/[SWPUCTF 2021 新生赛]pop.md",
+    "培训",
     "realcs",
     "~$scnBuild 设计报告.docx",
     "CiscnBuild 设计报告.docx",
