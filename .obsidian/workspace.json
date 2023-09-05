@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wp/SekaiCTF 2023.md",
+                "file": "Tricks.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -62,7 +62,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "less",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -192,8 +192,13 @@
   },
   "active": "9c17da3eff24d54c",
   "lastOpenFiles": [
-    "培训/强网杯 2019随便注.md",
+    "培训/pingpingping.md",
     "培训.md",
+    "Tricks.md",
+    "life/2023-05-10.md",
+    "wp/SekaiCTF 2023.md",
+    "培训/[UUCTF 2022 新生赛]ez_rce.md",
+    "培训/强网杯 2019随便注.md",
     "培训/报错注入.md",
     "培训/[CISCN 2019华北Day2]Web1.md",
     "培训/盲注脚本.md",
@@ -212,12 +217,7 @@
     "wp/JSMSA.md",
     "wp/nkctf2023.md",
     "language/Java.md",
-    "wp/SekaiCTF 2023.md",
-    "Tricks.md",
     "wp/icq春秋杯2023春.md",
-    "wp/省赛.md",
-    "2023NwuCTF/知识点.md",
-    "wp/Africa battle CTF 2023.md",
     "培训",
     "realcs",
     "~$scnBuild 设计报告.docx",
