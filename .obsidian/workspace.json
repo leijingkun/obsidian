@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "培训/ctfshow351-360.md",
+                "file": "培训.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -87,7 +87,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "培训/ctfshow351-360.md"
+                "file": "培训.md"
               }
             }
           }
@@ -111,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "培训/ctfshow351-360.md",
+                "file": "培训.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
