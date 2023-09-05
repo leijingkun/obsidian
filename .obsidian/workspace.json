@@ -21,12 +21,12 @@
             }
           },
           {
-            "id": "7647842dfd3f63ea",
+            "id": "c2d2e70d3085ae2b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tricks.md",
+                "file": "wp/moectf2023.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -192,9 +192,12 @@
   },
   "active": "9c17da3eff24d54c",
   "lastOpenFiles": [
-    "培训/pingpingping.md",
+    "培训/[SWPUCTF 2021 新生赛]pop.md",
     "培训.md",
+    "wp/moectf2023.md",
+    "[SWPUCTF 2021 新生赛]no_wakeup.md",
     "Tricks.md",
+    "培训/pingpingping.md",
     "life/2023-05-10.md",
     "wp/SekaiCTF 2023.md",
     "培训/[UUCTF 2022 新生赛]ez_rce.md",
@@ -215,9 +218,6 @@
     "life/2023-09-04.md",
     "wp/buuctf.md",
     "wp/JSMSA.md",
-    "wp/nkctf2023.md",
-    "language/Java.md",
-    "wp/icq春秋杯2023春.md",
     "培训",
     "realcs",
     "~$scnBuild 设计报告.docx",
