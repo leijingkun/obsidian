@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "培训.md",
+                "file": "life/2023-09-05.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -100,7 +100,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "培训.md"
+                "file": "life/2023-09-05.md"
               }
             }
           }
@@ -124,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "培训.md",
+                "file": "life/2023-09-05.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -192,8 +192,9 @@
   },
   "active": "9c17da3eff24d54c",
   "lastOpenFiles": [
-    "培训/[网鼎杯 2020 玄武组]SSRFMe.md",
     "培训.md",
+    "life/2023-09-05.md",
+    "培训/[网鼎杯 2020 玄武组]SSRFMe.md",
     "培训/[HNCTF 2022 WEEK2]ez_ssrf.md",
     "[NISACTF 2022]easyssrf.md",
     "audit/audit.md",
@@ -217,7 +218,6 @@
     "wp/BDSec CTF 2023.md",
     "wp/BlockHarbor Automotive CTF.md",
     "wp/ciscn 2023.md",
-    "培训/[SWPUCTF 2021 新生赛]pop.md",
     "培训",
     "realcs",
     "~$scnBuild 设计报告.docx",
