@@ -13,20 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "培训.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "c2d2e70d3085ae2b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "wp/moectf2023.md",
+                "file": "培训/ctfshow351-360.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -100,7 +87,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "培训.md"
+                "file": "培训/ctfshow351-360.md"
               }
             }
           }
@@ -124,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "培训.md",
+                "file": "培训/ctfshow351-360.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -192,8 +179,13 @@
   },
   "active": "9c17da3eff24d54c",
   "lastOpenFiles": [
-    "培训/[SWPUCTF 2021 新生赛]pop.md",
     "培训.md",
+    "培训/ctfshow351-360.md",
+    "培训/[NISACTF 2022]easyssrf.md",
+    "培训/[HNCTF 2022 WEEK2]ez_ssrf.md",
+    "培训/[GDOUCTF 2023]反方向的钟.md",
+    "培训/[NISACTF 2022]popchains.md",
+    "培训/[SWPUCTF 2021 新生赛]pop.md",
     "wp/moectf2023.md",
     "[SWPUCTF 2021 新生赛]no_wakeup.md",
     "Tricks.md",
@@ -207,17 +199,12 @@
     "培训/盲注脚本.md",
     "life/2023-09-05.md",
     "培训/[网鼎杯 2020 玄武组]SSRFMe.md",
-    "培训/[HNCTF 2022 WEEK2]ez_ssrf.md",
     "[NISACTF 2022]easyssrf.md",
     "audit/audit.md",
     "wp/crewCTF.md",
     "practice/htb.md",
     "practice/thm.md",
     "wp/WaniCTF 2023.md",
-    "life/2023-05-11.md",
-    "life/2023-09-04.md",
-    "wp/buuctf.md",
-    "wp/JSMSA.md",
     "培训",
     "realcs",
     "~$scnBuild 设计报告.docx",
