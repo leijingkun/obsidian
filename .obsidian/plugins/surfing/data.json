@@ -45,7 +45,18 @@
   },
   "treeData": [
     {
-      "id": "55922ad50eaa15ca",
+      "id": "16673c7afa57bdc9",
+      "parent": 0,
+      "droppable": true,
+      "text": "New Tab",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "460fdbce987d6de7",
       "parent": 0,
       "droppable": true,
       "text": "New Tab",
