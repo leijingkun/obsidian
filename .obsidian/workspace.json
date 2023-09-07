@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "培训.md",
+                "file": "life/2023-09-07.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -54,7 +54,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -119,7 +119,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "life/2023-09-07.md"
+              }
             }
           }
         ]
@@ -142,6 +144,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "life/2023-09-07.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -207,7 +210,7 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "460fdbce987d6de7",
+  "active": "55922ad50eaa15ca",
   "lastOpenFiles": [
     "培训.md",
     "Tricks.md",
