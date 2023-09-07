@@ -13,14 +13,25 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "培训/ctfshow351-360.md",
+                "file": "培训.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               }
             }
+          },
+          {
+            "id": "55922ad50eaa15ca",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "http://139.224.43.82:49156/"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -74,8 +85,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "b908cc20e4ee3fcd",
@@ -87,7 +97,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "培训/ctfshow351-360.md"
+                "file": "培训.md"
               }
             }
           }
@@ -111,7 +121,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "培训/ctfshow351-360.md",
+                "file": "培训.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -177,14 +187,20 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "9c17da3eff24d54c",
+  "active": "55922ad50eaa15ca",
   "lastOpenFiles": [
     "培训.md",
+    "2023NwuCTF/培训-1.md",
+    "培训/报错注入.md",
     "life/2023-09-05.md",
+    "nzp8E3B.tmp",
+    "培训.zip",
+    "培训/ctfshow351-360.md",
+    "wp/ctfshow.md",
+    "life/2023-07-17.md",
     "培训/[HNCTF 2022 WEEK2]ez_ssrf.md",
     "培训/[NISACTF 2022]easyssrf.md",
     "培训/[SWPUCTF 2021 新生赛]pop.md",
-    "培训/ctfshow351-360.md",
     "培训/[GDOUCTF 2023]反方向的钟.md",
     "培训/[NISACTF 2022]popchains.md",
     "wp/moectf2023.md",
@@ -195,16 +211,12 @@
     "wp/SekaiCTF 2023.md",
     "培训/[UUCTF 2022 新生赛]ez_rce.md",
     "培训/强网杯 2019随便注.md",
-    "培训/报错注入.md",
     "培训/[CISCN 2019华北Day2]Web1.md",
     "培训/盲注脚本.md",
     "培训/[网鼎杯 2020 玄武组]SSRFMe.md",
     "[NISACTF 2022]easyssrf.md",
     "audit/audit.md",
     "wp/crewCTF.md",
-    "practice/htb.md",
-    "practice/thm.md",
-    "wp/WaniCTF 2023.md",
     "培训",
     "realcs",
     "~$scnBuild 设计报告.docx",
@@ -226,8 +238,6 @@
     "attachment/Pasted image 20230508010917.png",
     "attachment/Pasted image 20230507230421.png",
     "bc",
-    "audit",
-    "attachment",
     "test.canvas"
   ]
 }
