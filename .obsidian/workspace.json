@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "life/2023-09-09.md",
+                "file": "培训.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -109,7 +109,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "life/2023-09-09.md"
+                "file": "培训.md"
               }
             }
           }
@@ -133,7 +133,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "life/2023-09-09.md",
+                "file": "培训.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -201,12 +201,15 @@
   },
   "active": "9c17da3eff24d54c",
   "lastOpenFiles": [
-    "wp/SICTF.md",
+    "awdp.md",
     "life/2023-09-09.md",
+    "[SWPUCTF 2021 新生赛]no_wakeup.md",
+    "hvv.md",
+    "培训.md",
+    "wp/SICTF.md",
     "Race_list.md",
     "wp/DownUnderCTF 2023.md",
     "wp/省赛.md",
-    "培训.md",
     "wp/icq春秋杯2022.md",
     "wp/SCTF2023.md",
     "wp/buuctf.md",
@@ -227,9 +230,6 @@
     "life/2023-07-17.md",
     "培训/[HNCTF 2022 WEEK2]ez_ssrf.md",
     "培训/[NISACTF 2022]easyssrf.md",
-    "培训/[SWPUCTF 2021 新生赛]pop.md",
-    "培训/[GDOUCTF 2023]反方向的钟.md",
-    "培训/[NISACTF 2022]popchains.md",
     "培训",
     "realcs",
     "~$scnBuild 设计报告.docx",
