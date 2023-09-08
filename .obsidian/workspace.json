@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "life/2023-09-07.md",
+                "file": "life/2023-09-08.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -120,7 +120,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "life/2023-09-07.md"
+                "file": "life/2023-09-08.md"
               }
             }
           }
@@ -144,7 +144,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "life/2023-09-07.md",
+                "file": "life/2023-09-08.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -212,12 +212,13 @@
   },
   "active": "55922ad50eaa15ca",
   "lastOpenFiles": [
+    "life/2023-09-07.md",
+    "life/2023-09-08.md",
     "nzpEA37.tmp",
     "培训.md",
     "Tricks.md",
     "培训/[UUCTF 2022 新生赛]ez_rce.md",
     "web.md",
-    "life/2023-09-07.md",
     "2023NwuCTF/培训-1.md",
     "培训/报错注入.md",
     "life/2023-09-05.md",
@@ -260,7 +261,6 @@
     "attachment/Pasted image 20230508032325.png",
     "attachment/Pasted image 20230508010917.png",
     "attachment/Pasted image 20230507230421.png",
-    "bc",
     "test.canvas"
   ]
 }
