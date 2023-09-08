@@ -48,7 +48,7 @@
 [[wp/moectf2023]]
 [[wp/SekaiCTF 2023]]
 [[wp/DownUnderCTF 2023]]
-
+[[wp/SICTF]]
 
 
 复现

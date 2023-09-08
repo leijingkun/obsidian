@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "培训.md",
+                "file": "wp/SICTF.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "life/2023-09-08.md",
+                "file": "wp/icq春秋杯2022.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -34,27 +34,16 @@
             }
           },
           {
-            "id": "460fdbce987d6de7",
+            "id": "93905339aa94af6f",
             "type": "leaf",
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "http://36.152.17.3:40024/"
-              }
-            }
-          },
-          {
-            "id": "16673c7afa57bdc9",
-            "type": "leaf",
-            "state": {
-              "type": "surfing-view",
-              "state": {
-                "url": "http://139.224.43.82:49156/"
+                "url": "https://xz.aliyun.com/t/9360#toc-6"
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -83,7 +72,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#无参rce",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -120,7 +109,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "life/2023-09-08.md"
+                "file": "wp/SICTF.md"
               }
             }
           }
@@ -144,7 +133,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "life/2023-09-08.md",
+                "file": "wp/SICTF.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,12 +199,20 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "55922ad50eaa15ca",
+  "active": "9c17da3eff24d54c",
   "lastOpenFiles": [
-    "life/2023-09-07.md",
-    "life/2023-09-08.md",
-    "nzpEA37.tmp",
+    "Race_list.md",
+    "wp/SICTF.md",
+    "wp/DownUnderCTF 2023.md",
+    "wp/省赛.md",
     "培训.md",
+    "wp/icq春秋杯2022.md",
+    "wp/SCTF2023.md",
+    "wp/buuctf.md",
+    "blockchain.md",
+    "life/2023-09-08.md",
+    "life/2023-09-07.md",
+    "nzpEA37.tmp",
     "Tricks.md",
     "培训/[UUCTF 2022 新生赛]ez_rce.md",
     "web.md",
@@ -233,14 +230,6 @@
     "培训/[GDOUCTF 2023]反方向的钟.md",
     "培训/[NISACTF 2022]popchains.md",
     "wp/moectf2023.md",
-    "[SWPUCTF 2021 新生赛]no_wakeup.md",
-    "培训/pingpingping.md",
-    "life/2023-05-10.md",
-    "wp/SekaiCTF 2023.md",
-    "培训/强网杯 2019随便注.md",
-    "培训/[CISCN 2019华北Day2]Web1.md",
-    "培训/盲注脚本.md",
-    "培训/[网鼎杯 2020 玄武组]SSRFMe.md",
     "培训",
     "realcs",
     "~$scnBuild 设计报告.docx",
