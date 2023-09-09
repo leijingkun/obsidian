@@ -13,7 +13,20 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wp/SICTF.md",
+                "file": "hvv.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "88fecaff2adb4ff1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "待研究....md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -33,7 +46,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -99,7 +113,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "wp/SICTF.md"
+                "file": "待研究....md"
               }
             }
           }
@@ -123,7 +137,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "wp/SICTF.md",
+                "file": "待研究....md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -189,37 +203,37 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "d3af6c4036df9ec4",
+  "active": "88fecaff2adb4ff1",
   "lastOpenFiles": [
-    "Race_list.md",
-    "wp/DASCTF 2023 & 0X401七月暑期挑战赛.md",
-    "wp/KCTF2023.md",
+    "language/Java.md",
+    "待研究....md",
+    "web.md",
     "Tricks.md",
-    "wp/nkctf2023.md",
+    "tool.md",
+    "README.md",
+    "pentest.md",
+    "GRE.md",
+    "blockchain.md",
+    "awd.md",
     "培训.md",
-    "wp/icq春秋杯2022.md",
-    "life/2023-09-09.md",
-    "awdp.md",
+    "[NISACTF 2022]easyssrf.md",
     "[SWPUCTF 2021 新生赛]no_wakeup.md",
+    "tmp.md",
+    "Race_list.md",
+    "CiscnBuild 设计报告.md",
+    "awdp.md",
+    "通关流程.md",
     "hvv.md",
     "wp/SICTF.md",
+    "wp/DASCTF 2023 & 0X401七月暑期挑战赛.md",
+    "wp/KCTF2023.md",
+    "wp/nkctf2023.md",
+    "wp/icq春秋杯2022.md",
+    "life/2023-09-09.md",
     "wp/DownUnderCTF 2023.md",
-    "wp/省赛.md",
-    "wp/SCTF2023.md",
-    "wp/buuctf.md",
-    "blockchain.md",
-    "life/2023-09-08.md",
-    "life/2023-09-07.md",
     "nzpEA37.tmp",
-    "培训/[UUCTF 2022 新生赛]ez_rce.md",
-    "web.md",
-    "2023NwuCTF/培训-1.md",
-    "培训/报错注入.md",
-    "life/2023-09-05.md",
     "nzp8E3B.tmp",
     "培训.zip",
-    "培训/ctfshow351-360.md",
-    "wp/ctfshow.md",
     "培训",
     "realcs",
     "~$scnBuild 设计报告.docx",

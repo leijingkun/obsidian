@@ -1,6 +1,27 @@
+
+# java基础
+
+
+
 ## Java特性
 ### 反射
-简单理解其实是与php动态调用函数类似
+反射机制可以用来：
+
+- 在运行时分析类的能力。
+- 在运行时检查对象。
+- 实现泛型数组操作代码。
+- 利用Method对象，这个对象很像C++中的函数指针。
+```java
+import java.util.Scanner;
+public class hello {
+    public static void main(String args[]) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("q".getClass().getName());
+        
+    }
+}
+//java.lang.String
+```
 ### 静态代理
 ```java
 public class UserServiceProxy implements UserService {
