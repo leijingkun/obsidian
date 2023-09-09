@@ -33,7 +33,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -99,7 +100,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "wp/DASCTF 2023 & 0X401七月暑期挑战赛.md"
+                "file": "Tricks.md"
               }
             }
           }
@@ -123,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "wp/DASCTF 2023 & 0X401七月暑期挑战赛.md",
+                "file": "Tricks.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -189,10 +190,10 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "d3af6c4036df9ec4",
+  "active": "a77aa7bd41637052",
   "lastOpenFiles": [
-    "Tricks.md",
     "wp/DASCTF 2023 & 0X401七月暑期挑战赛.md",
+    "Tricks.md",
     "培训.md",
     "wp/icq春秋杯2022.md",
     "life/2023-09-09.md",
