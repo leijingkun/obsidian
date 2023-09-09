@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wp/DASCTF 2023 & 0X401七月暑期挑战赛.md",
+                "file": "wp/SICTF.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -26,15 +26,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tricks.md",
+                "file": "wp/KCTF2023.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -100,7 +99,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tricks.md"
+                "file": "wp/SICTF.md"
               }
             }
           }
@@ -124,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tricks.md",
+                "file": "wp/SICTF.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -190,10 +189,13 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "a77aa7bd41637052",
+  "active": "d3af6c4036df9ec4",
   "lastOpenFiles": [
+    "Race_list.md",
     "wp/DASCTF 2023 & 0X401七月暑期挑战赛.md",
+    "wp/KCTF2023.md",
     "Tricks.md",
+    "wp/nkctf2023.md",
     "培训.md",
     "wp/icq春秋杯2022.md",
     "life/2023-09-09.md",
@@ -201,7 +203,6 @@
     "[SWPUCTF 2021 新生赛]no_wakeup.md",
     "hvv.md",
     "wp/SICTF.md",
-    "Race_list.md",
     "wp/DownUnderCTF 2023.md",
     "wp/省赛.md",
     "wp/SCTF2023.md",
@@ -219,8 +220,6 @@
     "培训.zip",
     "培训/ctfshow351-360.md",
     "wp/ctfshow.md",
-    "life/2023-07-17.md",
-    "培训/[HNCTF 2022 WEEK2]ez_ssrf.md",
     "培训",
     "realcs",
     "~$scnBuild 设计报告.docx",
