@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "06ecff16277ad598",
+        "id": "d1630405d6d78a65",
         "type": "tabs",
         "children": [
           {
-            "id": "9c17da3eff24d54c",
+            "id": "d3af6c4036df9ec4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "培训.md",
+                "file": "wp/DASCTF 2023 & 0X401七月暑期挑战赛.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -21,25 +21,15 @@
             }
           },
           {
-            "id": "55922ad50eaa15ca",
+            "id": "a77aa7bd41637052",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wp/icq春秋杯2022.md",
+                "file": "Tricks.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "93905339aa94af6f",
-            "type": "leaf",
-            "state": {
-              "type": "surfing-view",
-              "state": {
-                "url": "https://xz.aliyun.com/t/9360#toc-6"
               }
             }
           }
@@ -109,7 +99,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "培训.md"
+                "file": "wp/DASCTF 2023 & 0X401七月暑期挑战赛.md"
               }
             }
           }
@@ -133,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "培训.md",
+                "file": "wp/DASCTF 2023 & 0X401七月暑期挑战赛.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -199,25 +189,26 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "9c17da3eff24d54c",
+  "active": "d3af6c4036df9ec4",
   "lastOpenFiles": [
+    "Tricks.md",
+    "wp/DASCTF 2023 & 0X401七月暑期挑战赛.md",
+    "培训.md",
+    "wp/icq春秋杯2022.md",
     "life/2023-09-09.md",
     "awdp.md",
     "[SWPUCTF 2021 新生赛]no_wakeup.md",
     "hvv.md",
-    "培训.md",
     "wp/SICTF.md",
     "Race_list.md",
     "wp/DownUnderCTF 2023.md",
     "wp/省赛.md",
-    "wp/icq春秋杯2022.md",
     "wp/SCTF2023.md",
     "wp/buuctf.md",
     "blockchain.md",
     "life/2023-09-08.md",
     "life/2023-09-07.md",
     "nzpEA37.tmp",
-    "Tricks.md",
     "培训/[UUCTF 2022 新生赛]ez_rce.md",
     "web.md",
     "2023NwuCTF/培训-1.md",
@@ -229,7 +220,6 @@
     "wp/ctfshow.md",
     "life/2023-07-17.md",
     "培训/[HNCTF 2022 WEEK2]ez_ssrf.md",
-    "培训/[NISACTF 2022]easyssrf.md",
     "培训",
     "realcs",
     "~$scnBuild 设计报告.docx",

