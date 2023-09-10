@@ -64,6 +64,24 @@ readelf -l <xx.so>
 #查看全部 -a 
 
 ```
+## APK文件格式
+```js
+assets//资源文件
+lib//.so文件
+META-INF//存放apk签名信息，用来保证apk包的完整性和系统的安全
+res//存放资源文件，包括icon，xml文件
+	res/layout/: //存放被编译为屏幕布局（或屏幕的一部分）的XML文件
+	res/values/: //存放可以被编译成很多类型的资源文件
+	array.xml: //定义数组
+	string.xml: //定义字符串（string）值
+
+AndroidMainifest.xml//应用程序配置文件，每个应用都必须定义和包含的，它描述了应用的名字、版本、权限、引用的库文件等信息
+classes.dex//传统 Class 文件是由一个 Java 源码文件生成的 .Class 文件，而 Android 是把所有 Class 文件进行合并优化，然后生成一个最终的 class.dex 文件。它包含 APK 的可执行代码，是分析 Android 软件时最常见的目标。由于dex文件很难看懂，可通过apktool反编译得到.smali文件，smali文件是对Dalvik虚拟机字节码的一种解释（也可以说是翻译），并非一种官方标准语言。通过对smali文件的解读可以获取源码的信息
+resources.arsc//二进制资源文件，它是一个映射表
+```
+
+
+
 ## AndroidManifest.xml文件格式解析
 
 
