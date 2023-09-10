@@ -1,3 +1,7 @@
+
+# 安卓系统架构
+![image](https://p2.ssl.qhimg.com/t01fc2d94f1f5c3fd24.png)
+
 #安卓逆向
 # <<Android应用安全防护和逆向分析 2017>>
 ## 密码算法分析
@@ -13,11 +17,53 @@
 太难先不看
 
 ## Android中开发与逆向常用命令总结
+非shell命令
+```zsh
+
+# 说明：可以查看当前应用的activity信息。
+adb shell dumpsys activity top
+
+#可以查看指定包名应用的详细信息（相当于应用的AndroidManifest.xml中的内容）
+adb shell dumpsys package [pkgname]
+
+#可以查看指定进程名或者进程id的内存信息。
+adb shell dumpsys meminfo [pname/pid]
+
+#可以查看指定包名应用的数据库存储信息（包括存储的SQL语句
+adb shell dumpsys dbinfo [packagename]
+
+#
+```
+
+shell命令
+```zsh
+#清空数据
+pm clear [packagename]
+
+#查看apk中的信息以及编辑apk程序包。
+aapt dump xmltree[apk包][需要查看的资源文件xml]
+
+#dex文件的详细信息
+dexdump [dex文件路径]
 
 
+```
 ## so文件格式解析
 Android中的so文件就是ELF文件，所以要了解so文件，必须先来了解一下ELF文件的格式
 
+```shell
+#查看文件头部信息
+readelf -h <xx.so>
+
+#查看文件节(section)头信息
+readelf -s <xx.so>
+
+#查看文件段头(program)信息
+readelf -l <xx.so>
+
+#查看全部 -a 
+
+```
 ## AndroidManifest.xml文件格式解析
 
 
