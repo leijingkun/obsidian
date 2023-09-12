@@ -1,8 +1,5 @@
 # web
 
-
-
-
 ```python
 import requests
 import re
