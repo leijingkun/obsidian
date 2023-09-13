@@ -50,7 +50,7 @@
 [[wp/DownUnderCTF 2023]]
 [[wp/SICTF]]
 [[KCTF2023]]
-
+[[wp/COMPFEST CTF 2023]]
 复现
 [[catctf2022]]
 [[i春秋2022冬]]
