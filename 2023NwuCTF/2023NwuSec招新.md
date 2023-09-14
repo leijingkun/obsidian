@@ -15,12 +15,13 @@ sudo nc -lvnp 80
 
 
 ### 游玩指南
-俩台电脑,一台linux服务器,用来接收shell
-另一台window,用来当靶机
+俩台电脑,一台手机
+手机负责执行hid attack攻击
+一台linux服务器,用来接收shell
+一台window,用来当被攻击机器
 
-
-手机作为一个hid attack攻击设备
-- 攻击机监听本地端口,在命令行输入`sudo nc -lvnp 80`![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230912235031.png)
+- 手机连接到电脑usb接口上,作为一个hid attack攻击设备
+- linux监听本地端口,在命令行输入`sudo nc -lvnp 80`![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230912235031.png)
 *监听成功标志*
 
 - 单击设备上的preview,点击右上角三角符号开始攻击
@@ -36,7 +37,7 @@ sudo nc -lvnp 80
 
 | 命令                            | 结果                                             | 举例 |
 | ------------------------------- | ------------------------------------------------ | ---- |
-| type "\<content\>" > ~/\<name\> | 在对方桌面新建一个\<name\>文件,内容为\<content\> | echo "i am hacker" >~/Desktop/haha.txt     |
+| echo "\<content\>" > ~/\<name\> | 在对方桌面新建一个\<name\>文件,内容为\<content\> | echo "i am hacker" >~/Desktop/haha.txt     |
 |                                 |                                                  |      |
 
 
