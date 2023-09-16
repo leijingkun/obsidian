@@ -1,5 +1,8 @@
 https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fandroid-basics-compose-unit-1-pathway-2&hl=zh-cn#4
 
+
+https://developer.android.com/courses/pathways/android-basics-compose-unit-2-pathway-1?hl=zh-cn#codelab-https://developer.android.com/codelabs/basic-android-kotlin-compose-classes-and-objects
+
 函数
 ```kotlin
 fun hello(name: String = "Rover", age: Int):Int {
@@ -65,3 +68,5 @@ fun main() {
 ```kotlin
 
 ```
+get和set
+![!image](https://developer.android.com/static/codelabs/basic-android-kotlin-compose-classes-and-objects/img/4cad686a6fcca35b_1440.png?hl=zh-cn)
