@@ -11,6 +11,31 @@
 - 在运行时检查对象。
 - 实现泛型数组操作代码。
 - 利用Method对象，这个对象很像C++中的函数指针。
+`反射就是在运行时才知道要操作的类是什么，并且可以在运行时获取类的完整构造，并调用对应的方法。`
+
+```java
+//正射
+Apple apple = new Apple(); //直接初始化，「正射」
+apple.setPrice(4);
+
+//反射
+Class clz = Class.forName("com.chenshuyi.reflect.Apple"); //根据字符串查找要构建的类
+//还可以这样
+Class clz_2=com.chenshuiyi.reflect.Apple.class;
+Class clz_3=ClassLoader.loadclass("com.chenshuiyi.reflect.Apple");
+//内部类需要加上$
+Class clz_in=com.chenshuiyi.reflect.Apple$Hello;
+
+Method method = clz.getMethod("setPrice", int.class);  //获取类的方法
+Constructor constructor = clz.getConstructor();  //构造方法
+Object object = constructor.newInstance();  //从类新建一个示例
+//调用方法 method.invoke(方法实例对象, 方法参数值，多个参数值用","隔开);
+method.invoke(object, 4);
+
+
+```
+
+
 ```java
 import java.util.Scanner;
 public class hello {
