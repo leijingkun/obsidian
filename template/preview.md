@@ -1,3 +1,9 @@
+---
+aliases:
+  - 预览各种样式
+---
+
+
 
 
 >[!info]
@@ -33,8 +39,8 @@ def hello(){
 	print("hello")
 }
 ```
+`<script></script>`
 
 - 无序标题
 1. 有序标题
 
-`<script></script>`
