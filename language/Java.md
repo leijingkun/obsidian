@@ -1,5 +1,5 @@
 
-# java基础
+## java基础
 
 
 
@@ -172,6 +172,20 @@ public class LogHandler implements InvocationHandler {
 
 
 ![javaweb项目结构](https://atts.w3cschool.cn/attachments/image/20210610/1623317314764573.jpeg)
+
+## 本地命令执行
+危险关键字
+`Runtime.exec/ProcessBuilder/ProcessImpl`
+## JDBC(Java Database Connectivity)
+java数据库的标准api
+### 数据库配置信息
+传统的Web应用的数据库配置信息一般都是存放在WEB-INF目录下的`*.properties`、`*.yml`、`*.xml`中的,如果是Spring Boot项目的话一般都会存储在jar包中的src/main/resources/目录下。常见的存储数据库配置信息的文件路径如：WEB-INF/applicationContext.xml、WEB-INF/hibernate.cfg.xml、WEB-INF/jdbc/jdbc.properties，一般情况下使用find命令加关键字可以轻松的找出来，如查找Mysql配置信息: `find 路径 -type f |xargs grep "com.mysql.jdbc.Driver"。`
+
+### ssrf
+利用file协议读取文件内容（仅限使用URLConnection|URL发起的请求）
+利用http 进行内网web服务端口探测
+利用http 进行内网非web服务端口探测(如果将异常抛出来的情况下)
+利用http进行ntlmrelay攻击(仅限HttpURLConnection或者二次包装HttpURLConnection并未复写AuthenticationInfo方法的对象)
 
 ## java-sec-code
 
