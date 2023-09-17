@@ -176,6 +176,13 @@ public class LogHandler implements InvocationHandler {
 ## 本地命令执行
 危险关键字
 `Runtime.exec/ProcessBuilder/ProcessImpl`
+
+> 只要在Java的API中的任何一个类只要符合以下条件，我们就可以在Java反序列化的时候触发InvokerTransformer类的transform方法实现RCE：
+实现了java.io.Serializable接口；
+并且可以传入我们构建的TransformedMap对象；
+调用了TransformedMap中的setValue/put/putAll中的任意方法一个方法的类；
+
+
 ## JDBC(Java Database Connectivity)
 java数据库的标准api
 ### 数据库配置信息
