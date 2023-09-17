@@ -9,6 +9,9 @@ Servlet是在 Java Web容器中运行的小程序,通常我们用Servlet来处�
 
 ```
 
+### json
+https://javasec.org/javaweb/JSON/FEATURE.html
+目前测试的所有JSON库都支持Unicode编码，fastjson支持\x（十六进制）和\（八进制）。
 
 ## Java特性
 ### 反射
