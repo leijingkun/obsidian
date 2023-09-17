@@ -1,6 +1,13 @@
 
-## java基础
+## java web基础
+### Servlet
+Servlet是在 Java Web容器中运行的小程序,通常我们用Servlet来处理一些较为复杂的服务器端的业务逻辑。Servlet是Java EE的核心,也是所有的MVC框架的实现的根本！
+### Servlet的定义
+定义一个 Servlet 很简单，只需要继承javax.servlet.http.HttpServlet类并重写doXXX(如doGet、doPost)方法或者service方法就可以了，其中需要注意的是重写HttpServlet类的service方法可以获取到上述七种Http请求方法的请求。
 
+```java
+
+```
 
 
 ## Java特性
