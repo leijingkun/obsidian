@@ -26,6 +26,7 @@ const algorithms = {
 const calculated_buf = Buffer.from(calculated_signature, 'base64'); casts everything to a primitive -> arr of dict gets "stringified"
 
 
+
 # reverse
 
 # pwn
