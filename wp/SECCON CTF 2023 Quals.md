@@ -19,8 +19,12 @@ const algorithms = {
 ```
 
 当传入特殊的属性如`constructor`时,`algorithms[header.alg.toLowerCase()](data, secret);`
-只会返回第一个参数
+返回函数的构造方法,
 ![image](https://i.imgur.com/8CnkB7o.png)
+>TL;DR explanation: 
+`const signature = algorithms[header.alg.toLowerCase()](data, secret);` is vulnerable to ["constructor"], calling the array constructor with the params -> results in an arr of dicts
+const calculated_buf = Buffer.from(calculated_signature, 'base64'); casts everything to a primitive -> arr of dict gets "stringified"
+
 
 # reverse
 
