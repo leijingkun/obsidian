@@ -33,8 +33,32 @@ popover框架
 ```
 ### eeeeejs
 
-# reverse
 
+### simple calc
+#xss 
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230919224449.png)
+
+eval执行任意代码,但是存在csp `default-src http://simplecalc.seccon.games:3000/js/index.js 'unsafe-eval';
+
+限制了源
+# reverse
+### jumpout
+
+```python
+import angr
+import claripy
+p = angr.Project('./jumpout', load_options={"auto_load_libs": False}) 
+argv = [p.filename]
+state = p.factory.entry_state(args = argv)
+simgr = p.factory.simulation_manager(state)
+
+simgr.explore(find=lambda s: b"Correct" in s.posix.dumps(1))
+
+if len(simgr.found) > 0:
+    state = simgr.found[0]
+    print(state.posix.dumps(0))
+else: print("Not found...")
+```
 # pwn
 
 # crypto
