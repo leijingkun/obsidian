@@ -16,6 +16,11 @@ express+nginx1.25.1
 猜到了路由 `/console`,flask pin值在css文件里,直接可以进入
 console rce
 `__import__('os').popen('whoami').read();`
+
+
+### realworld
+moectf{Information-leakage-Is-dangerous!
+
 # reverse
 
 # pwn
