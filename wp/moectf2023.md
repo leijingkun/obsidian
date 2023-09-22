@@ -1022,8 +1022,9 @@ ssaassssdddddwwddddwwaa
 https://www.cnblogs.com/c1047509362/p/12806297.html
 
 ```
-{Dig_Thr0ugh_Eve2y_C0de_3nd_Poss1bIlIti3s!!}
+moectf{Dig_Thr0ugh_Eve2y_C0de_3nd_Poss1bIlIti3s!!}
 ```
+
 # pwn
 
 # crypto
