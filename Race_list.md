@@ -53,6 +53,7 @@
 [[wp/COMPFEST CTF 2023]]
 [[wp/SEC-T 0x0FOO CTF 2023]]
 [[wp/SECCON CTF 2023 Quals]]
+[[wp/ASIS CTF 2023]]
 复现
 [[catctf2022]]
 [[i春秋2022冬]]
