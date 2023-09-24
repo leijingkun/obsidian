@@ -43,7 +43,7 @@ eval执行任意代码,但是存在csp `default-src http://simplecalc.seccon.gam
 限制了源
 # reverse
 ### jumpout
-
+#angr
 ```python
 import angr
 import claripy
