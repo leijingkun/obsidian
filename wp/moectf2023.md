@@ -1154,6 +1154,14 @@ echo -e "[common]\nserver_addr = 54.255.166.12\nserver_port = 82\n \n[ssh]\ntype
 
 # Misc
 
+# Ai
+### 入门指北
+https://pytorch.org/get-started/pytorch-2.0/
+
+```
+moectf{install_torch_torchvision_torchaudio}
+```
+
 # Jail
 
 ### 1
