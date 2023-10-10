@@ -1260,3 +1260,17 @@ contract AlienCodexHack {
 }
 ```
 不知道为什么修改长度为2\*\*256-1后就可以视作动态数组然后覆盖slot0 
+
+
+
+
+
+### shctf
+
+```
+v4.local.edbztygerjGnKa5XPTOfkzEFjQ2sxXbqRZTZj_4G5A8VbzP70I7BULYPnrn-sbjqneIodj19x6zjNLHlrGJadvtOVoPGpljwaqbgMk971Db7Q9lIo5Pxe2g4RU_Yq1e34OweI_n6KwtVYDW1cPuJnGebQr78KTNUyFRP7QoZsZLUWg.R3JlZXRlcg
+```
+
+```
+0xBEF0C3B1992979334e472b56fCF6E45eC87D24b3
+```
