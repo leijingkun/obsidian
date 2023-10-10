@@ -12,3 +12,21 @@
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230827212917.png)
 *win7*
 *提取用户密码哈希*
+
+## MoeCTF
+### 坚持访问的浏览器
+工具
+`D:\CTF\Forensics\Broswer\Infornito\`
+
+跟进源码里的浏览器函数即可自定义取证的文件路径
+```python
+browser_modules = {
+    'firefox': firefox(), 
+    'chrome': chrome(), 
+    'safari': safari()
+}
+```
+
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231010230242.png)
+
+浏览记录,访问最后一个url
