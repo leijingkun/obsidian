@@ -387,7 +387,7 @@ var utils = require('../utils/common');
 router.post('/', require('body-parser').json(),function(req, res, next) {
   res.type('html');
   res.render('api', { query: Function(query)(query)});
-   
+
 });
 
 module.exports = router;
@@ -395,6 +395,7 @@ module.exports = router;
 
 
 ---
+
 污染 query的值
 
 ```json
