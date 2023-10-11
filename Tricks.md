@@ -1,3 +1,7 @@
+
+## php原生类利用
+
+
 # XPATH注入
 https://xz.aliyun.com/t/7791?page=1
 盲注脚本

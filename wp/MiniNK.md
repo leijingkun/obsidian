@@ -1,5 +1,46 @@
 # web
-### On1y0ne
+
+### Onlyone
+
+```php
+<?php
+if($_SERVER['SCRIPT_NAME']==="/waf.php")die(header("Location: https://b23.tv/j0rQzU"));
+
+function waf($func){
+    $func_blacklist=array("eval","assert","include","phpinfo","system","passthru","shell_exec","exec","proc_open","popen","pcntl_exec","file_get_contents","highlight_file","show_source","file","fgets","dl","proc_terminate","touch","escapeshellcmd","escapeshellarg","substr_replace","call_user_func_array","call_user_func","array_filter","array_walk","array_map","registregister_shutdown_function","register_tick_function","filter_var","filter_var_array","uasort","uksort","array_reduce","array_walk","array_walk_recursive","fopen","fwrite","file_put_contents","pcntl_alarm","pcntl_fork","pcntl_waitpid","pcntl_wait","pcntl_wifexited","pcntl_wifstopped","pcntl_wifsignaled","pcntl_wifcontinued","pcntl_wexitstatus","pcntl_wtermsig","pcntl_wstopsig","pcntl_signal","pcntl_signal_get_handler","pcntl_signal_dispatch","pcntl_get_last_error","pcntl_strerror","pcntl_sigprocmask","pcntl_sigwaitinfo","pcntl_sigtimedwait","pcntl_getpriority","pcntl_setpriority","pcntl_async_signals","symlink","link","syslog","imap_open","ld");
+    if(in_array($func,$func_blacklist))return True;
+    else return False;
+}
+
+class Test{
+    public $func;
+    public $para;
+    public $copy;
+    private function On1y0ne(){
+        $testdir="./tests/tmp_".md5($_SERVER['REMOTE_ADDR']);
+        if(file_exists($testdir))system("rm -rf /var/www/html/tests/*");
+        mkdir($testdir);
+        if(!empty($_FILES["test"])){
+            $tmp_name=$_FILES["test"]["tmp_name"];
+            $name=$_FILES["test"]["name"];
+            $mime=$_FILES["test"]["type"];
+            $ext=substr($name,strrpos($name,".")+1);
+            if(preg_match("/ph/i",$ext)||($mime!=="image/jpg"&&$mime!=="image/png"&&$mime!=="image/jpeg"&&$mime!=="image/gif")||!exif_imagetype($tmp_name))die("Hacker!!!");
+            $path=$testdir."/".basename($name);
+            move_uploaded_file($tmp_name,$path);
+            echo $path;
+        }
+    }
+
+    public function __destruct(){
+        $this->func="phpinfo";
+        if(!preg_match("/[\s\S]*/",$this-&gt;para))$this-&gt;copy=$this-&gt;para;
+        @call_user_func($this-&gt;func);
+    }
+}
+>
+```
+### 亲眼所见，亦非真实-1
 ?file=/app/app.py
 ?file=/proc/self/cmdline
 伪造cookie,上传文件,
