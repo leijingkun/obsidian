@@ -17,6 +17,7 @@ $密文=明文^E mod N$
 ```
 
 *dec.py*
+
 ```python
 import gmpy2
 p=473398607161
