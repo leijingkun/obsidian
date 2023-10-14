@@ -40,7 +40,7 @@ xhr.send();
 ### COOKIE STORE
 一个可以自定义模板,并且能分享给其他人的网站
 提交的模板会存储的session里,并且使用`csrf_token`防止越权
-![image|500](https://i.imgur.com/YyII7ml.png)
+![image](https://i.imgur.com/YyII7ml.png)
 我们可以操作bot向指定fields写入FLAG内容,
 ```python
     client.get(f"http://localhost:1337/form_builder?fields={fields}")
