@@ -1,3 +1,16 @@
+# nmap红队四扫
+
+```bash
+
+nmap -sT -sV -sC -O -p22,80,8080 <ip> -oA nmapscan/detail
+```
+
+
+
+
+
+
+
 # 信息收集
 ## IP和端口信息
 [参考文章](https://xz.aliyun.com/t/9455)
@@ -199,3 +212,5 @@ Hacking8安全信息流:https://i.hacking8.com/
 零零信安:https://0.zone
 
 # 初始访问
+
+
