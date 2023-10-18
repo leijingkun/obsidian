@@ -3,6 +3,8 @@
 # nmap红队四扫
 
 ```bash
+#全端口扫描
+nmap --min-rate 10000 <ip> -p- -oA nmapscan/ports
 
 nmap -sT -sV -sC -O -p22,80,8080 <ip> -oA nmapscan/detail
 ```

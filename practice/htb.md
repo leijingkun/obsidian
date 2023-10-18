@@ -3,6 +3,13 @@
 [toc]
 ## StartPoint
 ### Archetype
+扫到了1433端口,使用
+```bash
+
+```
+
+> -N : No password
+  -L : This option allows you to look at what services are available on a server
 
 
 ## Easy
