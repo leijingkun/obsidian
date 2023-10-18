@@ -1,6 +1,9 @@
 # HTB
 
 [toc]
+## StartPoint
+### Archetype
+
 
 ## Easy
 ### Sau

