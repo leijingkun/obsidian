@@ -55,6 +55,7 @@
 [[wp/SECCON CTF 2023 Quals]]
 [[wp/ASIS CTF 2023]]
 [[wp/BRICS+ CTF]]
+[[wp/hack.lu]]
 复现
 [[catctf2022]]
 [[i春秋2022冬]]
