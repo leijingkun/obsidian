@@ -4,8 +4,12 @@
 $username=addslashes($username);
 $password=addslashes($password);
 
+//替换
+$blacklist = [">",";","|","union","select","or","#","--+","%","'"," "];
+$username = str_replace($blacklist,"",$username);
+$password = str_replace($blacklist,"",$password);
 
-
+//通防
 function wafrce($str){
 	return !preg_match("/openlog|syslog|readlink|symlink|popepassthru|stream_socket_server|scandir|assert|pcntl_exec|fwrite|curl|system|eval|assert|flag|passthru|exec|chroot|chgrp|chown|shell_exec|proc_open|proc_get_status|popen|ini_alter|ini_restore/i", $str);
 }

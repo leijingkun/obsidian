@@ -1,3 +1,15 @@
+
+## 软链接
+在/bin/mklink
+使用 mklink /etc/passwd passwd
+自动生成passwd.zip
+```php
+#!/bin/bash
+ln -s $1 $2
+zip --symlinks $2.zip $2
+rm $2         
+```
+
 ## GIT
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230705202542.png)
 
