@@ -10,3 +10,8 @@ random.seed(uuid.getnode())
 种子的生成
 读取 /sys/class/net/eth0/address
 
+
+### ezjava
+#java反序列化 
+
+
