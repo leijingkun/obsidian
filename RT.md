@@ -4,9 +4,17 @@
 
 ```bash
 #全端口扫描
-nmap --min-rate 10000 <ip> -p- -oA nmapscan/ports
+sudo nmap --min-rate 10000 <ip> -p- -oA nmapscan/ports
 
-nmap -sT -sV -sC -O -p22,80,8080 <ip> -oA nmapscan/detail
+#tcp全扫
+sudo nmap -sT -sV -sC -O -p22,80,8080 <ip> -oA nmapscan/detail
+
+#udp快速扫描
+sudo nmap -sU --top-ports 30 <ip> -oA nmapscan/udp
+
+#script扫
+sudo nmap --script-vuln -p21,80,22,3306 <ip> nmapscan/vuln
+
 ```
 
 
