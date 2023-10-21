@@ -56,6 +56,8 @@
 [[wp/ASIS CTF 2023]]
 [[wp/BRICS+ CTF]]
 [[wp/hack.lu]]
+[[wp/0xgame]]
+
 复现
 [[catctf2022]]
 [[i春秋2022冬]]
