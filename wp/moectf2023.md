@@ -1030,7 +1030,7 @@ moectf{Dig_Thr0ugh_Eve2y_C0de_3nd_Poss1bIlIti3s!!}
 生成一个字典后爆破
 
 ```shell
-> flask-unsign --unsign --cookie "eyJwb3dlciI6Imd1ZXN0IiwidXNlciI6ImtqaWVsIn0.ZSV9Ag.xZ_QJcNHTtYO0Z9rSxo_-Cez-oQ" --wordlist "D:\tmp\wordlist"
+flask-unsign --unsign --cookie "eyJwb3dlciI6Imd1ZXN0IiwidXNlciI6ImtqaWVsIn0.ZSV9Ag.xZ_QJcNHTtYO0Z9rSxo_-Cez-oQ" --wordlist "D:\tmp\wordlist"
 ```
 
 
