@@ -602,7 +602,7 @@ cc3.2.2
 			AnnotationInvocationHandler.readObject()
 				Map(Proxy).entrySet()
 					AnnotationInvocationHandler.invoke()
-						LazyMap.get()
+						TransformerMap.decorate()
 							ChainedTransformer.transform()
 								ConstantTransformer.transform()
 								InvokerTransformer.transform()
