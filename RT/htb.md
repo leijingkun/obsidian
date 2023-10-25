@@ -422,6 +422,16 @@ echo '[{hosts: localhost, tasks: [shell: /usr/bin/chmod +s /bin/bash]}]' >> /opt
 
 * root 6b90bf771b3bca6f236cef43ae88773d
 
+
+
+### keeper
+#### user
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231025150542.png)
+
+- 80
+添加
+`10.10.11.227 tickets.keeper.htb` 到/etc/hosts
+
 ## Medium
 ### Sandworm
 #### user

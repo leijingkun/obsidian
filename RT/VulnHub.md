@@ -1,5 +1,4 @@
 
-# VulnHub
 ### w1r3s
 ip:
 `192.168.36.129`
@@ -25,4 +24,13 @@ ftp <IP>
 wget -m ftp://anonymous:anonymous@10.10.10.98 #Donwload all
 wget -m --no-passive ftp://anonymous:anonymous@10.10.10.98 #Download all
 ```
+
+- 80
+扫描得到目录
+/administrator
+访问查看源码发现是cuppa cms
+`searchexploit cuppa`
+存在任意文件包含漏洞,读取/etc/shadow,`john`爆破密码,登录用户属于sodu组,直接sudo bash
+
+
 
