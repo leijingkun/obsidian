@@ -34,3 +34,16 @@ wget -m --no-passive ftp://anonymous:anonymous@10.10.10.98 #Download all
 
 
 
+
+### billu
+`192.168.36.130`
+
+
+
+#### user
+- 22
+
+- 80
+目录扫描
+`gobuster dir -u http://192.168.36.130 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt`
+
