@@ -33,6 +33,18 @@ mt管理器修改smail代码
 | Content Provider(内容提供者)   | 作为应用程序之间唯一的共享数据的途径，Content Provider主要的功能就是存储并检索数据以及向其他应用程序提供访问数据的接口。Android内置的许多数据都是使用Content Provider形式，供开发者调用的（如视频，音频，图片，通讯录等）            |     |     |
                                                                                                                                                                                                                                   |     |     |
 
+## 安卓动态调试
+
+### AndroidManifest.xml
+添加debug
+```xml
+<application
+	android:debuggable="true"
+```
+
+jeb下断点`Ctrl+B`
+
+`adb shell am start -D `
 # 安卓系统架构
 ![image](https://p2.ssl.qhimg.com/t01fc2d94f1f5c3fd24.png)
 
