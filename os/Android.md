@@ -44,7 +44,13 @@ mt管理器修改smail代码
 
 jeb下断点`Ctrl+B`
 
-`adb shell am start -D `
+`adb shell am start -D -n <包名>/<主类>`
+
+jeb调试即可
+
+### log插桩
+修改smail,增加一个classes2.dex,用算法助手捕获log
+
 # 安卓系统架构
 ![image](https://p2.ssl.qhimg.com/t01fc2d94f1f5c3fd24.png)
 
