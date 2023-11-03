@@ -51,7 +51,11 @@ jeb调试即可
 ### log插桩
 修改smail,增加一个classes2.dex,用算法助手捕获log
 
+## IDA调试.so
+```bash
+#将dbgsrc/下的android移动到目录下
 
+```
 ## 六
 
 # 安卓系统架构
