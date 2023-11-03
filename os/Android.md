@@ -60,8 +60,16 @@ jeb调试即可
 window
 `adb forward tcp:23946 tcp:23946`端口转发
 ida直接打开不要选择.so文件,debugger->attach附加进程
-找到包名
+找到包名双击
 `Ctrl+S`找到.so文件
+
+定位函数的**地址**=so文件基地址+偏移地址
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231103135255.png)
+基地址 D27E4000
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231103135334.png)
+
+偏移地址 11A8
+
 ## 六
 
 # 安卓系统架构
