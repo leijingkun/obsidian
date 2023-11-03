@@ -53,9 +53,15 @@ jeb调试即可
 
 ## IDA调试.so
 ```bash
-#将dbgsrc/下的android移动到目录下
-
+#将dbgsrc/下的android移动到目录下,加权限运行
+./android_x86_server
 ```
+
+window
+`adb forward tcp:23946 tcp:23946`端口转发
+ida直接打开不要选择.so文件,debugger->attach附加进程
+找到包名
+`Ctrl+S`找到.so文件
 ## 六
 
 # 安卓系统架构
