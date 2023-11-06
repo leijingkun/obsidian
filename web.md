@@ -184,6 +184,8 @@ jdbc反序列化漏洞
 
 需要我们自己开启一个fake_sql_server
 
+在ubuntu和aws里均有
+
 ```java
 
 import gdufs.challenge.web.invocation.InfoInvocationHandler;

