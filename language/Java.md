@@ -1,4 +1,36 @@
 
+
+## ONGL注入
+OGNL具有三要素：表达式（expression）、根对象（root）和上下文对象（context）。
+
+- 表达式（expression）：表达式是整个OGNL的核心，通过表达式来告诉OGNL需要执行什么操作；
+- 根对象（root）：root可以理解为OGNL的操作对象，OGNL可以对root进行取值或写值等操作，表达式规定了“做什么”，而根对象则规定了“对谁操作”。实际上根对象所在的环境就是 OGNL 的上下文对象环境；
+- 上下文对象（context）：context可以理解为对象运行的上下文环境，context以MAP的结构、利用键值对关系来描述对象中的属性以及值；
+
+###### 使用操作符号
+OGNL表达式中能使用的操作符基本跟Java里的操作符一样，除了能使用`+, -, *, /, ++, --, ==, !=, =等操作符之外，还能使用mod, in, not in等。`
+
+###### 容器、数组、对象
+OGNL支持对数组和ArrayList等容器的顺序访问。例如：`group.users[0]`
+
+同时，OGNL支持对Map的按键值查找。例如：`#session['mySessionPropKey']`
+
+不仅如此，OGNL还支持容器的构造的表达式。例如：`{"green", "red", "blue"}`构造一个List，`#{"key1" : "value1", "key2" : "value2", "key3" : "value3"}构造一个Map`
+
+你也可以通过任意类对象的构造函数进行对象新建。例如：`new Java.net.URL("xxxxxx/")`
+
+###### 对静态方法或变量的访问
+要引用类的静态方法和字段，他们的表达方式是一样的@class@member或者@class@method(args)。
+例如：`@com.javaeye.core.Resource@ENABLE，@com.javaeye.core.Resource@getAllResources`
+
+##### payload
+```java
+@java.lang.Runtime@getRumtime().exec("ls")
+
+
+```
+
+
 ## java web基础
 ### Servlet
 Servlet是在 Java Web容器中运行的小程序,通常我们用Servlet来处理一些较为复杂的服务器端的业务逻辑。Servlet是Java EE的核心,也是所有的MVC框架的实现的根本！
@@ -614,3 +646,4 @@ cc3.2.2
 								InvokerTransformer.transform()
 									Method.invoke()
 										Runtime.exec()
+								
