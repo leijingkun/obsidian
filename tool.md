@@ -55,3 +55,14 @@ xray webscan --listen 127.0.0.1:7777 --html-output proxy.html
 xray webscan --url http://example.com?a=b --html-output single-url.html
 
 ```
+
+
+## sqlmap
+
+```bash
+sqlmap -u "<url>"
+
+sqlmap -r "<http>.txt"
+
+sqlmap -u "<url>" --data "<post>"
+```
