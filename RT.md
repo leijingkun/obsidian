@@ -230,6 +230,7 @@ Hacking8安全信息流:https://i.hacking8.com/
 
 ## 端口转发
 ### 正向端口转发
+边界机有双网卡,内+外
 217为边界,108为内网
 - windows
 ```powershell
@@ -241,12 +242,42 @@ netstat -ano | findstr 3389
 ```
 - linux
 ```bash
+sudo iptables -I INPUT -p tcp -m tcp --dport 3389 -j ACCEPT
+sudo iptables -t nat -A PREROUTING -p tcp --dport 3389 -j DNAT --to-destination 172.16.108.184:3389
+sudo iptables -t nat -A POSTROUTING -j MASQUERADE
+sudo iptables -I FORWARD -j ACCEPT
+sudo iptables -P FORWARD ACCEPT
+sudo sysctl net.ipv4.ip_forward=1
+
+#重启防火墙
+sudo ufw disable && sudo ufw enable
+#其他系统
+/etc/init.d/iptables restart
+```
+
+或使用socat
+```bash
+socat TCP4-LISTEN:3389,fork TCP4:172.16.108.184:3389
 
 ```
 
+
+### 反向端口转发
+> 公网Web服务器只有内网 ip，然后通过路由器把 80 端口映射到公网的 ip上。这种情况下不能让 Web服务器直接监听本地的端口，然后让攻击主机进行连接，因为路由器只做了80端口的映射。
+
+
+
+
 ## socks代理
+### reGeorg
+> 如果我们获得了一个webshell，可以使用 socks 代理的webshell来实现 socks代理。
+
 
 ## 隧道
+### ssh隧道
+```bash
+ssh -CfNg -D localhost:1086 ubuntu@localhost
+```
 
 
 
