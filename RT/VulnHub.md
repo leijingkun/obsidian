@@ -90,3 +90,6 @@ httpd.serve_forever()
 ```
 
 拿到shell,存在phpmy目录
+里面的`config.inc.php`有root密码
+也可内核提权
+

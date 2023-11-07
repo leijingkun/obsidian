@@ -224,6 +224,29 @@ Virustotal: https://www.virustotal.com/gui/home/upload
 Hacking8安全信息流:https://i.hacking8.com/
 零零信安:https://0.zone
 
-# 初始访问
+
+
+# 内网
+
+## 端口转发
+### 正向端口转发
+217为边界,108为内网
+- windows
+```powershell
+netsh interface portproxy add v4tov4 listenport=3389 listenaddress=172.16.217.186 connectport=3389 connectaddress=172.16.108.184
+//查看存在的转发
+netsh interface portproxy show all
+//使用netstat确保 3389 端口当前处于被侦听状态：
+netstat -ano | findstr 3389
+```
+- linux
+```bash
+
+```
+
+## socks代理
+
+## 隧道
+
 
 
