@@ -269,6 +269,8 @@ socat TCP4-LISTEN:3389,fork TCP4:172.16.108.184:3389
 
 
 ## socks代理
+frp
+[[tool#frp]]
 ### reGeorg
 > 如果我们获得了一个webshell，可以使用 socks 代理的webshell来实现 socks代理。
 

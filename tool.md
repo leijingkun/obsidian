@@ -68,7 +68,33 @@ sqlmap -u "<url>" --data "<post>"
 ```
 
 ## frp
-#### frps
+
+socks5代理
+
+- frps.toml
+```toml
+bindAddr = "0.0.0.0"
+bindPort = 7000
+```
+配完后在proxifier打开proxy server并配置要走代理的ip
+
+- frpc.toml
+```toml
+serverAddr = "192.168.36.1"
+serverPort = 7000
+
+[[proxies]]
+name = "plugin_socks5"
+type = "tcp"
+remotePort = 6005
+[proxies.plugin]
+type = "socks5"
+username = "abc"
+password = "abc"
+```
+
+
+#### frps_all
 ```toml
  
 # This configuration file is for reference only. Please do not use this configuration directly to run the program as it may have various issues.
@@ -290,8 +316,7 @@ ops = ["NewProxy"]
  
  
 ```
-##### frpc
-#### frpc
+#### frpc_all
 ```toml
  
 # This configuration file is for reference only. Please do not use this configuration directly to run the program as it may have various issues.
@@ -787,4 +812,11 @@ minRetryInterval = 90
 # fallbackTo = "stcp_visitor"
 # fallbackTimeoutMs = 500
  
+```
+
+socks5
+- frps
+```toml
+
+
 ```
