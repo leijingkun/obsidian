@@ -25,6 +25,7 @@ function wafxss($str){
 ```
 
 
+
 *赛题笔记-[CISCN2022]总决赛-第一天 _ 远离尘世的幻想乡*
 - create_function代码注入就可以RCE
 *虎符CTF2022 总决赛部分题解 _ Eki's blog*
