@@ -1560,3 +1560,7 @@ _BOOL8 __fastcall cek(int a1)
 追踪vaild变量  `valid dd 51615h`
 转换为10进制  `333333`
 
+
+
+
+
