@@ -1,3 +1,16 @@
+
+### 2023浙江大学生省赛初赛
+#java 
+https://www.yuque.com/dat0u/ctf/zticsggntervfyue wp
+有admin路由,但是有路由限制
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231115234413.png)
+
+看不懂后面的反序列化,只有前面的spring配置绕过
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231115234225.png)
+漏洞原因在`/admin*`只匹配单层url,如`/admin/a`,`admin/**`才能匹配多级目录,所以这里属于开发失误,所谓的限制相当于null,但是需要注意请求必须有csrf_token
+
+
+
 # NSS
 ### [GKCTF 2021]babycat
 #java 
@@ -479,7 +492,7 @@ RS{/\/eveRG0nna_G1v3y0uuP_|3tY0|_|d0vvn_TuRna30unD_D3s3RTy0u}
 ```
 
 payload
-
+#xxe 
 ```py
 <?xml version="1.0" encoding="utf-8"?> 
 <!DOCTYPE input [
@@ -1046,7 +1059,7 @@ https://tttang.com/archive/1395/#toc_0x00-tldr
 
 源码
 
-```py
+```python
 #encoding:utf-8
 import os
 import re, random, uuid

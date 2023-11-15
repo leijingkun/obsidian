@@ -104,37 +104,10 @@ if __name__ == "__main__":
 
 ### DeserBug
 #java
-```java
-public class Testapp {
-    public static void main(String[] args) {
-        HttpUtil.createServer(8888).addAction("/", request, response -> {
-            String result;
-            String bugstr = request.getParam("bugstr");
-            if (bugstr == null) {
-                response.write("welcome,plz give me bugstr", ContentType.TEXT_PLAIN.toString());
-            }
-            try {
-                byte[] decode = Base64.getDecoder().decode(bugstr);
-                ObjectInputStream inputStream = new ObjectInputStream(new ByteArrayInputStream(decode));
-                Object object = inputStream.readObject();
-                result = object.toString();
-            } catch (Exception e) {
-                Myexpect myexpect = new Myexpect();
-                myexpect.setTypeparam(new Class[]{String.class});
-                myexpect.setTypearg(new String[]{e.toString()});
-                myexpect.setTargetclass(e.getClass());
-                try {
-                    result = myexpect.getAnyexcept().toString();
-                } catch (Exception ex) {
-                    result = ex.toString();
-                }
-            }
-            response.write(result, ContentType.TEXT_PLAIN.toString());
-        }).start();
-    }
-}
-```
-接收`bugstr`参数进行反序列化
+
+
+### reading
+
 
 ### [CISCN 2023 华北]ez_date
 #hash
