@@ -23,8 +23,6 @@ burp sitemap scope `(^|^[^:]+:\/\/|[^\.]+\.)spdbccc.*`
 
 ### fofa语法
 
-
-
 ### google语法
 
 ```
@@ -72,6 +70,8 @@ intext
 + 在线: http://stool.chinaz.com/same
 + 在线: https://site.ip138.com
 
+### 灯塔
+自动收集资产工具
 ### Googlehack语法
 
 1. 后台地址
