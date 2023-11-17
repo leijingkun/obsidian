@@ -1,5 +1,9 @@
 
 
+
+
+## php反序列化
+[[C:\Users\20925\Desktop\study\RT\php反序列化总结 - lewiserii's blog.mhtml]]
 ## 代码注入
 无字母数字
 
