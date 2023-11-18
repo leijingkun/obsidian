@@ -11,8 +11,10 @@ compress.zlib://data:text/plain;base64,PD9waHAgcGhwaW5mbygpOz8%2b
 远程文件包含绕过allow_url
 开启smb服务器
 
+## oracle注入
+`C:\Users\20925\Desktop\study\attachment\Oracle数据库注入全方位利用 - 先知社区.mhtml`
 ## php反序列化
-[[C:\Users\20925\Desktop\study\RT\php反序列化总结 - lewiserii's blog.mhtml]]
+`C:\Users\20925\Desktop\study\RT\php反序列化总结 - lewiserii's blog.mhtml`
 ## 代码注入
 无字母数字
 
