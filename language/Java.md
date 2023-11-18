@@ -1,5 +1,6 @@
 
 
+
 ## ONGL注入
 OGNL具有三要素：表达式（expression）、根对象（root）和上下文对象（context）。
 
@@ -33,6 +34,8 @@ OGNL支持对数组和ArrayList等容器的顺序访问。例如：`group.users[
 
 
 ## java web基础
+
+[java安全初探](https://evilpan.com/2023/04/01/java-ee/)
 ### Servlet
 Servlet是在 Java Web容器中运行的小程序,通常我们用Servlet来处理一些较为复杂的服务器端的业务逻辑。Servlet是Java EE的核心,也是所有的MVC框架的实现的根本！
 ### Servlet的定义
