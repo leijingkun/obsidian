@@ -1,6 +1,15 @@
 
 
 
+## 文件包含
+后缀绕过
+远程文件包含url+?或者#
+
+前缀绕过
+compress.zlib://data:text/plain;base64,PD9waHAgcGhwaW5mbygpOz8%2b
+
+远程文件包含绕过allow_url
+开启smb服务器
 
 ## php反序列化
 [[C:\Users\20925\Desktop\study\RT\php反序列化总结 - lewiserii's blog.mhtml]]
