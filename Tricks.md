@@ -1,12 +1,22 @@
 
 
+
+
+
+## http请求走私
+> HTTP请求走私漏洞是因为前端的反向代理服务器和后端的Web服务器，对同一个请求的理解不一致造成的。因此，针对同一个HTTP请求，不同的服务器可能会产生不同的处理结果，这样就产生了安全风险。
+
+
+前后端对数据的结束位置有多个标头 `Content-Length` `Transfer-Encoding`来确定
+
+> CL.TE：前端服务器使用Content-Length标头，而后端服务器使用Transfer-Encoding标头。
+> TE.CL：前端服务器使用Transfer-Encoding标头，而后端服务器使用Content-Length标头。
+> TE.TE：前端服务器和后端服务器都支持Transfer-Encoding标头，但是可以通过对标头进行某种方式的混淆来诱导其中一台服务器不对其进行处理
+
+
+
+
 ## python文件上传
-
-
-```python
-
-```
-
 
 ```python
 import requests
