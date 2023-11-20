@@ -1,7 +1,23 @@
 
-## frida
+# frida
 一加frida-server路径在`/data/local/tmp/fs-64`
+frida-server的压缩包位置在`D:\android`
 
+
+### java Hook一般函数返回值
+`frida -U -l exp1.js com.luoyesiqiu.crackme`
+```js
+if(Java.available){
+    Java.perform(function(){
+        var MainActivity = Java.use("com.luoyesiqiu.crackme.MainActivity");
+        MainActivity.isExcellent.implementation=function(){
+            return true;        
+        }
+    });
+
+}
+
+```
 
 
 
