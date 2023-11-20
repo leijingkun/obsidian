@@ -1,3 +1,10 @@
+
+## frida
+一加frida-server路径在`/data/local/tmp/fs-64`
+
+
+
+
 # 52pojie吾爱安卓逆向入门
 ## 第二节.初识APK文件结构、双开、汉化、基础修改
 ### 双开
