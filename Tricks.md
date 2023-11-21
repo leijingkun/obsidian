@@ -1,6 +1,11 @@
 
 
+# JWT
+爆破,jwt_tool在`CTF_TOOL`下
 
+```bash
+python .\jwt_tool.py eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI0OTI5MSIsImlhdCI6MTcwMDU0NzM5MSwiZXhwIjoxNzAxMTUyMTkxfQ.hKwliNI5OGbTrpcrxRZ8Bvq978ur4o483jmD2CFbbbhO5V9_3HHNTK6YZ9-YaE4lFOnTeRjYQkyKYsPprFAr0g -C -d D:\dict\wordlists\rockyou.txt
+```
 
 
 ## http请求走私

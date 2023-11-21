@@ -1,4 +1,5 @@
 https://ctf.heroctf.fr/challenges
+https://github.com/HeroCTF/HeroCTF_v5
 # web
 ### Best Schools
 一个投票网站,需要我们的投票数大于1337,也就是伪造投票人数,一般就是伪造ip这类
