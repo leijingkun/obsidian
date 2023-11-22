@@ -21,6 +21,9 @@ url:, POST, api, GET, setRequestHeader, send(
 
 burp sitemap scope `(^|^[^:]+:\/\/|[^\.]+\.)spdbccc.*`
 
+
+
+子域名查询-https://chaziyu.com、https://site.ip138.com/xxx.com/domain.htm
 ### fofa语法
 
 ### google语法
@@ -61,9 +64,11 @@ intext
 *  子域名爆破
 
   ```shell
-  cd C:\Users\20925\Desktop\Info\subDomainsBrute
-  python .\subDomainsBrute.py -o output www.baidu.com
+  python D:\pentest\Info\子域名爆破\subDomainsBrute\subDomainsBrute.py -o output www.baidu.com
   ```
+
+* subdomainbrute
+* [subdomain](https://rapiddns.io/s/nwu.edu.cn#result)
 
 ### 旁站
 
@@ -105,10 +110,6 @@ intext
 + Vulners: https://vulners.com
 + Sploitus: https://sploitus.com
 
-### Finding subdomains
-
-* subdomainbrute
-* [subdomain](https://rapiddns.io/s/nwu.edu.cn#result)
 
 ### Asset and content discovery
 
@@ -192,7 +193,7 @@ cat file.js | grep -aoP "(?<=(\"|\'|\`))\/[a-zA-Z0-9_?&=\/\-\#\.]*(?=(\"|\'|\`))
 
 - Top 5 Google dorks
 
-- ```
+ ```
   inurl:example.com intitle:"index of"
   inurl:example.com intitle:"index of /" "*key.pem"
   inurl:example.com ext:log
