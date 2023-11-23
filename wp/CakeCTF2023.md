@@ -75,6 +75,9 @@ guess_answer()
 
 
 # reverse
+给了一个pdb和exe文件
+pdb里有函数名,变量名,数据结构等信息
+
 
 # pwn
 
