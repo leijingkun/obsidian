@@ -1,4 +1,13 @@
 
+## adb
+```bash
+#查看包名对应进程
+adb shell "ps| grep com.yaotong.*"
+
+#读取对应进程log
+adb shell "logcat|grep com.yaotong.*"
+```
+
 # frida
 一加frida-server路径在`/data/local/tmp/fs-64`
 frida-server的压缩包位置在`D:\android`
