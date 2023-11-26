@@ -59,6 +59,7 @@
 [[wp/0xgame]]
 [[wp/hackerGame]]
 [[CakeCTF2023]]
+[[wp/DASCTF X 0psu3十一月挑战赛｜越艰巨·越狂热]]
 
 
 复现
