@@ -11,3 +11,27 @@
 IDA安卓调试.so文件
 `C:\Program Files\IDA_Pro_7.7\dbgsrv\`
 
+
+### app-debug
+#frida
+- app为测试版本,使用adb安装时,要加点参数
+```bash
+adb install -g -t -r -d app-debug.apk
+```
+
+jadx->发现静态注册的native函数,ida打开
+
+frida hook函数hook java层函数参数和返回值
+```js
+Java.perform(() => {
+    let MainActivity = Java.use("com.roysue.easyso1.MainActivity");
+    MainActivity["method01"].implementation = function (str) {
+        console.log('method01 is called' + ', ' + 'str: ' + str);
+        let ret = this.method01(str);
+        console.log('method01 ret value is ' + ret);
+        return ret;
+    };
+})
+```
+
+`Frida -U -l .\hook.js esayso1`
