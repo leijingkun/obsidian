@@ -2,7 +2,64 @@
 ## jeb安装
 https://www.52pojie.cn/forum.php?mod=viewthread&tid=1598242&highlight=jeb
 
-# 汇编
+
+
+## angr符号执行框架
+### angr_find
+
+```python
+import angr
+#加载二进制文件
+project=angr.Project("./angr_ctf/dist/00_angr_find",auto_load_libs=False)
+#表示程序入口点为main
+init=project.factory.entry_state()
+
+simulation=project.factory.simgr(init)
+#期待执行的函数地址
+print_good=0x0804867D
+simulation.explore(find=print_good)
+
+if simulation.found:
+    for i in simulation.found:
+        solution_state=i
+        print(solution_state.posix.dumps(0))
+else:
+    print("no")
+```
+
+
+### angr_avoid
+
+代码中会有avoid函数,修改
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231127145948.png)
+
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231127145906.png)
+
+
+需要阻止这个函数,只需添加一个参数avoid
+```python
+import angr
+proj=angr.Project("./angr_ctf/dist/01_angr_avoid")
+
+init=proj.factory.entry_state()
+
+sim=proj.factory.simgr(init)
+
+print_good=0x080485E0
+avoid=0x080485A8
+sim.explore(find=print_good,avoid=avoid)
+
+if sim.found:
+    for i in sim.found:
+        solution_state=i
+        print(solution_state.posix.dumps(0))
+else:
+    print("no")
+
+
+```
+
+## 汇编
 Intel格式:<指令>,<目标>,<源>
 
 AT&T 格式:<指令>,<源>,<目标>
