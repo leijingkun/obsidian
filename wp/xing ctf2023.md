@@ -40,6 +40,9 @@ md5扩展攻击
 # reverse
 ### GoGpt
 一道go的逆向题
+直接用ida8.3就可以,不需要go_parse插件了
+
+异或+base64
 
 # pwn
 
