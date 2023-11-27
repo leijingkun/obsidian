@@ -16,6 +16,20 @@
 需要使用`binwalk -e`分离文件才能看见flag,可以看到明显文件大小与之前不一样了
 
 
+### babyjs
+#nodejs 
+#ssrf 
+
+- 绕过ip限制 [[Tricks#SSRF]]
+考点实际就是关于url双重编码里的一些细节，在nodejs的url模块处理字符串的时候假如遇到http://xxxx@a，xxxx的部分就会被双重URL编码，所以直接使用
+
+`http://127.0.0.2:3000/debug?url=http://a%2527@a;cp$IFS/flag$IFS/tmp/log%00`
+
+### [红明谷CTF 2021]JavaWeb
+#shiro
+shiro权限绕过`/;/json`
+
+发现回显理由jackson,猜测反序列化漏洞,在`D:\CTF_TOO
 
 
 
