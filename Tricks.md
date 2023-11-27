@@ -137,6 +137,17 @@ fclose($myfile);
 ```
 
 ## SSRF
+php302跳转
+```php
+<?php
+
+$redirectUrl = "https://example.com/new-page";
+header("Location: " . $redirectUrl, true, 302);
+exit; // 确保在发送头部之后结束脚本的执行
+?>
+```
+
+
 #ssrf 
 
 工具`https://github.com/tarunkant/Gopherus` 安装在ubuntu上
