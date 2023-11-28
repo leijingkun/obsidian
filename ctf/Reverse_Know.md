@@ -2,6 +2,8 @@
 
 
 ## pyc
+`python -m py_compile your_script.py`编译py->pyc
+
 ### uncompyle6
 支持 Python 1.0-3.8 版本
 
