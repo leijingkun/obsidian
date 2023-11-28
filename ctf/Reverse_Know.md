@@ -1,4 +1,18 @@
 [[ctf/Reverse|ctf刷题]]
+
+
+## pyc
+### uncompyle6
+支持 Python 1.0-3.8 版本
+
+
+### pycdc
+python3.9+
+存在`D:\reverse\pycdc.exe`
+
+`pycdc <filename>`
+
+
 ## jeb安装
 https://www.52pojie.cn/forum.php?mod=viewthread&tid=1598242&highlight=jeb
 
