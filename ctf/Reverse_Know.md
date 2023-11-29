@@ -12,9 +12,9 @@
 python3.9+
 存在`D:\reverse\pycdc.exe`
 
-`pycdc <filename>`
+`pycdc <filename>`  pyc->py
 
-
+`pycdas <filename>`
 ## jeb安装
 https://www.52pojie.cn/forum.php?mod=viewthread&tid=1598242&highlight=jeb
 
