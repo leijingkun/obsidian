@@ -41,7 +41,14 @@ java -jar JNDI-Injection-Exploit-1.0-SNAPSHOT-all.jar -C "open /Applications/Cal
 
 
 
-### 2023浙江大学生省赛初赛
+
+
+### [b01lers2020]Space Noodles
+
+
+
+
+# 2023浙江大学生省赛初赛
 #java 
 https://www.yuque.com/dat0u/ctf/zticsggntervfyue wp
 有admin路由,但是有路由限制

