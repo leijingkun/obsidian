@@ -18,6 +18,10 @@ import('child_process').then(m=>m.execSync('/readflag > /app/asserts/flag'));
 先查看`pom.xml`,发现存在`actuator`
 其次没有针对actuator路由鉴权,使用spring-scan也可以扫描到
 
+---
+复现采用的是linux虚拟机,远程靶机上需要下载heapdump,使用visualVM(`D:\Tools\VisualVM`)
+分析,使用OQL引擎查询
+
 
 
 # reverse
