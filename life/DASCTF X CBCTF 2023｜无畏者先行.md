@@ -1,4 +1,4 @@
-
+https://test-cuycc6s9lprw.feishu.cn/docx/T7budbiSWoTNd4xQGVicHL1Vnpf
 # web
 
 ### yet another sandbox
@@ -14,6 +14,10 @@ import('child_process').then(m=>m.execSync('/readflag > /app/asserts/flag'));
 ```
 
 ### Deserialize?Upload!
+
+先查看`pom.xml`,发现存在`actuator`
+其次没有针对actuator路由鉴权,使用spring-scan也可以扫描到
+
 
 
 # reverse
