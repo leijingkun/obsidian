@@ -35,6 +35,13 @@ phpinfo();
 ![!img](https://img.php.cn/upload/article/000/000/067/be69afd137ffe0e5382767c78090c8c8-0.png)
 
 
+
+### web2
+#sql 
+
+```
+username=admin' %26%26(ascii(mid(user()from(2)for(1)))=111)#&password=admi&submit=1
+```
 # reverse
 
 # pwn
