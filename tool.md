@@ -80,7 +80,7 @@ bindPort = 7000
 
 - frpc.toml
 ```toml
-serverAddr = "192.168.36.1"
+serverAddr = "36.152.17.5"
 serverPort = 7000
 
 [[proxies]]
