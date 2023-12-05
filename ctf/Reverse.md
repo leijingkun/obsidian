@@ -3,4 +3,4 @@
 
 # Buu
 [[Buu_1]]
-[[ctf/Reverse/Buu_2]]
+[[ctf/Reverse/Buu_2|Buu_2]]

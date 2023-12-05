@@ -318,3 +318,14 @@ shift+F9
 右键insert
 
 ```
+
+
+### [网鼎杯 2020 青龙组]jocker
+
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231206011337.png)
+
+函数异或,猜测smc
+下断点动调到函数部分,先到函数头undefined,然后按p生成函数
+
+
+### 
