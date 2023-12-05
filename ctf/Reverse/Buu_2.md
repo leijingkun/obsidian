@@ -275,5 +275,28 @@ int main()
 
 先把所有opcode搞出来
 
+### crackme
 
+
+
+
+### findKey
+
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231205193743.png)
+`0x8003u`是win32的md5
+
+还有一个简单的异或,
+```python
+string="0kk`d1a`55k222k2a776jbfgd`06cjjb"
+xor = "SS"
+
+for i in range(len(string)):
+    print(chr(ord(string[i])^ord(xor[i%2])),end='')
+
+string=[  0x57, 0x5E, 0x52, 0x54, 0x49, 0x5F, 0x01, 0x6D, 0x69, 0x46, 
+  0x02, 0x6E, 0x5F, 0x02, 0x6C, 0x57, 0x5B, 0x54, 0x4C]
+
+for i in range(len(string)):
+    print(chr(string[i]^ord('123321'[i%6])),end='')
+```
 
