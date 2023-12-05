@@ -300,3 +300,21 @@ for i in range(len(string)):
     print(chr(string[i]^ord('123321'[i%6])),end='')
 ```
 
+### [GUET-CTF2019]number_game
+
+创建结构体
+
+```text
+shiftF1
+c语言形式创建结构体
+example:
+
+struct student {
+  char name[16];
+  int age;
+}
+
+shift+F9
+右键insert
+
+```
