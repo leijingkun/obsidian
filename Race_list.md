@@ -63,6 +63,9 @@
 [[CakeCTF2023]]
 [[wp/DASCTF X 0psu3十一月挑战赛｜越艰巨·越狂热]]
 
+[[wp/WannaGame Championship 2023]]
+
+
 
 复现
 [[catctf2022]]
