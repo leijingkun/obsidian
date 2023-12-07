@@ -18,8 +18,6 @@ console rce
 `__import__('os').popen('whoami').read();`
 
 
-### realworld
-moectf{Information-leakage-Is-dangerous!
 
 # reverse
 
