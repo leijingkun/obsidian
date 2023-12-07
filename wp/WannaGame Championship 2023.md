@@ -81,6 +81,17 @@ model.compile()
 model.save("counting_stars.h5")
 ```
 
+但是这块的逻辑是请求一个模型,如果文件名\=\=`f'{session["dir"]}/{MODEL}'`则重新从上一级目录拿到未污染的模型,但是模型加载的文件名又是固定的
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231207161321.png)
+
+---
+discord上说是条件竞争
+
+
+### 
+
+
+
 # reverse
 
 # pwn
