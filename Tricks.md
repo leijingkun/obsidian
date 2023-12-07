@@ -1,4 +1,11 @@
 
+## postgreSQL语法
+
+![image.png|500](https://gitee.com/leiye87/typora_picture/raw/master/20231207180852.png)
+
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231207180952.png)
+
+
 
 # JWT
 爆破,jwt_tool在`CTF_TOOL`下

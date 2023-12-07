@@ -88,8 +88,20 @@ model.save("counting_stars.h5")
 discord上说是条件竞争
 
 
-### 
+### art galley
 
+- `api/decompress/?path`
+读取文件然后反序列化
+- `xml`
+可以post xml,过滤了xxe利用
+
+---
+过滤了关键字,可以使用html实体编码绕过
+通过xxe上传文件
+
+再通过decompress反序列化
+
+难得批爆
 
 
 # reverse
