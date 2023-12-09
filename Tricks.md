@@ -1,4 +1,12 @@
 
+
+
+
+
+## .htaccess
+
+
+
 ## postgreSQL语法
 
 ![image.png|500](https://gitee.com/leiye87/typora_picture/raw/master/20231207180852.png)
@@ -997,6 +1005,7 @@ less
 more
 head
 tail
+uniq
 nl
 sed '' file1.txt
 cut -f 1 file1.txt
