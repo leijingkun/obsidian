@@ -51,6 +51,9 @@ http://www.xxx.com?_POST[flag1]=8gen1&_POST[flag2]=8gen1
 post:sys=echo($flag);&504[SYS.COM=a
 ```
 
+### \$\$
+`$GLOBALS`全局变量
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231211154038.png)
 
 
 # reverse
