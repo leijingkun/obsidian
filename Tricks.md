@@ -969,6 +969,21 @@ config
 
 ```
 
+## session文件包含
+session 基础知识
+
+可通过phpinfo查看session.save_path的值
+
+```
+/var/lib/php/sess_PHPSESSID
+/var/lib/php/sessions/sess_PHPSESSID
+/xxx/tmp/sess_PHPSESSID
+/xxxx/tmp/sessions/sess_PHPSESSID
+```
+
+文件名格式为`sess_[phpsessid]`。而phpsessid来源于请求的cookie字段。
+
+
 # LFI
 
 
