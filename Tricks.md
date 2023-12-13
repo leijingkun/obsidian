@@ -780,6 +780,18 @@ print('[%d]' % s.status_code, s.url)
 print(s.text)
 ```
 
+# 空格绕过
+
+```
+${IFS}
+$()
+<
+$IFS$9
+''
+%09
+%0A
+```
+
 # Nodejs
 
 
@@ -1147,18 +1159,6 @@ has-response-header:Content-Length：只显示响应头中包含 Content-Length 
 
 
 
-
-# 空格绕过
-
-```
-${IFS}
-$()
-<
-$IFS$9
-''
-%09
-%0A
-```
 
 # XXE+EXCEPT协议
 
