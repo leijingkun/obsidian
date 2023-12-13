@@ -96,8 +96,13 @@ user = base64.b64encode(s).decode()##将序列化的对象使用base64加密
 print(user)#输出加密后的序列化对象
 ```
 
-### 代码审计1
+### upload tutu
+使用`fastcoll`生成俩个hash值相同的文件,在`D:\CTF_Tools\fastcoll_v1.0.0.5.exe\fastcoll_v1.0.0.5.exe`
 
+`fastcoll_v1.0.0.5.exe -p test.php -o test1.php test2.php`
+
+
+``
 
 
 # reverse
