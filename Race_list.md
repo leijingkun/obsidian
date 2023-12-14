@@ -73,3 +73,4 @@
 [[wp/ciscn 2022]]
 [[XSCTF 联合招新赛]]
 [[wp/Polar]]
+[[wp/D3CTF2022]]

@@ -1,4 +1,10 @@
 
+## java内存马
+### Tomcat内存马
+> Tomcat内存马大致可以分为三类，分别是Listener型、Filter型、Servlet型。可能有些朋友会发现，这不正是Java Web核心的三大组件嘛！没错，Tomcat内存马的核心原理就是动态地将恶意组件添加到正在运行的Tomcat服务器中。
+> 而这一技术的实现有赖于官方对Servlet3.0的升级，Servlet在3.0版本之后能够支持动态注册组件。而Tomcat直到7.x才支持Servlet3.0，因此通过动态添加恶意组件注入内存马的方式适合Tomcat7.x及以上。为了便于调试Tomcat，我们先在父项目的pom文件中引入Tomcat依赖
+
+
 
 
 ## ONGL注入
@@ -38,8 +44,21 @@ OGNL支持对数组和ArrayList等容器的顺序访问。例如：`group.users[
 [java安全初探](https://evilpan.com/2023/04/01/java-ee/)
 ### Servlet
 Servlet是在 Java Web容器中运行的小程序,通常我们用Servlet来处理一些较为复杂的服务器端的业务逻辑。Servlet是Java EE的核心,也是所有的MVC框架的实现的根本！
-### Servlet的定义
+#### Servlet的定义
 定义一个 Servlet 很简单，只需要继承javax.servlet.http.HttpServlet类并重写doXXX(如doGet、doPost)方法或者service方法就可以了，其中需要注意的是重写HttpServlet类的service方法可以获取到上述七种Http请求方法的请求。
+
+![image.png](https://c.biancheng.net/uploads/allimg/210616/14224J192-0.png)
+
+### Filter
+
+
+### Listener
+
+
+
+加载顺序:`Listener->Filter->Servlet`
+
+
 
 ```java
 

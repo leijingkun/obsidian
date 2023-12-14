@@ -160,6 +160,8 @@ AddHandler application/x-httpd-php.php
 
 ---
 
+### CB链
+java反序列化CommonBean链
 
 
 # reverse
