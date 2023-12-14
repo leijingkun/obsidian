@@ -146,6 +146,22 @@ python3 weevely.py generate cmd shell.php
 #连接shell
 python3 weevely.py http://xxx.php cmd
 ```
+
+### 你的马呢？
+apache解析漏洞
+> AddHandler导致的Apache解析漏洞
+如果服务器给.php后缀添加了处理器：
+AddHandler application/x-httpd-php.php
+那么，在有多个后缀的情况下，只要包含.php后缀的文件就会被识别出php文件进行解析，不需要是最后一个后缀。如shell.php.jpg中包含.php，所以解析为php文件
+利用：
+1、1.php.jpg
+2、1.php.txt
+影响范围：2.4.0-2.4.29版本
+
+---
+
+
+
 # reverse
 
 # pwn
