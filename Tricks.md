@@ -30,12 +30,6 @@ le "php://filter/convert.base64-decode/resource=1.jpg"
 ```
 
 
-## postgreSQL语法
-
-![image.png|500](https://gitee.com/leiye87/typora_picture/raw/master/20231207180852.png)
-
-![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231207180952.png)
-
 ## php死亡绕过
 
 - 第一种情况
@@ -902,6 +896,14 @@ $IFS$9
 
 
 # SQL Injection
+## sqlite语法
+
+
+## postgreSQL语法
+
+![image.png|500](https://gitee.com/leiye87/typora_picture/raw/master/20231207180852.png)
+
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231207180952.png)
 
 ##### payload
 ```python
