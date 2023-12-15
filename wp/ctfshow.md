@@ -1,4 +1,9 @@
 # web
+
+## 菜狗杯
+### 算力升级
+只允许`dir(g)
+
 ## 红包挑战
 ### 7
 ```php
@@ -47,6 +52,11 @@ function filter($cmd){
 session反序列化+写shell
 > 语句session_decode($_GET['token']);往session里面存放对象
 > 语句$data = $_SESSION['user'];往session里面拿取对象，拿取名字为user的对象。
+
+---
+> 1、fast-destruct先触发application::\_\_destruct()，最终调用到mysql_helper::get_pdo()方法
+> 
+  2、把mysql_helper类的$db属性设置为空，使得mysql_helper::get_pdo()方法连接数据库失败，执行die()函数，结束所有对象的生命周期（主要是结束了userLogger，GC回收），导致提前执行了userLogger::\_\_destruct()写马到文件。
 
 
 
