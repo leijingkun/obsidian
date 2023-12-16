@@ -65,6 +65,7 @@
 
 [[wp/WannaGame Championship 2023]]
 
+[[wp/强网杯2023]]
 
 
 复现
