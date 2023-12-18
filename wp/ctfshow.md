@@ -53,6 +53,21 @@ web手自己的re
 
 需要sleep(5184000)秒才能获得flag,
 
+16进制绕过
+`0x4f1a00`
+
+### web684
+核心代码为绕过下面的正则,函数名不能全字母数字
+```php
+if(preg_match('/^[a-z0-9_]*$/isD', $action)) {
+    show_source(__FILE__);
+```
+
+使用`\create_function`绕过,然后[[Tricks#create_function函数注入]]即可
+
+> 在PHP的命名空间默认为\，所有的函数和类都在\这个命名空间中，如果直接写函数名function_name()调用，调用的时候其实相当于写了一个相对路径；而如果写\function_name() 这样调用函数，则其实是写了一个绝对路径。如果你在其他namespace里调用系统类，就必须写绝对路径这种写法。
+
+
 ## 菜狗杯
 
 ### 算力升级

