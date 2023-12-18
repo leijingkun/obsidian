@@ -508,6 +508,11 @@ user.userinfo.__proto__-->匿名函数.prototype-->Object.prototype
 
 ## java反序列化
 
+cc1、cc3、cc5、cc6、cc7对应的commons-collections:3.1
+cc2、cc4对应的commons-collections4:4.0
+
+
+
 ### web846
 ```java
 import java.io.FileOutputStream;
@@ -578,5 +583,7 @@ cc3.2.2
 										Runtime.exec()
 
 ### web847
+
+java7
 `commons-collections 3.1`
 
