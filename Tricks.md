@@ -1,7 +1,16 @@
 
 
 ## 前端反调试
-
+```js
+Function.prototype.temp_constructor= Function.prototype.constructor;
+Function.prototype.constructor=function(){
+if (arguments && typeof arguments[0]==="string"){
+    if (arguments[0]==="debugger")
+    return ""
+}
+return Function.prototype.temp_constructor.apply(this, arguments);
+};
+```
 
 # 文件上传
 

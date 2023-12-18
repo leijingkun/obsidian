@@ -19,13 +19,39 @@ php代码执行,过滤了很多函数,无法使用蚁剑插件绕过
 
 ### web682
 前端题,反调试
-不知道为什么重新打开F12反调试就没了
+
 
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231218194410.png)
 
 需要sha256(<输入>)== 'e3a331710b01ff3b3e34d5f61c2c9e1393ccba3e31f814e7debd537c97ed7d3d'
 cmd5查不到,
 
+web手自己的re
+
+`ctfshow{592b9d77-9dda-4e30-94a4-5e64f4499a52}`
+
+### web683
+```php
+<?php
+   error_reporting(0);
+   include "flag.php";
+   if(isset($_GET['秀'])){
+       if(!is_numeric($_GET['秀'])){
+          die('必须是数字');
+       }else if($_GET['秀'] < 60 * 60 * 24 * 30 * 2){
+          die('你太短了');
+       }else if($_GET['秀'] > 60 * 60 * 24 * 30 * 3){
+           die('你太长了');
+       }else{
+           sleep((int)$_GET['秀']);
+           echo $flag;
+       }
+       echo '<hr>';
+   }
+   highlight_file(__FILE__);
+```
+
+需要sleep(5184000)秒才能获得flag,
 
 ## 菜狗杯
 
