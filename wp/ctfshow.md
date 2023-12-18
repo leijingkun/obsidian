@@ -18,8 +18,13 @@ php代码执行,过滤了很多函数,无法使用蚁剑插件绕过
 中间一部分被转为分号内一部分
 
 ### web682
-前端题,很多反调试
+前端题,反调试
+不知道为什么重新打开F12反调试就没了
 
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20231218194410.png)
+
+需要sha256(<输入>)== 'e3a331710b01ff3b3e34d5f61c2c9e1393ccba3e31f814e7debd537c97ed7d3d'
+cmd5查不到,
 
 
 ## 菜狗杯
