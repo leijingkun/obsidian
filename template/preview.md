@@ -1,7 +1,44 @@
 ---
-aliases:
-  - 预览各种样式
+aliases: []
 ---
+
+```mermaid
+classDiagram
+    class AddressBook {
+        - entries: List<Entry>
+        + findEntry(name: string): Entry
+        + addEntry(name: string, phone: string, postcode: string, address: string): void
+        + deleteEntry(entry: Entry): void
+    }
+
+    class Entry {
+        - name: string
+        - phone: string
+        - postcode: string
+        - address: string
+        + getName(): string
+        + getPhone(): string
+        + getPostcode(): string
+        + getAddress(): string
+        + setName(name: string): void
+        + setPhone(phone: string): void
+        + setPostcode(postcode: string): void
+        + setAddress(address: string): void
+    }
+
+    class GUI {
+        - currentEntry: Entry
+        + displayEntry(entry: Entry): void
+        + editName(name: string): void
+        + editPhone(phone: string): void
+        + editPostcode(postcode: string): void
+        + editAddress(address: string): void
+        + saveChanges(): void
+    }
+
+    AddressBook --> "*" Entry
+    GUI --> Entry
+```
 
 
 $$
