@@ -491,6 +491,9 @@ echo '[{hosts: localhost, tasks: [shell: /usr/bin/chmod +s /bin/bash]}]' >> /opt
 `10.10.11.227 tickets.keeper.htb` 到/etc/hosts
 
 ## Medium
+### Manager
+#### user
+
 ### Sandworm
 #### user
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20230722155953.png)
