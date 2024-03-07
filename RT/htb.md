@@ -13,6 +13,22 @@
 
 
 ## Easy
+### Perfection
+#### user
+nmap:
+```bash
+Nmap scan report for 10.10.11.253
+Host is up (6.5s latency).
+Not shown: 65076 filtered tcp ports (no-response), 457 closed tcp ports (reset)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+```
+
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240307143815.png)
+webrick 1.7.0 ,一个ruby的web框架
+
+
 ### Sau
 #### user
 
