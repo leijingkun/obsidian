@@ -13,7 +13,6 @@
 
 
 ## Easy
-### craft
 
 ### Perfection
 #### user
