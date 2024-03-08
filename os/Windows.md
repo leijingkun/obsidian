@@ -28,3 +28,13 @@ Common verbs to use include:
 
 
 
+# 域渗透
+## 信息收集
+### 域内常用命令
+`ipconifg /all` 查看网卡配置信息,本机IP段,所在域
+`net config workstation`查看计算机名,全名,用户名,系统版本,工作站,域,登录域
+`net view /domain` 查看当前存在的域
+`ping -a <ip>` -a反向根据IP查看主机名
+`net view /domain:<域名>` 查看域里所有主机
+
+`net user`
