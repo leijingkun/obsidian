@@ -42,3 +42,4 @@ Common verbs to use include:
 ## window认证机制
 ### 1. NTLM认证协议
 ### 2. Kerberos认证协议
+ 
