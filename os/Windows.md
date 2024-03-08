@@ -38,3 +38,7 @@ Common verbs to use include:
 `net view /domain:<域名>` 查看域里所有主机
 
 `net user`
+
+## window认证机制
+### 1. NTLM认证协议
+### 2. Kerberos认证协议
