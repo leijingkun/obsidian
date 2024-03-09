@@ -515,7 +515,28 @@ PORT   STATE SERVICE
 
 有一个下载文件的接口,发现可以输入路径,存在双写绕过
 把网页的后端代码下载下来`index.aspx.cs`
+- 下载`/web.config`应该是web根目录的配置文件
+```xml
+<configuration>
+  <system.web>
+    <customErrors mode="On" defaultRedirect="default.aspx" />
+    <httpRuntime targetFramework="4.5" />
+    <machineKey decryption="AES" decryptionKey="74477CEBDD09D66A4D4A8C8B5082A4CF9A15BE54A94F6F80D5E822F347183B43" validation="SHA1" validationKey="5620D3D029F914F4CDF25869D24EC2DA517435B200CCF1ACFA1EDE22213BECEB55BA3CF576813C3301FCB07018E605E7B7872EEACE791AAD71A267BC16633468" />
+  </system.web>
+    <system.webServer>
+        <httpErrors>
+            <remove statusCode="403" subStatusCode="-1" />
+            <error statusCode="403" prefixLanguageFilePath="" path="http://dev.pov.htb:8080/portfolio" responseMode="Redirect" />
+        </httpErrors>
+        <httpRedirect enabled="true" destination="http://dev.pov.htb/portfolio" exactDestination="false" childOnly="true" />
+    </system.webServer>
+</configuration>
 
+```
+
+[ViewState反序列化攻击](https://book.hacktricks.xyz/pentesting-web/deserialization/exploiting-__viewstate-parameter)
+
+关键是要寻找`MachineKey`,在pentest/Vuln/asp下的俩个工具都尝试了
 
 ### Manager
 #### user
