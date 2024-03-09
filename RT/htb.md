@@ -491,6 +491,32 @@ echo '[{hosts: localhost, tasks: [shell: /usr/bin/chmod +s /bin/bash]}]' >> /opt
 `10.10.11.227 tickets.keeper.htb` 到/etc/hosts
 
 ## Medium
+### Pov
+#### user
+- nmap端口扫描
+```text
+PORT   STATE SERVICE
+80/tcp open  http
+```
+- nmap 80服务扫描
+```text
+
+```
+
+只开了一个80端口
+
+
+80端口只是一个html,目录扫描也没有什么东西
+
+
+`gobuster vhost -u http://pov.htb/ -t 35 -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt --append-domain -k --no-error`
+子域名扫描到 dev.pov.htb
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240309200053.png)
+
+有一个下载文件的接口,发现可以输入路径,存在双写绕过
+把网页的后端代码下载下来`index.aspx.cs`
+
+
 ### Manager
 #### user
 - nmap
