@@ -26,7 +26,8 @@ Common verbs to use include:
 
 感觉没必要做笔记了，chatGBT完全可以拿下了
 
-
+# 提权
+ 
 
 # 域渗透
 ## 信息收集
