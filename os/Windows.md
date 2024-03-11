@@ -43,3 +43,7 @@ Common verbs to use include:
 ### 1. NTLM认证协议
 ### 2. Kerberos认证协议
  
+## 攻击
+### 1.Hash传递攻击 PTH(Pass The Hash)
+使用mimikatz工具
+- 
