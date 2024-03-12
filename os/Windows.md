@@ -27,7 +27,8 @@ Common verbs to use include:
 感觉没必要做笔记了，chatGBT完全可以拿下了
 
 # 提权
- 
+### MS14-068提权
+
 
 # 域渗透
 ## 信息收集
@@ -73,4 +74,5 @@ Windows 2003 之后的机器，只能是administrator用户的哈希值才能进
 
 
 使用mimikatz工具
-- 
+
+### 2.票据传递攻击 PTT(Pass The Ticket)
