@@ -76,3 +76,13 @@ Windows 2003 之后的机器，只能是administrator用户的哈希值才能进
 使用mimikatz工具
 
 ### 2.票据传递攻击 PTT(Pass The Ticket)
+
+### 3.黄金票据伪造
+> TGT=Krbtgt的NTLM哈希加密
+> 
+> 1、Kerberos中的TGT和Logon Session Key（CT_SK）是AS返回的，TGT它是由Krbtgt加密和签名的，krbtgt的 NTLM Hash又是固定的，而CT_SK并不会保存在KDC中。
+> 
+> 2、所以只要得到krbtgt的NTLM Hash，就可以伪造TGT和Logon Session Key（CT_SK）。
+> 
+> 3、Client与TGS的交互中，而已有了黄金票据后（TGT），就跳过AS验证，不用验证账户和密码，所以也不担心域管密码修改。
+
