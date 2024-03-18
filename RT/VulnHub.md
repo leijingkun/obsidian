@@ -93,3 +93,6 @@ httpd.serve_forever()
 里面的`config.inc.php`有root密码
 也可内核提权
 
+### metasploitable2
+#### user
+
