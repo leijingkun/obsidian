@@ -58,6 +58,8 @@ intext
 + 爱企查: https://aiqicha.baidu.com
 
 ### 子域名
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240322001750.png)
+
 
 + 查子域: https://chaziyu.com/ (在线)
 
