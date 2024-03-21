@@ -21,3 +21,9 @@
 
 ### `*.yto.net.cn`
 
+### fr.yto.net.cn
+
+
+https://mec.yto.net.cn/
+
+https://mec.yto.net.cn/api/loginsendsms?username=18392343504&randValue=734d349b-b134-446c-969c-a42e3e648905&code=4506
