@@ -7,6 +7,39 @@
 ### chain17
 
 ### Pastbin
+所有接口捋一遍
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240323191816.png)
+
+静态页面排除掉
+*r.Post("/login", loginHandler)*
+输入账号密码登录,用户名必须符合正则`^[a-zA-Z0-9_]{7,20}$`,且密码的长度<8(数组绕过?)
+根据用户名查询数据库里的密码
+```go
+	var dbPassword string
+	err = c.DBCon.QueryRow("SELECT password FROM users WHERE username = ?", username).Scan(&dbPassword)
+```
+通过指针将查询到的密码存储到dbPassword变量里,然后一个hash对比操作,若成功则给token
+*r.Post("/register", registerHandler)*
+输入账号密码,同样需要用户名正则与密码长度,然后hash输入的密码,预编译存储到users表里,
+
+*r.Post("/paste/create", needAuth, createPasteHandler)*
+post里传title和content,其中len(title)在0-31,len(content)在0-511,
+为paste生成一个id,预编译写入数据库
+*r.Get("/paste/view", addCSPHeaders, needAuth, pasteView)*
+```go
+	var paste Paste
+	err := c.DBCon.QueryRow("SELECT title,content FROM pastes WHERE user = ?", username).Scan(&paste.Title, &paste.Content)
+```
+从token里获取用户名,然后从库里查询paste,并渲染到html
+*r.Get("/paste/del", needAuth, delPasteHandler)*
+get传入id,从token里获取用户名,调用delete,删除
+
+
+*r.Get("/flag", adminOnly, flagHandler)*
+拿到flag,需要adminonly,即token伪造为admin,那我们需要secret
+
+
+注意到verifyJWTToken返回了secret,即我们需要让加密部分报错,让这个函数返回secret.
 
 # reverse
 
