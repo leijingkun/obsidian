@@ -66,7 +66,7 @@
 [[wp/WannaGame Championship 2023]]
 
 [[wp/强网杯2023]]
-
+[[aliyunctf2024]]
 
 复现
 [[catctf2022]]
