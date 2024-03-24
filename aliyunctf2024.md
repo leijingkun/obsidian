@@ -36,11 +36,29 @@ get传入id,从token里获取用户名,调用delete,删除
 
 
 *r.Get("/flag", adminOnly, flagHandler)*
-拿到flag,需要adminonly,即token伪造为admin,那我们需要secret
+拿到flag,需要adminonly,即token伪造为admin,那我们需要获取secret
 
+```go
+func verifyJWTToken(tokenString string) (string, error) {
+	token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
+		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
+			return nil, fmt.Errorf("Unexpected signing method: %v", token.Header["alg"])
+		}
+		return mySigningKey, nil
+	})
+	if err != nil {
+		return "", err
+	}
 
-注意到verifyJWTToken返回了secret,即我们需要让加密部分报错,让这个函数返回secret.
+	if claims, ok := token.Claims.(jwt.MapClaims); ok {
+		return claims["username"].(string), nil
+	}
+	return "", nil
+}
+```
+注意到verifyJWTToken会赋值key到token里,但是没有返回的地方
 
+好难
 # reverse
 
 # pwn
