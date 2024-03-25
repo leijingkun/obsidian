@@ -1,5 +1,5 @@
 
-## 软链接
+## 软连接
 在/bin/mklink
 使用 mklink /etc/passwd passwd
 自动生成passwd.zip
