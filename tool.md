@@ -40,11 +40,15 @@ exploit   //攻击
 [msf获取到session后的命令集合](https://blog.csdn.net/qq_39101049/article/details/96854716)
 
 ## Hydra
-
-```
+-l 用户名,-L用户名列表  
+ssh
+```bash
 hydra -l frank -P /usr/share/wordlists/rockyou.txt 10.10.240.52 ssh
 ```
-
+ftp
+```bash
+hydra -l root -P passwords.txt [-t 32] <IP> ftp
+```
 ## xray
 ```shell
 //基础爬虫爬取并对爬虫爬取的链接进行漏洞扫描
