@@ -35,3 +35,9 @@ Java.perform(() => {
 ```
 
 `Frida -U -l .\hook.js esayso1`
+
+
+# Crackme160
+### 1
+
+# crackme.one

@@ -77,6 +77,9 @@ func (rtr *Router) Handle(method string, pattern string, handlers []Handler) {
 slice数据竞争，同个底层数组的情况下，可能会出现c.mws被其他goroutine的append数据覆盖
 
 用三个请求，使得第一个非/flag请求的后续两个handler被/flag路由覆盖，再由第三个请求覆盖/flag的第一个handler取消adminOnly
+
+勉强懂了....
+
 # reverse
 
 # pwn
