@@ -1,3 +1,4 @@
+https://utctf.live/challenges
 # web
 ### Beginner: Off-Brand Cookie Clicker
 前端题,直接js找接口
@@ -61,6 +62,11 @@ sym.l* 函数按顺序即可得到flag,但是没找到radare2脚本来一把梭�
 问的是恶意文件的名字,
 `banANA-Hakrz09182afd4.exe`
 ### PES-128
+给了一个flag.enc和PES(elf),需要分析加密流程来解密flag.enc
+
+### In the Dark
+https://gist.github.com/nrabulinski/ba0a6927866e822e27faae190185a0f1
+
 
 # pwn
 
