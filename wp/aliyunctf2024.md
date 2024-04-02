@@ -58,7 +58,25 @@ func verifyJWTToken(tokenString string) (string, error) {
 ```
 注意到verifyJWTToken会赋值key到token里,但是没有返回的地方
 
-好难
+---
+wp是条件竞争
+[[go#切片(slice)的数据竞争]]
+> Pastbin
+
+```go
+func (rtr *Router) Handle(method string, pattern string, handlers []Handler) {
+    rtr.handle(method, pattern, func(resp http.ResponseWriter, req *http.Request) {
+       c := rtr.m.createContext(resp, req)
+       for _, h := range handlers {
+          c.mws = append(c.mws, getMWFromHandler(h))
+       }
+       c.run()
+    })
+}
+```
+slice数据竞争，同个底层数组的情况下，可能会出现c.mws被其他goroutine的append数据覆盖
+
+用三个请求，使得第一个非/flag请求的后续两个handler被/flag路由覆盖，再由第三个请求覆盖/flag的第一个handler取消adminOnly
 # reverse
 
 # pwn
