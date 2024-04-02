@@ -48,6 +48,14 @@ you'll receive 2 requests to your server; first is from your local machine, runn
 
 
 # reverse
+### Beginner: Basic Reversing Problem
+sym.l* 函数按顺序即可得到flag,但是没找到radare2脚本来一把梭出来
+`afi @@ sym.l* ~name[1]`
+
+### Fruit Deals
+一个恶意的xlsm文件,应该是要分析恶意宏
+`Alt+F11`打开宏文件
+
 
 # pwn
 
