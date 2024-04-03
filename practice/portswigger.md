@@ -46,3 +46,19 @@
 10.   DOM XSS in Angular,可以看到网站用的是 `Angular`,这里提到了一个 `cilent-side-template-injection`
 
 
+
+
+## 逻辑漏洞
+### 1
+需要购买一个价格为1337的商品
+流程:
+添加购物车 post 商品参数+商品价格(可修改)
+购买      /cart/checkout
+
+### 2
+没有了价格参数,剩下三个参数
+```bash
+productId=1&redir=PRODUCT&quantity=1
+```
+
+
