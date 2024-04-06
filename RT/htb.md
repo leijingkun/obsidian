@@ -517,6 +517,15 @@ PORT     STATE SERVICE
 ```
 `22,53,88,135,139,443,445,464,1801,2103,2105,2107,3389,5985,6409,6635,8080`
 
+- 8080
+可以上传文件,在uploads目录下 .htaccess无法利用
+可以上传phar ...
+传了一个命令行的webshell,放在
+
+- 443
+Hospital Webmail
+`Roundcube Webmail` 这个框架
+
 
 ### Pov
 #### user

