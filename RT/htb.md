@@ -491,6 +491,33 @@ echo '[{hosts: localhost, tasks: [shell: /usr/bin/chmod +s /bin/bash]}]' >> /opt
 `10.10.11.227 tickets.keeper.htb` 到/etc/hosts
 
 ## Medium
+### Hospital
+#### user
+`10.10.11.241`
+- nmap
+```text
+PORT     STATE SERVICE
+22/tcp   open  ssh
+53/tcp   open  domain
+88/tcp   open  kerberos-sec
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+443/tcp  open  https
+445/tcp  open  microsoft-ds
+464/tcp  open  kpasswd5
+1801/tcp open  msmq
+2103/tcp open  zephyr-clt
+2105/tcp open  eklogin
+2107/tcp open  msmq-mgmt
+3389/tcp open  ms-wbt-server
+5985/tcp open  wsman
+6409/tcp open  boe-resssvr3
+6635/tcp open  mpls-udp
+8080/tcp open  http-proxy
+```
+`22,53,88,135,139,443,445,464,1801,2103,2105,2107,3389,5985,6409,6635,8080`
+
+
 ### Pov
 #### user
 - nmap端口扫描

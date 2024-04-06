@@ -18,10 +18,11 @@ sudo nmap --script-vuln -p21,80,22,3306 <ip> nmapscan/vuln
 
 ```
 
+分隔端口号
+`cat ports.txt |awk -F'/' '{print $1}' |paste -sd ','`
 
-
-
-
+存储到变量里
+ports=$(cat ports.txt |awk -F '/' '{print $1}' |paste -sd ',')
 
 
 # 信息收集
