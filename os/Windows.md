@@ -29,6 +29,8 @@ Common verbs to use include:
 # 提权
 ### MS14-068提权
 
+## rpcclient
+rpc remote procedure call 远程过程调用,它允许请求操作另一台计算机上的服务
 
 # 域渗透
 ## 信息收集
