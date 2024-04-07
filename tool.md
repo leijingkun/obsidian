@@ -1,4 +1,13 @@
 
+
+## hashcat
+在 D:\\pentest\\Info\\hashcat下
+
+使用
+```bash
+hashcat.exe <hashfile> <dict>
+```
+
 ## 软连接
 在/bin/mklink
 使用 mklink /etc/passwd passwd
