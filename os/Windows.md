@@ -27,6 +27,10 @@ Common verbs to use include:
 感觉没必要做笔记了，chatGBT完全可以拿下了
 
 # 提权
+### window访问令牌
+```powershell
+whoami /all
+```
 ### MS14-068提权
 
 ## rpcclient
