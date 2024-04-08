@@ -718,6 +718,7 @@ PORT    STATE SERVICE
 还有个88端口的kerberos-sec没扫出来
 
 使用[kerbrute](https://github.com/ropnop/kerbrute)枚举ad域里的用户
+`kerbrute userenum -d  manager.htb /usr/share/wordlist/Seclists/Usernames/xato-net-10-million-usernames.txt --dc dc01.manager.htb`
 得到user.txt
 ```
 ryan
