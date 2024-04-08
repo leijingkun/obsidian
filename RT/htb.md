@@ -492,6 +492,7 @@ echo '[{hosts: localhost, tasks: [shell: /usr/bin/chmod +s /bin/bash]}]' >> /opt
 
 ## Medium
 ### Hospital
+#win
 #### user
 `10.10.11.241`
 - nmap
@@ -584,9 +585,15 @@ rpcclient -U "drbrown" 10.10.11.241
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240408004802.png)
 
 admin与guest开启了共享
+![Uploading file...1vosh]()
+
+所以在`C:\xampp\htdocs`上传一个webshell即可拿到root
+
+还有一个解是winpeas扫出来存在一个定时任务,里面有admin的密码
 
 
 ### Pov
+#win
 #### user
 - nmap端口扫描
 ```text
