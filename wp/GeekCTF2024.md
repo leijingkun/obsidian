@@ -52,7 +52,12 @@ json={"name":""}
 原来如此
 ### oauth
 登录会跳oauth到上交的认证网页,需要绕过
+[oauth](https://book.hacktricks.xyz/v/cn/pentesting-web/oauth-to-account-takeover)流程与原理
+发现`redirect_url`即授权的url为`http://chall.geekctf.geekcon.top:40521/code.php`
+直接访问提示输入code参数
 
+`http://chall.geekctf.geekcon.top:40521/code.php?code=whoami`
+提示 Log saved
 
 # reverse
 
