@@ -85,7 +85,12 @@ secret带下划线一定有鬼,试了下web路径也不对
 # crypto
 
 # Misc
-
+### 2024-WhereIsMyFlag
+py代码藏了一段base64,用github能直接看到
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240411030515.png)
+不断解压,发现是个gzip炸弹,使用grep查找flag
+-a表示强制查找,不然会当作二进制文件
+`grep -a 'flag' test`
 
 ---
 # *相关wp*
