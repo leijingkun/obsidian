@@ -58,6 +58,25 @@ json={"name":""}
 
 `http://chall.geekctf.geekcon.top:40521/code.php?code=whoami`
 提示 Log saved
+访问
+`http://chall.geekctf.geekcon.top:40521/log` 给出了log页面,根据admin的code可以直接登录
+
+
+得到log内容
+> The flag content is: sha1(sha256($account)), where $account stands for the SSO account name (consists of less than 10 letters) of the admin user.
+This website doesn't display username, so only I know the <u>secret</u> flag!
+
+获取admin的用户名,首先排除admin....好吧其实我也尝试了Admin,,,secret也不对
+
+http://chall.geekctf.geekcon.top:40521/sitemap.xml/
+提示网站只有一个文本是粗体,是`log`
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240411015924.png)
+
+好吧,还以为是用户名,原来是上面猜到的log路径,想多了...
+
+secret带下划线一定有鬼,试了下web路径也不对
+- [ ] 58986b1f3ca5f57ea4e897986f6e93f32ad8a006
+- [ ] 
 
 # reverse
 
