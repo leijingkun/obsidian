@@ -28,7 +28,31 @@ if __name__ == '__main__':
 
 ```
 
-没有过滤$(),数字
+没有过滤$(),数字,但是过滤了\\没法8进制执行
+\* 可以构造出来flag.txt
+
+`/*/*/*64 *` 会解析为/bin/base64 /bin/x86_64  flag.txt
+
+---
+base32!!!竟然有这个命令
+
+`/*/*/????32 *.*`
+
+另一个解法,使用diff3
+
+`/*/????3 ./* ./???`
+
+another
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240411222144.png)
+
+### javajail1
+```python
+BANNED = ['import', 'class', 'Main', '{', '}']
+```
+
+
+
+
 # web
 ### 
 # reverse

@@ -1279,6 +1279,7 @@ more
 head
 tail
 uniq
+base64
 nl
 sed '' file1.txt
 cut -f 1 file1.txt
