@@ -69,6 +69,7 @@
 [[aliyunctf2024]]
 [[utctf2024]]
 [[wp/GeekCTF2024]]
+[[wp/AmateursCTF2024]]
 复现
 [[wp/Nss#20]]
 [[catctf2022]]
