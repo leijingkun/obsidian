@@ -54,7 +54,7 @@ BANNED = ['import', 'class', 'Main', '{', '}']
 
 
 # web
-### 
+### one-shot
 # reverse
 
 # pwn
