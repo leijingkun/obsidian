@@ -75,9 +75,9 @@ http://chall.geekctf.geekcon.top:40521/sitemap.xml/
 好吧,还以为是用户名,原来是上面猜到的log路径,想多了...
 
 secret带下划线一定有鬼,试了下web路径也不对
-- [ ] 58986b1f3ca5f57ea4e897986f6e93f32ad8a006
-- [ ] 
-
+- [ ] 58986b1f3ca5f57ea4e897986f6e93f32ad8a006    secret
+- [ ] e424af1995f69a6e74acaa591fd9959f7d192a03    admin
+难道要读取session文件/tmp/<session_id>,也没有
 # reverse
 
 # pwn
