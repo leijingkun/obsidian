@@ -65,6 +65,12 @@ rpc remote procedure call 远程过程调用,它允许请求操作另一台计�
 
 # 域渗透
 ## 信息收集
+
+### rpcclient
+
+登录
+`rpcclient -U "drbrown" 10.10.11.241`
+
 ### 域内常用命令
 `ipconifg /all` 查看网卡配置信息,本机IP段,所在域
 `net config workstation`查看计算机名,全名,用户名,系统版本,工作站,域,登录域
