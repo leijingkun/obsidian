@@ -12,6 +12,14 @@ return Function.prototype.temp_constructor.apply(this, arguments);
 };
 ```
 
+## 特殊字符
+### python upper(),lower()
+```py
+chr upper
+223 SS
+305 I
+383 S
+```
 # 文件上传
 
 ## hackbar上传

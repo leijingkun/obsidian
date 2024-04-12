@@ -153,7 +153,17 @@ if __name__ == "__main__":
 
 登录发现需要`isEqual(username, "alice") and isEqual(password, "start2024"):`
 
-python的upper特殊处理
+python的upper特殊处理,简单遍历一下特殊字符
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240412165347.png)
+
+成功登录
+`alıce/ſtart2024`
+
+接下来需要伪造admin,限制了目录无法只能读取web目录下的文件,
+```python
+app.secret_key = os.environ.get("SECRET_KEY", os.urandom(128).hex())
+
+```
 ### NextGPT
 是chatgpt-next-web这个开源项目
 
