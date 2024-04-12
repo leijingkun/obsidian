@@ -491,6 +491,35 @@ echo '[{hosts: localhost, tasks: [shell: /usr/bin/chmod +s /bin/bash]}]' >> /opt
 `10.10.11.227 tickets.keeper.htb` 到/etc/hosts
 
 ## Medium
+### Jab
+#win 
+- nmap
+```bash
+53/tcp   open  domain
+88/tcp   open  kerberos-sec
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+389/tcp  open  ldap
+445/tcp  open  microsoft-ds
+464/tcp  open  kpasswd5
+593/tcp  open  http-rpc-epmap
+636/tcp  open  ldapssl
+3268/tcp open  globalcatLDAP
+3269/tcp open  globalcatLDAPssl
+5222/tcp open  xmpp-client
+5269/tcp open  xmpp-server
+7070/tcp open  realserver
+7443/tcp open  oracleas-https
+7777/tcp open  cbt
+```
+
+7070是web服务
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240412212618.png)
+扫到一个ws路由,返回405,尝试其他方法
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240412213010.png)
+
+支持的请求方法`CANCELUPLOAD,HEAD,MKCOL,UNCHECKOUT,POST,CHECKIN,CHECKOUT,PROPFIND,LOCK,VERSION-CONTROL,COPY,REPORT,OPTIONS,PUT,DELETE,GETLIB,MOVE,GET,UPDATE,PROPPATCH,UNLOCK`
+
 ### Hospital
 #win
 #### user
