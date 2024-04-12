@@ -150,6 +150,10 @@ def setCustomColor():
 if __name__ == "__main__":
     app.run()
 ```
+
+登录发现需要`isEqual(username, "alice") and isEqual(password, "start2024"):`
+
+python的upper特殊处理
 ### NextGPT
 是chatgpt-next-web这个开源项目
 
