@@ -104,6 +104,8 @@ search的query参数存在sql注入
 ,只剩下randomNum可以
 ~~分析登录接口可知,用户名是否存在都返回Credentials wrong,但是状态码未修改,我们可以据此来获取randomNum的值~~
 瞎扯,直接注册71用户不就行了,没办法判断
+
+
 # reverse
 
 # pwn
