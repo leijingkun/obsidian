@@ -513,12 +513,18 @@ echo '[{hosts: localhost, tasks: [shell: /usr/bin/chmod +s /bin/bash]}]' >> /opt
 7777/tcp open  cbt
 ```
 
-7070是web服务
+7070,7443是web服务
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240412212618.png)
 扫到一个ws路由,返回405,尝试其他方法
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240412213010.png)
 
 支持的请求方法`CANCELUPLOAD,HEAD,MKCOL,UNCHECKOUT,POST,CHECKIN,CHECKOUT,PROPFIND,LOCK,VERSION-CONTROL,COPY,REPORT,OPTIONS,PUT,DELETE,GETLIB,MOVE,GET,UPDATE,PROPPATCH,UNLOCK`
+
+可以看到xmpp-server和client,google下是什么
+> XMPP is the Extensible Messaging and Presence Protocol, a set of open technologies for instant messaging, presence, multi-party chat, voice and video calls, collaboration, lightweight middleware, content syndication, and generalized routing of XML data.
+> XMPP是可扩展消息和呈现协议，是一组用于即时消息、呈现、多方聊天、语音和视频通话、协作、轻量级中间件、内容联合和XML数据通用路由的开放技术。
+
+官网可以看到使用scansion与这个协议交互
 
 ### Hospital
 #win
