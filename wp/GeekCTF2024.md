@@ -9,6 +9,147 @@
 
 cookie可能存在目录穿越?实测../可以往上,但是读不到根目录,wapp说是nextjs 13.4.9版本,穿了几个创建的main.js/ts都没有,放弃...
 
+我的锅,是flask,读取app.py
+
+```python
+import os
+
+from flask import (
+    Flask,
+    jsonify,
+    redirect,
+    render_template,
+    request,
+    send_from_directory,
+    session,
+)
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import text
+
+app = Flask(
+    __name__, static_folder="assets/js", template_folder="templates", static_url_path=""
+)
+
+app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://ctf:114514@db/secrets"
+app.secret_key = os.environ.get("SECRET_KEY", os.urandom(128).hex())
+app.url_map.strict_slashes = False
+
+db = SQLAlchemy(app)
+
+
+class Notes(db.Model):
+    table_name = "notes"
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(80), nullable=False)
+    message = db.Column(db.Text, nullable=False)
+    type = db.Column(db.String(80), nullable=False, default="notes")
+
+    def __repr__(self):
+        return f"<Note {self.message}>"
+
+
+@app.route("/")
+def index():
+    if not session.get("logged_in"):
+        return redirect("/login")
+    with db.engine.connect() as con:
+        character_set_database = con.execute(
+            text("SELECT @@character_set_database")
+        ).fetchone()
+        collation_database = con.execute(text("SELECT @@collation_database")).fetchone()
+    assert character_set_database[0] == "utf8mb4"
+    assert collation_database[0] == "utf8mb4_unicode_ci"
+    type = request.args.get("type", "notes").strip()
+    if ("secrets" in type.lower() or "SECRETS" in type.upper()) and session.get(
+        "role"
+    ) != "admin":
+        return render_template(
+            "index.html",
+            notes=[],
+            error="You are not admin. Only admin can view secre<u>ts</u>.",
+        )
+    q = db.session.query(Notes)
+    q = q.filter(Notes.type == type)
+    notes = q.all()
+    return render_template("index.html", notes=notes)
+
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if session.get("logged_in"):
+        return redirect("/")
+
+    def isEqual(a, b):
+        return a.lower() != b.lower() and a.upper() == b.upper()
+
+    if request.method == "GET":
+        return render_template("login.html")
+    username = request.form.get("username", "")
+    password = request.form.get("password", "")
+    if isEqual(username, "alice") and isEqual(password, "start2024"):
+        session["logged_in"] = True
+        session["role"] = "user"
+        return redirect("/")
+    elif username == "admin" and password == os.urandom(128).hex():
+        session["logged_in"] = True
+        session["role"] = "admin"
+        return redirect("/")
+    else:
+        return render_template("login.html", error="Invalid username or password.")
+
+
+@app.route("/logout")
+def logout():
+    session.pop("logged_in", None)
+    session.pop("role", None)
+    return redirect("/")
+
+
+@app.route("/redirectCustomAsset")
+def redirectCustomAsset():
+    asset = request.cookies.get("asset", "assets/css/pico.azure.min.css")
+    if not asset.startswith("assets/css/"):
+        return "Hacker!", 400
+    return send_from_directory("", asset)
+
+
+@app.route("/setCustomColor")
+def setCustomColor():
+    color = request.args.get("color", "azure")
+    if color not in [
+        "amber",
+        "azure",
+        "blue",
+        "cyan",
+        "fuchsia",
+        "green",
+        "grey",
+        "indigo",
+        "jade",
+        "lime",
+        "orange",
+        "pink",
+        "pumpkin",
+        "purple",
+        "red",
+        "sand",
+        "slate",
+        "violet",
+        "yellow",
+        "zinc",
+    ]:
+        return jsonify({"error": "Invalid color."}), 400
+    asset = f"assets/css/pico.{color}.min.css"
+    return (
+        jsonify({"success": asset}),
+        200,
+        {"Set-Cookie": f"asset={asset}; SameSite=Strict"},
+    )
+
+
+if __name__ == "__main__":
+    app.run()
+```
 ### NextGPT
 是chatgpt-next-web这个开源项目
 
