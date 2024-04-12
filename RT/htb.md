@@ -492,6 +492,7 @@ echo '[{hosts: localhost, tasks: [shell: /usr/bin/chmod +s /bin/bash]}]' >> /opt
 
 ## Medium
 ### Jab
+#### user
 #win 
 - nmap
 ```bash
@@ -525,6 +526,17 @@ echo '[{hosts: localhost, tasks: [shell: /usr/bin/chmod +s /bin/bash]}]' >> /opt
 > XMPP是可扩展消息和呈现协议，是一组用于即时消息、呈现、多方聊天、语音和视频通话、协作、轻量级中间件、内容联合和XML数据通用路由的开放技术。
 
 官网可以看到使用scansion与这个协议交互
+
+---
+针对xmpp与jabber,类似于discord的聊天服务器,使用pidgin交互
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240412234029.png)
+开启了88端口,使用kerbrure枚举用户+getnpusers获取hash
+得到一个`jmontgomery`用户的hash
+`hashcat.exe ./hashes D:\dict`
+得到密码
+`Midnight_121`
+
+登录上服务器后
 
 ### Hospital
 #win

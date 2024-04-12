@@ -25,6 +25,18 @@ Common verbs to use include:
     ```
 
 感觉没必要做笔记了，chatGBT完全可以拿下了
+# 信息收集
+### 88-kerberos-sec
+可以使用kerbrute爆破用户名
+> 在kerberos的AS-REQ认证中当cname值中的用户不存在时返回包提示KDC_ERR_C_PRINCIPAL_UNKNOWN，所以当我们没有域凭证时，可以通过Kerberos pre-auth从域外对域用户进行用户枚举。
+
+
+`.\kerbrute_windows_amd64.exe userenum -d jab.htb --dc dc01.jab.htb D:\dict\wordlists\SecLists\Usernames\xato-net-10-million-usernames-dup.txt`
+获取users里的用户列表的hash
+> 对于域用户，如果设置了选项Do not require Kerberos preauthentication(不要求Kerberos预身份认证)，此时向域控制器的88端口发送AS-REQ请求，对收到的AS-REP内容重新组合，能够拼接成”Kerberos 5 AS-REP etype 23”(18200)的格式，接下来可以使用hashcat或是john对其破解，最终获得该用户的明文口令。默认情况下该配置不会设置。
+不要求Kerberos预身份认证默认不启用
+
+`impacket-GetNPUsers jab.htb/ -usersfile users -format hashcat -outputfile hashes`
 
 # 提权
 总结
