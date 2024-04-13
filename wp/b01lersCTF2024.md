@@ -45,6 +45,9 @@ async def view(request):
 	return FileResponse(UPLOAD_FOLDER.joinpath("a").with_name(filename))
 ```
 
+需要伪造admin用户,使用的是非对称加密,且公钥(decode)的文件位置可指定,能否通过upload上传公钥文件,且文件名不重要,重要的是pem还要符合png的标准
+
+rs256
 
 # reverse
 
