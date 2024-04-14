@@ -123,6 +123,30 @@ sh不支持多级目录通配符...
 
 `bctf{Lucky_you_I_did_not_code_this_stuff_in_Ruby_lasudkjklhdsfkhjkae}`
 
+### pwnhub
+
+可以上传笔记内容,存在ssti
+```python
+@app.get('/view/<id>')
+@login_required
+def view(id):
+    if (users[current_user.name].verification != V.admin):
+        return render_template_string('This feature is still in development, please come back later.')
+    content = next((post for post in current_user.posts if id in post), None)
+    if not content:
+        return render_template_string('Post not found')
+    content = content.get(id, '')
+    if any(char in content for char in INVALID):
+        return render_template_string(f'1{"".join("33" for _ in range(len(content)))}7 detected')
+    return render_template_string(f"Post contents here: {content[:250]}")
+```
+但是需要先是admin
+```python
+users = {
+    "admin": User("admin", ''.join(choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(32)), V.admin),
+    "pwnlyfans": User("pwnlyfans", ''.join(choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(32)), V.user)
+}
+```
 
 # reverse
 
