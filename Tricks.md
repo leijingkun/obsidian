@@ -1,3 +1,12 @@
+## wsl docker
+1. 配置clash,在/opt/clash下,运行strat.sh,`proxy_on`,最外层代理开启
+2. dockerfile里添加,容器内部配置代理
+```bash
+ENV http_proxy "http://172.17.0.1:7890"
+ENV HTTP_PROXY "http://172.17.0.1:7890"
+ENV https_proxy "http://172.17.0.1:7890"
+ENV HTTPS_PROXY "http://172.17.0.1:7890"
+```
 
 
 ## 前端反调试
