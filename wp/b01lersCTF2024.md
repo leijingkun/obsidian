@@ -191,6 +191,20 @@ ssti不下去了,
 
 ### b01lers_casino
 
+```python
+@app.route("/grab_flag", methods = ["GET"])
+def grab_flag():
+    jwt_token = request.cookies.get('jwt')
+    if jwt_token == None or not is_valid_token(jwt_token, app.config['SECRET_KEY']):
+        return jsonify({'error': 'Unauthorized'}), 403
+    payload = decode_token(jwt_token, app.config["SECRET_KEY"])
+    if (payload["username"] != "admin"):
+        return jsonify({'error': 'Unauthorized'}), 403
+    return jsonify({"flag": app.config["FLAG"]})
+```
+
+还是需要伪造为admin,
+
 # reverse
 
 # pwn
