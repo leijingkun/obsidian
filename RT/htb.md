@@ -493,6 +493,7 @@ echo '[{hosts: localhost, tasks: [shell: /usr/bin/chmod +s /bin/bash]}]' >> /opt
 ## Medium
 
 ### Runner
+https://breachforums.st/Thread-HackTheBox-Runner-Writeup?highlight=runner
 `10.10.11.13`
 
 ```bash
@@ -519,7 +520,17 @@ echo '[{hosts: localhost, tasks: [shell: /usr/bin/chmod +s /bin/bash]}]' >> /opt
 使用cewl生成的字典也没爆出来
 
 ---
-看了一眼题解可以扫到teamcity的一个虚拟主机
+
+看题解还是用dns子域名扫到的teamcity这个子域名?
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240422024259.png)
+
+
+发现是jetbrains的一个teamcity服务器,搜索2023.05.4 存在一个` CVE-2023-42793`
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240422024653.png)
+
+使用`searchsploit`可以直接搜索到这个漏洞,但是我是用kali没成功,换到win上成功了(代码没变),跟vpn连接的位置有关?
+
+该怎么通过后台rce,
 
 
 #### root
