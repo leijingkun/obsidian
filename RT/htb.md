@@ -530,7 +530,16 @@ https://breachforums.st/Thread-HackTheBox-Runner-Writeup?highlight=runner
 
 使用`searchsploit`可以直接搜索到这个漏洞,但是我是用kali没成功,换到win上成功了(代码没变),跟vpn连接的位置有关?
 
-该怎么通过后台rce,
+该怎么通过后台rce,找到一个ruby的代码,根据代码和报错构造了一下web请求
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240422033608.png)
+要添加一个`X-TC-CSRF-Token`头,随便给个值真正的值他就会告诉你,防止csrf的
+
+反弹一个shell
+
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240422033655.png)
+
+是一台teamcity的docker,,,
+
 
 
 #### root
