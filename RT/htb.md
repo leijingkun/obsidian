@@ -510,6 +510,10 @@ echo '[{hosts: localhost, tasks: [shell: /usr/bin/chmod +s /bin/bash]}]' >> /opt
 200      GET        1l        1w        9c http://10.10.11.13:8000/version
 ```
 
+看了眼提示,使用gobuster vhost爆破虚拟主机
+
+#### root
+
 
 
 ### Jab
