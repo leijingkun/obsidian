@@ -501,6 +501,8 @@ echo '[{hosts: localhost, tasks: [shell: /usr/bin/chmod +s /bin/bash]}]' >> /opt
 8000/tcp open  http-alt
 ```
 
+#### user
+
 目录扫描,无
 子域名爆破 webproxy.runner
 
@@ -511,6 +513,14 @@ echo '[{hosts: localhost, tasks: [shell: /usr/bin/chmod +s /bin/bash]}]' >> /opt
 ```
 
 看了眼提示,使用gobuster vhost爆破虚拟主机
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240422014054.png)
+
+什么也没爆出来
+使用cewl生成的字典也没爆出来
+
+---
+看了一眼题解可以扫到teamcity的一个虚拟主机
+
 
 #### root
 
