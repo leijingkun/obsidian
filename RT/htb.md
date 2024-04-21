@@ -491,6 +491,27 @@ echo '[{hosts: localhost, tasks: [shell: /usr/bin/chmod +s /bin/bash]}]' >> /opt
 `10.10.11.227 tickets.keeper.htb` 到/etc/hosts
 
 ## Medium
+
+### Runner
+`10.10.11.13`
+
+```bash
+22/tcp open  ssh
+80/tcp open  http
+8000/tcp open  http-alt
+```
+
+目录扫描,无
+子域名爆破 webproxy.runner
+
+8000端口目录扫描
+```bash
+200      GET        1l        1w        3c http://10.10.11.13:8000/health
+200      GET        1l        1w        9c http://10.10.11.13:8000/version
+```
+
+
+
 ### Jab
 #### user
 #win 
