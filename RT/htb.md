@@ -1088,5 +1088,16 @@ url `perpass.htb/download?fn=../../../../../../../etc//proc/self/cgroup`存在�
 49709/tcp open  unknown
 ```
 
+`analysis.htb`
 
-80,
+
+扫一下子域名和vhost
+wp使用
+`ffuf -c -u http://analysis.htb/ -H "Host: FUZZ.analysis.htb" -w Desktop/sublist.txt -http2`
+
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240422203717.png)
+
+得到一个子域名`internal.analysis.htb`
+用 gobuster dns 和vhost都没有
+
+
