@@ -603,7 +603,7 @@ linpeas.sh找到一个反向代理
 或者通过 https://nitroc.org/en/posts/cve-2024-21626-illustrated/#how-docker-engine-calls-runc
 这个漏洞目录穿越读取root.txt
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240422145920.png)
-
+ 
 9bdcf881fbf0534b4aad070397096bea
 ### Jab
 #### user
