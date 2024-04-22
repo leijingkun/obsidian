@@ -1100,4 +1100,30 @@ wp使用
 得到一个子域名`internal.analysis.htb`
 用 gobuster dns 和vhost都没有
 
+破案了,要加上-r参数指定dns服务器ip与端口
+`gobuster dns -d analysis.htb -w /usr/share/wordlists/dirb/common.txt -r 10.10.11.250:53`
 
+
+扫到三个目录
+```bash
+/dashboard            (Status: 301) [Size: 174] [--> http://internal.analysis.htb/dashboard/]
+/employees            (Status: 301) [Size: 174] [--> http://internal.analysis.htb/employees/]
+/users                (Status: 301) [Size: 170] [--> http://internal.analysis.htb/users/]
+```
+
+根据response可以判断是一个php服务器,
+扫到的php文件
+http://internal.analysis.htb/users/list.php 提示缺少参数,使用arjun爆破得到name
+
+根据?name=a*,可以得到以a开头的用户名
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240422211647.png)
+
+---
+所以这块是[[Tricks#ldap]]ldap注入...
+所以下一步是确定有哪些类
+
+
+http://internal.analysis.htb/employees/login.php
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240422212055.png)
+
+一个登录框,没有

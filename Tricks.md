@@ -189,6 +189,24 @@ compress.zlib://data:text/plain;base64,PD9waHAgcGhwaW5mbygpOz8%2b
 远程文件包含绕过allow_url
 开启smb服务器
 
+## ldap注入
+https://www.anquanke.com/post/id/212186
+ldap 轻量级目录访问协议
+> 条目
+> 
+> 条目，也叫记录项，是LDAP中最基本的颗粒，就想字典中的词条或者是数据中的记录。通常对LDAP的添加、删除、修改、搜索都是以条目为基本单位。
+> 
+> 属性
+> 
+> 每个条目都可以有很多属性（Attribute），比如常见的人都有姓名、地址、电话等属性。每个属性都有名称及对应的值，属性值可以有单个、多个，比如你有多个邮箱。
+> 
+> 此外，LDAP为人员组织机构中常见的对象都设计了属性(比如commonName，surname)。
+> 
+> 对象类
+> 
+> 对象类是属性的集合，LDAP预想了很多人员组织机构中常见的对象，并将其封装成对象类。比如人员（person）含有姓（sn）、名（cn）、电话(telephoneNumber)、密码(userPassword)等属性，单位职工(organizationalPerson)是人员(person)的继承类，除了上述属性之外还含有职务（title）、邮政编码（postalCode）、通信地址(postalAddress)等属性。
+
+
 ## oracle注入
 `C:\Users\20925\Desktop\study\attachment\Oracle数据库注入全方位利用 - 先知社区.mhtml`
 ## php反序列化
