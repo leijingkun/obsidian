@@ -605,6 +605,15 @@ linpeas.sh找到一个反向代理
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240422145920.png)
  
 9bdcf881fbf0534b4aad070397096bea
+
+> runc是docker底层的一个命令,它用于运行根据Open Container Initiative(OCI)格式打包的应用,包括一个根文件系统和一个config.json
+> 在runc 1.1.12,存在docker逃逸
+> Successfully tested on Ubuntu 22.04 with runc 1.1.7-0ubuntu1~22.04.1 using Docker build.
+> 1. 通过设置workdir在 /proc/self/fd/\<fd\>,这个fd是文件/sys/fs/cgroup的文件描述符,通常为7/8
+> 2. 通过docker exec 或 kubectl exec执行命令建立系统链接(ln -sf /proc/self/fd/7/foo),这个文件描述符属于宿主机,可以据此获得一个宿主机的工作目录
+> 3. 此时攻击者可以访问宿主机
+
+
 ### Jab
 #### user
 #win 
