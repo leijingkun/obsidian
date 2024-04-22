@@ -597,6 +597,12 @@ linpeas.sh找到一个反向代理
 > 2.19.4
 
 
+思路就是给一个容器挂载/root目录
+
+---
+或者通过 https://nitroc.org/en/posts/cve-2024-21626-illustrated/#how-docker-engine-calls-runc
+这个漏洞目录穿越读取root.txt
+
 ### Jab
 #### user
 #win 
