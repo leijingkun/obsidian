@@ -855,7 +855,7 @@ PORT   STATE SERVICE
 
 [ViewState反序列化攻击](https://book.hacktricks.xyz/pentesting-web/deserialization/exploiting-__viewstate-parameter)
 
-关键是要寻找`MachineKey`,在pentest/Vuln/asp下的俩个工具都尝试了
+关键是要寻找`MachineKey`,就保存在web.config里
 
 可以利用工具[ysoserial.net](https://github.com/pwntester/ysoserial.net.git)来攻击
 ```bash
