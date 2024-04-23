@@ -1,6 +1,6 @@
 ## powershell
 
- `Cmdlet`格式  （动词-名称）
+`Cmdlet`格式  （动词-名称）
 
 Common verbs to use include:
 
