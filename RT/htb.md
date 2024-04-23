@@ -1154,4 +1154,7 @@ http://internal.analysis.htb/employees/login.php
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240422222103.png)
 
 
+---
+更新一下,第二天再上这台机器发现密码变了,同样的ldap注入也没了???一直没有回显
+
 
