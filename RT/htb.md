@@ -1170,6 +1170,7 @@ http://internal.analysis.htb/users/list.php 提示缺少参数,使用arjun爆破
 
 ---
 所以这块是[[Tricks#ldap]]ldap注入...
+
 所以下一步是确定有哪些类
 
 ---
@@ -1195,7 +1196,7 @@ for i in range(1000):
 
 ```
 
-description的内容 `97NTtl*4QP96Bv#`
+description的内容 `97NTtl*4QP96Bv`
 账号为邮箱, `technician@analysis.htb`
 
 http://internal.analysis.htb/employees/login.php
@@ -1205,6 +1206,16 @@ http://internal.analysis.htb/employees/login.php
 
 
 ---
-更新一下,第二天再上这台机器发现密码变了,同样的ldap注入也没了???一直没有回显
+能直接上传php的webshell,
 
+蚁剑连上后查看配置文件,有一个ldap webservice的账号密码,
+```bash
+$ldap_password = 'N1G6G46G@G!j';
+$ldap_username = 'webservice@analysis.htb';
+```
+mysql的密码
+```bash
+ $username = "db_master";  
+ $password = '0$TBO7H8s12yh&';  
+```
 
