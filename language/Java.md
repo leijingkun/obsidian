@@ -331,7 +331,7 @@ java数据库的标准api
 白名单机制,目前来说这个方法是安全的🥰
 
 ### 反序列化
-
+https://www.cnblogs.com/LittleHann/p/17800577.html
 ```java
     @RequestMapping("/rememberMe/vuln")
     public String rememberMeVul(HttpServletRequest request)
