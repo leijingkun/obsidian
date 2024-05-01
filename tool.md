@@ -4,6 +4,8 @@
 
 每一个插件配置一个lua文件,自动加载
 
+`set clipboard=unnamed` 打通系统剪切板
+
 ## hashcat
 在 D:\\pentest\\Info\\hashcat下
 
