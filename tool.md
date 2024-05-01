@@ -1,4 +1,8 @@
+## neovim
+插件lua文件在
+`C:\Users\20925\AppData\Local\nvim-data\lazy\lazy.nvim\lua\plugins\`
 
+每一个插件配置一个lua文件,自动加载
 
 ## hashcat
 在 D:\\pentest\\Info\\hashcat下
