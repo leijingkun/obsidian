@@ -49,7 +49,20 @@ ban掉了关键字regex,防止正则表达式注入
 https://www.mongodb.com/docs/v6.0/reference/operator/query/gt/
 mongodb的操作符,发现有gte(>=),可以盲注
 
+但是盲注过程中有`regex`这个字符串,被filter函数过滤了
+```js
+const filter = (input) => {
+    if (typeof input === 'string') {
+        return input.toLowerCase().includes('regex');
+    }
+  
+    if (typeof input === 'object') {
+        return JSON.stringify(input).toLowerCase().includes('regex');
+    }
+}
+```
 
+什么切片,拼接在mongodb查询里也不能用...
 
 # reverse
 
