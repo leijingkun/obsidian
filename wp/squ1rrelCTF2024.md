@@ -32,6 +32,24 @@ taffydb在查询时如果找到索引,就会忽略其他条件,直接返回索�
 }
 ```
 
+### web/Goosemon
+flag在admin的用户密码里,数据库用的是mongodb
+
+ban掉了关键字regex,防止正则表达式注入
+
+看来需要盲注出admin的密码
+```js
+    const result = await data.toArray();
+    if (result.length > 0) {
+      res.status(200).send("Login successful!");
+    } else {
+      res.status(400).send("Login failed!");
+    }
+```
+https://www.mongodb.com/docs/v6.0/reference/operator/query/gt/
+mongodb的操作符,发现有gte(>=),可以盲注
+
+
 
 # reverse
 
