@@ -100,7 +100,10 @@ for i in range(1000):
 
 
 ---
-
+别人用的是expr,gpt害我
+```json
+{'username': 'admin', "$expr": { "$eq": [ { "$substr": ["$password", i, 1] }, c ]}}
+```
 
 ### web/Key Server
 一个jwt校验,公钥可以从url中读取,
