@@ -63,6 +63,11 @@ const filter = (input) => {
 }
 ```
 
+
+```python
+
+```
+
 切片,拼接在mongodb查询里也不能用...
 
 # reverse
