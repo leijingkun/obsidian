@@ -113,6 +113,46 @@ https://dnsexit.com/domains/free-second-level-domains/
 host是主机名不是ip,可以申请一个免费的二级域名 `10.publicvm.com`
 
 本地通了,远程不行...
+
+### web/mutex-lock
+```js
+app.put("/mutex/:name", (req, res) => {
+    const { name } = req.params;
+    if (mutexes[name] == undefined) {
+        const uuid = crypto.randomUUID();
+        mutexes[name] = uuid;
+        return res.status(200).send("Acquired! Password to release: " + uuid);
+    } else {
+        return res.status(409).send("Mutex already acquired");
+    }
+});
+
+app.delete("/mutex/:name", (req, res) => {
+    const { name } = req.params;
+    const pwd = req.query.pwd;
+    if (mutexes[name] == undefined) {
+        return res.status(404).send("Mutex not found");
+    }
+
+    if (mutexes[name] == pwd) {
+        delete mutexes[name];
+        return res.status(200).send("Mutex released.");
+    } else {
+        return res.status(403).send("Invalid password -- do you control this mutex?");
+    }
+});
+
+
+```
+
+很简单的代码,flag在环境变量里,但是这俩个路由也没有可以读flag的地方啊...
+
+---
+
+出题者修改了express的来源,指向了他的仓库,进去之后看commit
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240506181958.png)
+
+
 # reverse
 
 # pwn
