@@ -112,7 +112,7 @@ for i in range(1000):
 https://dnsexit.com/domains/free-second-level-domains/
 host是主机名不是ip,可以申请一个免费的二级域名 `10.publicvm.com`
 
-
+本地通了,远程不行...
 # reverse
 
 # pwn
