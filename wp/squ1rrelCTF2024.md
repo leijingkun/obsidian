@@ -1,3 +1,4 @@
+`https://ctf.squ1rrel.dev/login?token=s1pniGOFTCNbGpXBaH6TOnQHoHPmROX77Hag8pLcUTSXzEHayVkKRN0cUF7B6k%2BoUNGHOQwBeyNHoSmpE%2BqEOi1cVPDDG1fNtFosvy%2FlUdEhw4BNtLfxiifRmcbb`
 # web
 ### web/JSON Store
 
@@ -62,7 +63,7 @@ const filter = (input) => {
 }
 ```
 
-什么切片,拼接在mongodb查询里也不能用...
+切片,拼接在mongodb查询里也不能用...
 
 # reverse
 
