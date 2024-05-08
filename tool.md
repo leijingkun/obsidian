@@ -14,6 +14,9 @@
 hashcat.exe <hashfile> <dict>
 ```
 
+```bash
+ 
+```
 ## 软连接
 在/bin/mklink
 使用 mklink /etc/passwd passwd
