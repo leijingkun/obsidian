@@ -155,6 +155,21 @@ app.delete("/mutex/:name", (req, res) => {
 出题者修改了express的来源,指向了他的仓库,进去之后看commit
 ![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240506181958.png)
 
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240509105214.png)
+
+
+### web/Personal Website
+https://squ1rrel.dev/squ1rrel-personal-website
+一个简单的博客,什么也没有
+
+---
+通过wappalyzer可以看到是使用了firebase,并且图片也是用的这个存储
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20240509105639.png)
+
+firebase是谷歌的云主机NoSQL数据库
+
+
+
 
 # reverse
 
