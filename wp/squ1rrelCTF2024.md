@@ -168,7 +168,18 @@ https://squ1rrel.dev/squ1rrel-personal-website
 
 firebase是谷歌的云主机NoSQL数据库
 
-
+https://firebase.google.com/docs/hosting/reserved-urls?hl=zh-cn
+可以发现,初始配置在`/__/firebase/init.json`中,可以读取apikey
+```json
+{
+  "apiKey": "AIzaSyAlUQ9NC6P-KiEVPuwD9X6rwuZwB1lcvd4",
+  "authDomain": "my-personal-website-a.firebaseapp.com",
+  "databaseURL": "https://my-personal-website-a-default-rtdb.firebaseio.com",
+  "messagingSenderId": "415548456803",
+  "projectId": "my-personal-website-a",
+  "storageBucket": "my-personal-website-a.appspot.com"
+}
+```
 
 
 # reverse
