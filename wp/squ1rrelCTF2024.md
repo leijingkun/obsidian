@@ -181,6 +181,33 @@ https://firebase.google.com/docs/hosting/reserved-urls?hl=zh-cn
 }
 ```
 
+```js
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import { getStorage ,list ,ref } from 'firebase/storage';
+import {getAuth,createUserWithEmailAndPassword} from 'firebase/auth';
+// TODO: Replace the following with your app's Firebase project configuration
+const firebaseConfig = {
+   "apiKey": "AIzaSyAlUQ9NC6P-KiEVPuwD9X6rwuZwB1lcvd4",
+  "authDomain": "my-personal-website-a.firebaseapp.com",
+  "databaseURL": "https://my-personal-website-a-default-rtdb.firebaseio.com",
+  "messagingSenderId": "415548456803",
+  "projectId": "my-personal-website-a",
+  "storageBucket": "my-personal-website-a.appspot.com"
+};
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth();
+await createUserWithEmailAndPassword(auth, "kjiel@user.com", "password");
+
+const storage = getStorage(app);
+const data = await list(ref(storage, "/"))
+console.log(data)
+```
+
+提示网络错误,,,
+
 
 # reverse
 
