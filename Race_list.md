@@ -73,6 +73,7 @@
 [[wp/b01lersCTF2024]]
 [[wp/cr3c.ctf2024]]
 [[wp/squ1rrelCTF2024]]
+[[wp/open.ecsc2024]]
 
 复现
 [[wp/Nss#20]]
