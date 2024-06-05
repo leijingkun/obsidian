@@ -1,3 +1,9 @@
+## 工具列表
+### 子域名扫描
+
+`https://github.com/projectdiscovery/subfinder`
+
+
 ## neovim
 插件lua文件在
 `C:\Users\20925\AppData\Local\nvim-data\lazy\lazy.nvim\lua\plugins\`

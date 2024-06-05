@@ -7,8 +7,44 @@
 
 ## Tricks
 
-js 查找关键词 
+快速获取子域名的http请求状态码
+```bash
+cat alive-subdomains.txt | parallel -j50 -q curl -w 'Status:%{http_code}\t  Size:%{size_download}\t %{url_effective}\n' -o /dev/null -sk
 
+#apt-get -y install parallel
+```
+
+https://github.com/projectdiscovery/httpx
+快速请求
+```bash
+cat domains.txt | httpx -path /swagger-api/ -status-code -content-length
+```
+
+.bash_profile 里写入
+```bash
+rapiddns(){
+curl -s "https://rapiddns.io/subdomain/$1?full=1" \
+ | grep -oE "([a-zA-Z0-9_-]*\\.)?$1" \
+ | grep -v http \
+ | sort -u
+}
+```
+使用
+```
+rapiddns target.com
+```
+
+google dork语法
+```bash
+inurl:example.com intitle:"index of"
+inurl:example.com intitle:"index of /" "*key.pem"
+inurl:example.com ext:log
+inurl:example.com intitle:"index of" ext:sql|xls|xml|json|csv
+inurl:example.com "MYSQL_ROOT_PASSWORD:" ext:env OR ext:yml -git
+```
+
+
+js 查找关键词 
 ```
 url:, POST, api, GET, setRequestHeader, send(
 ```
