@@ -7,5 +7,7 @@ flutter学习记录
 侧边栏刚敲过,转头就忘了
 
 
-spotube这个项目不错,clone下来学习学习,但是main.dart看不懂,决定先checkout到第一次提交,咋变成electron了
+spotube这个项目不错,clone下来学习学习,但是main.dart看不懂,决定先checkout到第一次提交,咋变成electron了,看不懂,编译也fail,操
+
+
 
