@@ -15,7 +15,7 @@ adb shell "logcat|grep com.yaotong.*"
 # frida
 一加frida-server路径在`/data/local/tmp/fs-64`
 frida-server的压缩包位置在`D:\android`
-
+frida venv在 `D:\venv\frida`
 ### java-获取类的所有方法
 ```js
 Java.perform(function() {
