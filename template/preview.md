@@ -1,6 +1,7 @@
 ---
-aliases: []
+aliases:
 ---
+
 
 ```mermaid
 classDiagram
@@ -46,15 +47,14 @@ $$
 $$
 
 
-
 >[!info]
 >this is a info
 
 
-| row | row | fdasf |
-| ---- | ---- | ---- |
-| fdasf | afdaf | fasdf |
-| 1 | hello | fdsaas |
+| row   | row   | fdasf  |
+| ----- | ----- | ------ |
+| fdasf | afdaf | fasdf  | 
+| 1     | hello | fdsaas |
 
 # 一级标题
 
