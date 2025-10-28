@@ -37,6 +37,35 @@ function wafxss($str){
 
 *CISCN西南复赛AWDPlus Web – fushulingのblog*
 
+```
+
+```
+
+## fix
 
 
-*2023ciscn华北*
+
+```
+tar -czvf fix.tar justDeserialize-1.0-SNAPSHOT.jar repair.sh
+```
+
+update.sh
+
+```bash
+#尝试删掉flag
+touch flag;cp -f flag /flag
+ps -ef | grep <服务名> | grep -v grep | awk '{print $2}' | xargs kill -9
+jar -jar <>.jar &
+```
+
+
+
+c#启动
+```
+#!/bin/sh
+
+pkill -9 dotnet
+rm /app/RazorCor.dll
+mv RazorCor.dll /app/RazorCor.dll
+nohup dotnet /app/RazorCor.dll &
+```

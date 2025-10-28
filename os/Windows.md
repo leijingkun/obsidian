@@ -1,3 +1,58 @@
+
+
+## 基础知识
+
+```powershell
+#查看用户
+net user
+
+```
+
+查看系统配置
+`MSConfig`
+
+### AD
+域就是将计算机网络组件集中在一个名为active directory(ad)的存储库中,运行ad的服务称为域控
+
+#### 对象
+用户users
+
+组group
+默认组有domain admin,domain users,等
+
+机器machine
+计算机的账户为计算机名称+\$,如DC01\$
+
+组织单位ou:
+like公司部门,一个用户只能加入一个ou,但可以加入多个组
+
+#### 组策略 GPO
+Group Policy Objects 
+用于设置ou的权限
+gpo通过存储在dc中的sysvol网络共享分发
+
+#### 身份验证方法
+kerberos
+发送用户名+加密时间戳到kdc,kdc返回tgt(黄金票据)可通过krbtgt用户密码哈希伪造,请求服务a,则向kdc发送用户名,加密时间戳,tgt,服务名spn,kdc返回tgs
+ntlm
+
+#### 树
+同一根域
+#### 森林
+多个域
+
+
+域中的computers分为三种
+workstation 工作站
+services   服务器
+domain controller 域控 (包含所有域内用户的哈希密码)
+
+
+
+修改sophie用户密码
+```powershell
+Set-ADAccountPassword sophie -Reset -NewPassword (Read-Host -AsSecureString -Prompt 'New Password') -Verbose
+```
 ## powershell
 
 `Cmdlet`格式  （动词-名称）
@@ -24,7 +79,7 @@ Common verbs to use include:
     Get-ChildItem -Path "文件夹路径" -Filter "b64.txt" -Recurse
     ```
 
-感觉没必要做笔记了，chatGBT完全可以拿下了
+
 # 信息收集
 ### 88-kerberos-sec
 可以使用kerbrute爆破用户名
@@ -65,6 +120,8 @@ whoami /all
 rpc remote procedure call 远程过程调用,它允许请求操作另一台计算机上的服务
 
 # 域渗透
+![image.png](https://gitee.com/leiye87/typora_picture/raw/master/20250315195912.png)
+
 ## 信息收集
 
 ### rpcclient

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模糊测试工具生成效率对比</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            width: 1650px;
+            height: 1450px;
+            margin: 0 auto;
+            font-family: "Times New Roman", serif;
+        }
+        .chart-title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-container">
+        <div class="chart-title">测试用例生成效率对比</div>
+        <canvas id="efficiencyChart" width="1200" height="800"></canvas>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('efficiencyChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['EJSFuzz', 'Fuzzilli', 'AFL'],
+                datasets: [{
+                    label: '生成效率（用例数/秒）',
+                    data: [1200, 900, 1500],
+                    backgroundColor: [
+                        'rgba(65, 131, 215, 0.7)',  // 蓝色
+                        'rgba(219, 68, 55, 0.7)',   // 红色
+                        'rgba(244, 180, 0, 0.7)'    // 黄色
+                    ],
+                    borderColor: [
+                        'rgba(65, 131, 215, 1)',
+                        'rgba(219, 68, 55, 1)',
+                        'rgba(244, 180, 0, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: false,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: '测试用例生成速率（个/秒）',
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        },
+                        ticks: {
+                            stepSize: 300,
+                            font: {
+                                size: 12
+                            }
+                        },
+                        grid: {
+                            drawOnChartArea: true,
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: '测试工具类型',
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        },
+                        ticks: {
+                            font: {
+                                size: 13
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.parsed.y + ' 用例/秒';
+                            }
+                        }
+                    },
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'top',
+                        formatter: (value) => value,
+                        font: {
+                            weight: 'bold',
+                            size: 12
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+</body>
+</html>

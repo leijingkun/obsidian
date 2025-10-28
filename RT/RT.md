@@ -5,7 +5,7 @@
 
 ```bash
 #全端口扫描
-sudo nmap --min-rate 10000 <ip> -p- -oA nmapscan/ports
+sudo nmap --min-rate 10000 <ip> -p- -oA ./nmapscan/ports
 
 #tcp全扫
 sudo nmap -sT -sV -sC -O -p22,80,8080 <ip> -oA nmapscan/detail
